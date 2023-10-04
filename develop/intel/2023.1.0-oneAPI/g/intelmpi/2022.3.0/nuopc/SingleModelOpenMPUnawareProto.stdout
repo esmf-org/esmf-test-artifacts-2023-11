@@ -1,0 +1,131 @@
+2023-10-04 07:39:32
+[h16c10:101702:0:101702] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7fff17a26000)
+[h16c10:101704:0:101704] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7ffde16de008)
+[h16c10:101705:0:101705] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7ffd23b0c000)
+[h16c10:101703:0:101703] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7ffc50cb7008)
+==== backtrace (tid: 101705) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000044beb7 do_deallocate_all()  for_alloc_copy.c:0
+ 2 0x000000000044cea0 process_allocation_records_deallocate()  for_alloc_copy.c:0
+ 3 0x000000000044c045 do_deallocate_all()  for_alloc_copy.c:0
+ 4 0x0000000001b76a0c f_esmf_compcollectgarbage2_()  ???:0
+ 5 0x00000000016c85f2 ESMCI::VM::finalize()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_develop/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:3515
+ 6 0x00000000016f13b7 c_esmc_vmfinalize_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_develop/esmf/src/Infrastructure/VM/interface/ESMCI_VM_F.C:1206
+ 7 0x00000000026d9c7b c_esmc_vmfinalize_.t33100p.t33102p()  ifxQuQxWG.i90:0
+ 8 0x00000000026d2182 esmf_vmmod_mp_esmf_vmfinalize_()  ???:0
+ 9 0x000000000230b7fa esmf_initmod_mp_esmf_finalize_()  ???:0
+10 0x0000000000416995 MAIN__()  ???:0
+11 0x0000000000415edd main()  ???:0
+12 0x0000000000022555 __libc_start_main()  ???:0
+13 0x0000000000415e0b _start()  ???:0
+=================================
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B4F03087630  Unknown               Unknown  Unknown
+mainApp            000000000044BEB7  Unknown               Unknown  Unknown
+mainApp            000000000044CEA0  Unknown               Unknown  Unknown
+mainApp            000000000044C045  Unknown               Unknown  Unknown
+libesmf.so         00002B4EFDB29A0C  f_esmf_compcollec         516  ESMF_Comp_C.F90
+libesmf.so         00002B4EFD67B5F2  finalize                 3515  ESMCI_VM.C
+libesmf.so         00002B4EFD6A43B7  c_esmc_vmfinalize        1206  ESMCI_VM_F.C
+libesmf.so         00002B4EFE68CC7B  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         00002B4EFE685182  esmf_vmfinalize          9429  ESMF_VM.F90
+libesmf.so         00002B4EFE2BE7FA  esmf_finalize            1671  ESMF_Init.F90
+mainApp            0000000000416995  mainapp                   118  mainApp.F90
+mainApp            0000000000415EDD  Unknown               Unknown  Unknown
+libc-2.17.so       00002B4F043DA555  __libc_start_main     Unknown  Unknown
+mainApp            0000000000415E0B  Unknown               Unknown  Unknown
+==== backtrace (tid: 101703) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000044bee1 do_deallocate_all()  for_alloc_copy.c:0
+ 2 0x000000000044cea0 process_allocation_records_deallocate()  for_alloc_copy.c:0
+ 3 0x000000000044c045 do_deallocate_all()  for_alloc_copy.c:0
+ 4 0x0000000001b76a0c f_esmf_compcollectgarbage2_()  ???:0
+ 5 0x00000000016c85f2 ESMCI::VM::finalize()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_develop/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:3515
+ 6 0x00000000016f13b7 c_esmc_vmfinalize_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_develop/esmf/src/Infrastructure/VM/interface/ESMCI_VM_F.C:1206
+ 7 0x00000000026d9c7b c_esmc_vmfinalize_.t33100p.t33102p()  ifxQuQxWG.i90:0
+ 8 0x00000000026d2182 esmf_vmmod_mp_esmf_vmfinalize_()  ???:0
+ 9 0x000000000230b7fa esmf_initmod_mp_esmf_finalize_()  ???:0
+10 0x0000000000416995 MAIN__()  ???:0
+11 0x0000000000415edd main()  ???:0
+12 0x0000000000022555 __libc_start_main()  ???:0
+13 0x0000000000415e0b _start()  ???:0
+=================================
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002AD2EFCE8630  Unknown               Unknown  Unknown
+mainApp            000000000044BEE1  Unknown               Unknown  Unknown
+mainApp            000000000044CEA0  Unknown               Unknown  Unknown
+mainApp            000000000044C045  Unknown               Unknown  Unknown
+libesmf.so         00002AD2EA78AA0C  f_esmf_compcollec         516  ESMF_Comp_C.F90
+libesmf.so         00002AD2EA2DC5F2  finalize                 3515  ESMCI_VM.C
+libesmf.so         00002AD2EA3053B7  c_esmc_vmfinalize        1206  ESMCI_VM_F.C
+libesmf.so         00002AD2EB2EDC7B  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         00002AD2EB2E6182  esmf_vmfinalize          9429  ESMF_VM.F90
+libesmf.so         00002AD2EAF1F7FA  esmf_finalize            1671  ESMF_Init.F90
+mainApp            0000000000416995  mainapp                   118  mainApp.F90
+mainApp            0000000000415EDD  Unknown               Unknown  Unknown
+libc-2.17.so       00002AD2F103B555  __libc_start_main     Unknown  Unknown
+mainApp            0000000000415E0B  Unknown               Unknown  Unknown
+srun: error: h16c10: tasks 1,3: Exited with exit code 174
+srun: launch/slurm: _step_signal: Terminating StepId=50230886.394
+slurmstepd: error: *** STEP 50230886.394 ON h16c10 CANCELLED AT 2023-10-04T08:15:16 ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B937B35A630  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002B940DF44BA0  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002B940DF44E41  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002B940DF49B93  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002B940DF24D66  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002B940DEF435E  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002B940DF050CC  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002B940DEF4AF2  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002B940DEF4E55  ucs_debug_backtra     Unknown  Unknown
+libucs.so.0.0.0    00002B940DEF5455  ucs_debug_print_b     Unknown  Unknown
+libucs.so.0.0.0    00002B940DEF7814  ucs_handle_error      Unknown  Unknown
+libucs.so.0.0.0    00002B940DEF7B9C  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002B940DEF7D52  Unknown               Unknown  Unknown
+libpthread-2.17.s  00002B937B35A630  Unknown               Unknown  Unknown
+mainApp            000000000044BEB7  Unknown               Unknown  Unknown
+mainApp            000000000044CEA0  Unknown               Unknown  Unknown
+mainApp            000000000044C045  Unknown               Unknown  Unknown
+libesmf.so         00002B9375DFCA0C  f_esmf_compcollec         516  ESMF_Comp_C.F90
+libesmf.so         00002B937594E5F2  finalize                 3515  ESMCI_VM.C
+libesmf.so         00002B93759773B7  c_esmc_vmfinalize        1206  ESMCI_VM_F.C
+libesmf.so         00002B937695FC7B  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         00002B9376958182  esmf_vmfinalize          9429  ESMF_VM.F90
+libesmf.so         00002B93765917FA  esmf_finalize            1671  ESMF_Init.F90
+mainApp            0000000000416995  mainapp                   118  mainApp.F90
+mainApp            0000000000415EDD  Unknown               Unknown  Unknown
+libc-2.17.so       00002B937C6AD555  __libc_start_main     Unknown  Unknown
+mainApp            0000000000415E0B  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002AACB3499630  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002AAD46083BB2  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002AAD46083E41  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002AAD46088B93  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002AAD46063D66  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002AAD4603335E  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002AAD460440CC  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002AAD46033AF2  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002AAD46033E55  ucs_debug_backtra     Unknown  Unknown
+libucs.so.0.0.0    00002AAD46034455  ucs_debug_print_b     Unknown  Unknown
+libucs.so.0.0.0    00002AAD46036814  ucs_handle_error      Unknown  Unknown
+libucs.so.0.0.0    00002AAD46036B9C  Unknown               Unknown  Unknown
+libucs.so.0.0.0    00002AAD46036D52  Unknown               Unknown  Unknown
+libpthread-2.17.s  00002AACB3499630  Unknown               Unknown  Unknown
+mainApp            000000000044BEC9  Unknown               Unknown  Unknown
+mainApp            000000000044CEA0  Unknown               Unknown  Unknown
+mainApp            000000000044C045  Unknown               Unknown  Unknown
+libesmf.so         00002AACADF3BA0C  f_esmf_compcollec         516  ESMF_Comp_C.F90
+libesmf.so         00002AACADA8D5F2  finalize                 3515  ESMCI_VM.C
+libesmf.so         00002AACADAB63B7  c_esmc_vmfinalize        1206  ESMCI_VM_F.C
+libesmf.so         00002AACAEA9EC7B  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         00002AACAEA97182  esmf_vmfinalize          9429  ESMF_VM.F90
+libesmf.so         00002AACAE6D07FA  esmf_finalize            1671  ESMF_Init.F90
+mainApp            0000000000416995  mainapp                   118  mainApp.F90
+mainApp            0000000000415EDD  Unknown               Unknown  Unknown
+libc-2.17.so       00002AACB47EC555  __libc_start_main     Unknown  Unknown
+mainApp            0000000000415E0B  Unknown               Unknown  Unknown
+srun: error: h16c10: tasks 0,2: Exited with exit code 1
