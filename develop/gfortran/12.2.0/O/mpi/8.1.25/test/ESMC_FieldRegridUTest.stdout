@@ -1,0 +1,48 @@
+2023-10-05 04:00:18
+Beginning Test, file ESMC_FieldRegridUTest.c, line 66
+Beginning Test, file ESMC_FieldRegridUTest.c, line 66NUMBER_OF_PROCESSORS 1
+PASS MeshCreate, ESMC_FieldRegridUTest.c, line 123
+PASS MeshAddNodes, ESMC_FieldRegridUTest.c, line 131
+PASS MeshAddElements, ESMC_FieldRegridUTest.c, line 140
+PASS MeshGetNodeCount, ESMC_FieldRegridUTest.c, line 150
+PASS MeshGetElementCount, ESMC_FieldRegridUTest.c, line 161
+PASS MeshCreate, ESMC_FieldRegridUTest.c, line 229
+PASS MeshAddNodes, ESMC_FieldRegridUTest.c, line 237
+PASS MeshAddElements, ESMC_FieldRegridUTest.c, line 246
+PASS MeshGetNodeCount, ESMC_FieldRegridUTest.c, line 256
+PASS MeshGetElementCount, ESMC_FieldRegridUTest.c, line 267
+PASS Create ESMC_Field object, ESMC_FieldRegridUTest.c, line 282
+PASS Create ESMC_Field object, ESMC_FieldRegridUTest.c, line 291
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.c, line 304
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.c, line 323
+PASS Create an InterArray for maskValues in ESMC_FieldRegridStore(), ESMC_FieldRegridUTest.c, line 341
+PASS Create an ESMC_RouteHandle via ESMC_FieldRegridStore(), ESMC_FieldRegridUTest.c, line 365
+PASS Execute ESMC_FieldRegrid(), ESMC_FieldRegridUTest.c, line 373
+PASS Execute ESMC_RouteHandlePrint(), ESMC_FieldRegridUTest.c, line 381
+PASS Release an ESMC_RouteHandle via ESMC_FieldRegridRelease(), ESMC_FieldRegridUTest.c, line 389
+PASS Validation of regrid operation(), ESMC_FieldRegridUTest.c, line 414
+PASS Destroy ESMC_Field object, ESMC_FieldRegridUTest.c, line 422
+PASS Destroy ESMC_Mesh object, ESMC_FieldRegridUTest.c, line 430
+PASS LocStreamCreateLocal, ESMC_FieldRegridUTest.c, line 439
+PASS LocStreamAddKeyAlloc, ESMC_FieldRegridUTest.c, line 448
+PASS LocStreamGetKeyPtr, ESMC_FieldRegridUTest.c, line 456
+PASS LocStreamAddKeyAlloc, ESMC_FieldRegridUTest.c, line 479
+PASS LocStreamGetKeyPtr, ESMC_FieldRegridUTest.c, line 487
+PASS LocStreamAddKeyAlloc, ESMC_FieldRegridUTest.c, line 511
+PASS LocStreamGetKeyPtr, ESMC_FieldRegridUTest.c, line 519
+PASS Create ESMC_Field object on LocStream, ESMC_FieldRegridUTest.c, line 543
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.c, line 551
+
+ESMC_FieldRegridUTest:195817 terminated with signal 11 at PC=7f1fedb210c8 SP=7ffcbc7aa5c0.  Backtrace:
+/tmp/gfortran_12.2.0_mpi_O_develop/esmf/lib/libO/Unicos.gfortran.64.mpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistadd+0x226)[0x7f1fedb210c8]
+/tmp/gfortran_12.2.0_mpi_O_develop/esmf/lib/libO/Unicos.gfortran.64.mpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream+0x1449)[0x7f1fedb225eb]
+/tmp/gfortran_12.2.0_mpi_O_develop/esmf/lib/libO/Unicos.gfortran.64.mpi.default/libesmf.so(+0xc63b53)[0x7f1fed8f3b53]
+/tmp/gfortran_12.2.0_mpi_O_develop/esmf/lib/libO/Unicos.gfortran.64.mpi.default/libesmf.so(__esmf_fieldregridmod_MOD_esmf_fieldregridstorenx+0x94b)[0x7f1fed8f820c]
+/tmp/gfortran_12.2.0_mpi_O_develop/esmf/lib/libO/Unicos.gfortran.64.mpi.default/libesmf.so(f_esmf_regridstore_+0x207)[0x7f1fed76f0aa]
+/tmp/gfortran_12.2.0_mpi_O_develop/esmf/lib/libO/Unicos.gfortran.64.mpi.default/libesmf.so(_ZN5ESMCI5Field11regridstoreEPS0_S1_P18ESMC_InterArrayIntS3_PPNS_11RouteHandleEP22ESMC_RegridMethod_FlagP20ESMC_PoleMethod_FlagPiP18ESMC_LineType_FlagP18ESMC_NormType_FlagP22ESMC_ExtrapMethod_FlagSB_PfSB_P24ESMC_UnmappedAction_FlagP12ESMC_LogicalPPdPSB_SB_S1_S1_+0x1d3)[0x7f1fed20c335]
+/tmp/gfortran_12.2.0_mpi_O_develop/esmf/lib/libO/Unicos.gfortran.64.mpi.default/libesmf.so(ESMC_FieldRegridStore+0x195)[0x7f1fed00a53a]
+/tmp/gfortran_12.2.0_mpi_O_develop/esmf/test/testO/Unicos.gfortran.64.mpi.default/./ESMC_FieldRegridUTest[0x406627]
+/lib64/libc.so.6(__libc_start_main+0xef)[0x7f1fe8cb824d]
+/tmp/gfortran_12.2.0_mpi_O_develop/esmf/test/testO/Unicos.gfortran.64.mpi.default/./ESMC_FieldRegridUTest[0x40423a]
+srun: error: c5n0023: task 0: Exited with exit code 1
+srun: Terminating StepId=134585206.123
