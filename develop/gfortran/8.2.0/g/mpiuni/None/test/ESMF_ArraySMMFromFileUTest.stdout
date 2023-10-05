@@ -1,0 +1,23 @@
+2023-10-05 01:15:05
+Operating system error: Cannot allocate memory
+Memory allocation failed in xmallocarray
+
+Error termination. Backtrace:
+#0  0x7f5cb7699948 in __esmf_pointlistmod_MOD_esmf_pointlistadd
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+#1  0x7f5cb769c64a in __esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:671
+#2  0x7f5cb716b7e8 in getpointlistonfieldloc
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1676
+#3  0x7f5cb716deda in __esmf_fieldregridmod_MOD_esmf_fieldregridstorenx
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1003
+#4  0x7f5cb76c5024 in __esmf_regridweightgenmod_MOD_esmf_regridweightgenfile
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Superstructure/PreESMFMod/src/ESMF_RegridWeightGen.F90:1600
+#5  0x400e64 in __esmf_arraysmmfromfileutestmod_MOD_test_smm_from_file
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Array/tests/ESMF_ArraySMMFromFileUTest.F90:40
+#6  0x4010ef in esmf_arraysmmfromfileutest
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Array/tests/ESMF_ArraySMMFromFileUTest.F90:115
+#7  0x4013b9 in main
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Array/tests/ESMF_ArraySMMFromFileUTest.F90:70
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 104
+  NUMBER_OF_PROCESSORS           1

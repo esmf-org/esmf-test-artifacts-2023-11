@@ -1,0 +1,39 @@
+2023-10-05 01:15:05
+Operating system error: Cannot allocate memory
+Memory allocation failed in xmallocarray
+
+Error termination. Backtrace:
+#0  0x7fea4150a948 in __esmf_pointlistmod_MOD_esmf_pointlistadd
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+#1  0x7fea4150d64a in __esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:671
+#2  0x7fea40fdc7e8 in getpointlistonfieldloc
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1676
+#3  0x7fea40fdeeda in __esmf_fieldregridmod_MOD_esmf_fieldregridstorenx
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1003
+#4  0x7fea41536024 in __esmf_regridweightgenmod_MOD_esmf_regridweightgenfile
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Superstructure/PreESMFMod/src/ESMF_RegridWeightGen.F90:1600
+#5  0x40136f in esmf_regridweightgenutest
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Superstructure/PreESMFMod/tests/ESMF_RegridWeightGenUTest.F90:91
+#6  0x402e1a in main
+	at /project/esmf/theurich/ESMF-Nightly-Testing/gfortran_8.2.0_mpiuni_g_develop/esmf/src/Superstructure/PreESMFMod/tests/ESMF_RegridWeightGenUTest.F90:31
+  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+  NUMBER_OF_PROCESSORS           1
+ Starting weight generation with these inputs: 
+   Source File: data/T42_grid.nc
+   Destination File: data/ll2.5deg_grid.nc
+   Weight File: data/T42_ll2.5_bilinear.nc
+   Source File is in SCRIP format
+   Source Grid is a global grid
+   Source Grid is a logically rectangular grid
+   Use the center coordinates of the source grid to do the regrid
+   Destination File is in SCRIP format
+   Destination Grid is a global grid
+   Destination Grid is a logically rectangular grid
+   Use the center coordinates of the destination grid to do the regrid
+   Regrid Method: bilinear
+   Pole option: ALL
+   Line Type: cartesian
+   Norm Type: dstarea
+   Extrap. Method: none
+
