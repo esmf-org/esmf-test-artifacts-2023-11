@@ -1,0 +1,34 @@
+2023-10-05 04:04:41
+20231005 042020.159 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231005 042020.160 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231005 042020.160 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231005 042020.160 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231005 042020.160 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231005 042020.160 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231005 042020.160 INFO             PET0 Running with ESMF Version   : v8.6.0b07-59-g89013280a7
+20231005 042020.160 INFO             PET0 ESMF library build date/time: "Oct  5 2023" "04:03:01"
+20231005 042020.160 INFO             PET0 ESMF library build location : /project/esmf/theurich/ESMF-Nightly-Testing/nag_7.0_mpiuni_O_develop/esmf
+20231005 042020.160 INFO             PET0 ESMF_COMM                   : mpiuni
+20231005 042020.160 INFO             PET0 ESMF_MOAB                   : enabled
+20231005 042020.160 INFO             PET0 ESMF_LAPACK                 : enabled
+20231005 042020.160 INFO             PET0 ESMF_NETCDF                 : enabled
+20231005 042020.160 INFO             PET0 ESMF_PNETCDF                : disabled
+20231005 042020.160 INFO             PET0 ESMF_PIO                    : disabled
+20231005 042020.160 INFO             PET0 ESMF_YAMLCPP                : enabled
+20231005 042020.160 INFO             PET0  Beginning Test, file ESMF_PointListUTest.F90, line 67
+20231005 042020.160 INFO             PET0  NUMBER_OF_PROCESSORS 1
+20231005 042020.160 ERROR            PET0 ESMCI_PointList.C:244 ESMCI::PointList::add() Wrong data value  -  attempting to add original coords to a PointList that wasn't created to hold them.
+20231005 042020.161 ERROR            PET0 ESMCI_PointList_F.C:325 c_esmc_pointlistadd() Wrong data value  - Internal subroutine call returned Error
+20231005 042020.161 ERROR            PET0 ESMF_PointList.F90:1021 ESMF_PointListAdd Wrong data value  - Internal subroutine call returned Error
+20231005 042020.161 INFO             PET0  FAIL  Test creating a PointList from user inputs, ESMF_PointListUTest.F90, line 83:  Test unsuccessful
+20231005 042020.166 INFO             PET0  PASS  Test creating a PointList from existing grid without masking, ESMF_PointListUTest.F90, line 98
+20231005 042020.169 INFO             PET0  PASS  Test creating a PointList from existing grid with masking, ESMF_PointListUTest.F90, line 114
+20231005 042020.174 INFO             PET0  PASS  Test creating a PointList from existing mesh via nodes without masking, ESMF_PointListUTest.F90, line 130
+20231005 042020.176 INFO             PET0  PASS  Test creating a PointList from existing mesh via nodes with masking, ESMF_PointListUTest.F90, line 145
+20231005 042020.177 INFO             PET0  PASS  Test creating a PointList from existing mesh via elements without masking, ESMF_PointListUTest.F90, line 160
+20231005 042020.179 INFO             PET0  PASS  Test creating a PointList from existing mesh via elements with masking, ESMF_PointListUTest.F90, line 176
+20231005 042020.181 ERROR            PET0 ESMCI_PointList.C:244 ESMCI::PointList::add() Wrong data value  -  attempting to add original coords to a PointList that wasn't created to hold them.
+20231005 042020.181 ERROR            PET0 ESMCI_PointList_F.C:325 c_esmc_pointlistadd() Wrong data value  - Internal subroutine call returned Error
+20231005 042020.181 ERROR            PET0 ESMF_PointList.F90:1021 ESMF_PointListAdd Wrong data value  - Internal subroutine call returned Error
+20231005 042020.181 ERROR            PET0 ESMF_PointList.F90:680 ESMF_PointListCreateFrmLocStream Wrong data value  - Internal subroutine call returned Error
+20231005 042020.181 INFO             PET0  FAIL  Test creating a PointList from existing LocStream without masking, ESMF_PointListUTest.F90, line 191:  Test unsuccessful

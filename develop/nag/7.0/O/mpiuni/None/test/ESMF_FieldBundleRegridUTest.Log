@@ -1,0 +1,33 @@
+2023-10-05 04:04:41
+20231005 042455.208 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231005 042455.208 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231005 042455.208 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231005 042455.208 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231005 042455.208 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231005 042455.208 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231005 042455.208 INFO             PET0 Running with ESMF Version   : v8.6.0b07-59-g89013280a7
+20231005 042455.208 INFO             PET0 ESMF library build date/time: "Oct  5 2023" "04:03:01"
+20231005 042455.208 INFO             PET0 ESMF library build location : /project/esmf/theurich/ESMF-Nightly-Testing/nag_7.0_mpiuni_O_develop/esmf
+20231005 042455.208 INFO             PET0 ESMF_COMM                   : mpiuni
+20231005 042455.208 INFO             PET0 ESMF_MOAB                   : enabled
+20231005 042455.208 INFO             PET0 ESMF_LAPACK                 : enabled
+20231005 042455.208 INFO             PET0 ESMF_NETCDF                 : enabled
+20231005 042455.208 INFO             PET0 ESMF_PNETCDF                : disabled
+20231005 042455.208 INFO             PET0 ESMF_PIO                    : disabled
+20231005 042455.208 INFO             PET0 ESMF_YAMLCPP                : enabled
+20231005 042455.209 INFO             PET0  Beginning Test, file ESMF_FieldBundleRegridUTest.F90, line 56
+20231005 042455.209 INFO             PET0  NUMBER_OF_PROCESSORS 1
+20231005 042457.586 INFO             PET0  PASS  FieldBundleRegrid between a 0 to 360 sphere and a -180 to 180 sphere, ESMF_FieldBundleRegridUTest.F90, line 67
+20231005 042459.951 INFO             PET0  PASS  FieldBundleRegrid between a 0 to 360 sphere and a -180 to 180 sphere, ESMF_FieldBundleRegridUTest.F90, line 74
+20231005 042500.021 INFO             PET0  PASS  FieldBundleRegrid sphere with mask, ESMF_FieldBundleRegridUTest.F90, line 90
+20231005 042500.307 ERROR            PET0 ESMCI_PointList.C:244 ESMCI::PointList::add() Wrong data value  -  attempting to add original coords to a PointList that wasn't created to hold them.
+20231005 042500.307 ERROR            PET0 ESMCI_PointList_F.C:325 c_esmc_pointlistadd() Wrong data value  - Internal subroutine call returned Error
+20231005 042500.307 ERROR            PET0 ESMF_PointList.F90:1021 ESMF_PointListAdd Wrong data value  - Internal subroutine call returned Error
+20231005 042500.307 ERROR            PET0 ESMF_PointList.F90:680 ESMF_PointListCreateFrmLocStream Wrong data value  - Internal subroutine call returned Error
+20231005 042500.307 ERROR            PET0 ESMF_FieldRegrid.F90:1678 getPointListOnFieldLoc Wrong data value  - Internal subroutine call returned Error
+20231005 042500.307 ERROR            PET0 ESMF_FieldRegrid.F90:1005 ESMF_FieldRegridStoreNX Wrong data value  - Internal subroutine call returned Error
+20231005 042500.307 ERROR            PET0 ESMF_FieldBundle.F90:16180 ESMF_FieldBundleRegridStorePair( Wrong data value  - Internal subroutine call returned Error
+20231005 042500.307 ERROR            PET0 ESMF_FieldBundle.F90:15742 ESMF_FieldBundleRegridStore() Wrong data value  - Internal subroutine call returned Error
+20231005 042500.307 INFO             PET0  FAIL  FieldBundleRegrid between a 0 to 360 sphere and a LocStream, ESMF_FieldBundleRegridUTest.F90, line 97:
+20231005 042500.307 INFO             PET0  Ending Test, file ESMF_FieldBundleRegridUTest.F90, line 102
+20231005 042500.307 INFO             PET0 Finalizing ESMF

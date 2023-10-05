@@ -1,0 +1,34 @@
+2023-10-05 04:04:41
+20231005 042449.360 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231005 042449.360 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231005 042449.360 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231005 042449.360 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231005 042449.360 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231005 042449.360 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231005 042449.360 INFO             PET0 Running with ESMF Version   : v8.6.0b07-59-g89013280a7
+20231005 042449.360 INFO             PET0 ESMF library build date/time: "Oct  5 2023" "04:03:01"
+20231005 042449.360 INFO             PET0 ESMF library build location : /project/esmf/theurich/ESMF-Nightly-Testing/nag_7.0_mpiuni_O_develop/esmf
+20231005 042449.360 INFO             PET0 ESMF_COMM                   : mpiuni
+20231005 042449.360 INFO             PET0 ESMF_MOAB                   : enabled
+20231005 042449.360 INFO             PET0 ESMF_LAPACK                 : enabled
+20231005 042449.360 INFO             PET0 ESMF_NETCDF                 : enabled
+20231005 042449.360 INFO             PET0 ESMF_PNETCDF                : disabled
+20231005 042449.360 INFO             PET0 ESMF_PIO                    : disabled
+20231005 042449.360 INFO             PET0 ESMF_YAMLCPP                : enabled
+20231005 042449.360 INFO             PET0  Beginning Test, file ESMF_FieldSMMFromFileUTest.F90, line 287
+20231005 042449.360 INFO             PET0  NUMBER_OF_PROCESSORS 1
+20231005 042450.092 ERROR            PET0 ESMCI_PointList.C:244 ESMCI::PointList::add() Wrong data value  -  attempting to add original coords to a PointList that wasn't created to hold them.
+20231005 042450.092 ERROR            PET0 ESMCI_PointList_F.C:325 c_esmc_pointlistadd() Wrong data value  - Internal subroutine call returned Error
+20231005 042450.092 ERROR            PET0 ESMF_PointList.F90:1021 ESMF_PointListAdd Wrong data value  - Internal subroutine call returned Error
+20231005 042450.092 ERROR            PET0 ESMF_PointList.F90:680 ESMF_PointListCreateFrmLocStream Wrong data value  - Internal subroutine call returned Error
+20231005 042450.092 ERROR            PET0 ESMF_FieldRegrid.F90:1678 getPointListOnFieldLoc Wrong data value  - Internal subroutine call returned Error
+20231005 042450.092 ERROR            PET0 ESMF_FieldRegrid.F90:1005 ESMF_FieldRegridStoreNX Wrong data value  - Internal subroutine call returned Error
+20231005 042450.092 ERROR            PET0 ESMF_RegridWeightGen.F90:1603 ESMF_RegridWeightGenFile Wrong data value  - Internal subroutine call returned Error
+20231005 042450.092 ERROR            PET0 ESMF_FieldSMMFromFileUTest.F90:43 Wrong data value  - Passing error in return code
+20231005 042450.092 INFO             PET0  FAIL  ESMF_FieldSMMFromFile Unit Test, ESMF_FieldSMMFromFileUTest.F90, line 300:  Did not return ESMF_SUCCESS
+20231005 042450.112 ERROR            PET0 ESMF_IOScrip.F90:191 ESMF_OutputWeightFile Library needed by ESMF not present  - Internal subroutine call returned Error
+20231005 042450.112 ERROR            PET0 ESMF_IOScrip.F90:136 ESMF_SparseMatrixWrite Library needed by ESMF not present  - Internal subroutine call returned Error
+20231005 042450.112 ERROR            PET0 ESMF_FieldSMMFromFileUTest.F90:183 Library needed by ESMF not present  - Passing error in return code
+20231005 042450.112 INFO             PET0  PASS  ESMF_FieldRegridStoreFromFile Unit Test, ESMF_FieldSMMFromFileUTest.F90, line 318
+20231005 042450.112 INFO             PET0  Ending Test, file ESMF_FieldSMMFromFileUTest.F90, line 322
+20231005 042450.112 INFO             PET0 Finalizing ESMF
