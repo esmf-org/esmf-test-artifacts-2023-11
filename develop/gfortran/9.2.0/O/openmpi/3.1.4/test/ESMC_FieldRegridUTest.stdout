@@ -1,0 +1,55 @@
+2023-10-05 07:37:00
+[1696492129.987011] [h14c03:169814:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+[1696492129.992343] [h14c03:169814:0]         mxm.c:196  MXM  WARN  The 'ulimit -s' on the system is set to 'unlimited'. This may have negative performance implications. Please set the stack size to the default value (10240) 
+Beginning Test, file ESMC_FieldRegridUTest.c, line 66
+Beginning Test, file ESMC_FieldRegridUTest.c, line 66NUMBER_OF_PROCESSORS 1
+PASS MeshCreate, ESMC_FieldRegridUTest.c, line 123
+PASS MeshAddNodes, ESMC_FieldRegridUTest.c, line 131
+PASS MeshAddElements, ESMC_FieldRegridUTest.c, line 140
+PASS MeshGetNodeCount, ESMC_FieldRegridUTest.c, line 150
+PASS MeshGetElementCount, ESMC_FieldRegridUTest.c, line 161
+PASS MeshCreate, ESMC_FieldRegridUTest.c, line 229
+PASS MeshAddNodes, ESMC_FieldRegridUTest.c, line 237
+PASS MeshAddElements, ESMC_FieldRegridUTest.c, line 246
+PASS MeshGetNodeCount, ESMC_FieldRegridUTest.c, line 256
+PASS MeshGetElementCount, ESMC_FieldRegridUTest.c, line 267
+PASS Create ESMC_Field object, ESMC_FieldRegridUTest.c, line 282
+PASS Create ESMC_Field object, ESMC_FieldRegridUTest.c, line 291
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.c, line 304
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.c, line 323
+PASS Create an InterArray for maskValues in ESMC_FieldRegridStore(), ESMC_FieldRegridUTest.c, line 341
+PASS Create an ESMC_RouteHandle via ESMC_FieldRegridStore(), ESMC_FieldRegridUTest.c, line 365
+PASS Execute ESMC_FieldRegrid(), ESMC_FieldRegridUTest.c, line 373
+PASS Execute ESMC_RouteHandlePrint(), ESMC_FieldRegridUTest.c, line 381
+PASS Release an ESMC_RouteHandle via ESMC_FieldRegridRelease(), ESMC_FieldRegridUTest.c, line 389
+PASS Validation of regrid operation(), ESMC_FieldRegridUTest.c, line 414
+PASS Destroy ESMC_Field object, ESMC_FieldRegridUTest.c, line 422
+PASS Destroy ESMC_Mesh object, ESMC_FieldRegridUTest.c, line 430
+PASS LocStreamCreateLocal, ESMC_FieldRegridUTest.c, line 439
+PASS LocStreamAddKeyAlloc, ESMC_FieldRegridUTest.c, line 448
+PASS LocStreamGetKeyPtr, ESMC_FieldRegridUTest.c, line 456
+PASS LocStreamAddKeyAlloc, ESMC_FieldRegridUTest.c, line 479
+PASS LocStreamGetKeyPtr, ESMC_FieldRegridUTest.c, line 487
+PASS LocStreamAddKeyAlloc, ESMC_FieldRegridUTest.c, line 511
+PASS LocStreamGetKeyPtr, ESMC_FieldRegridUTest.c, line 519
+PASS Create ESMC_Field object on LocStream, ESMC_FieldRegridUTest.c, line 543
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.c, line 551
+[h14c03:169814:0] Caught signal 11 (Segmentation fault)
+==== backtrace ====
+ 2 0x000000000006c54c mxm_handle_error()  /var/tmp/OFED_topdir/BUILD/mxm-3.7.3112/src/mxm/util/debug/debug.c:641
+ 3 0x000000000006ca9c mxm_error_signal_handler()  /var/tmp/OFED_topdir/BUILD/mxm-3.7.3112/src/mxm/util/debug/debug.c:616
+ 4 0x0000000000036400 killpg()  ??:0
+ 5 0x000000000017e2d0 _gfortrani_internal_pack_r8()  /tmp/Role.Apps/spack-stage/spack-stage-gcc-9.2.0-wqdecm4rkyyhejagxwmnabt6lscgm45d/spack-src/libgfortran/generated/in_pack_r8.c:98
+ 6 0x0000000000d9d0f3 __esmf_pointlistmod_MOD_esmf_pointlistadd()  ??:0
+ 7 0x0000000000d9eaba __esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream()  ??:0
+ 8 0x0000000000c0a53c __esmf_fieldregridmod_MOD_getpointlistonfieldloc()  ESMF_FieldRegrid.F90:0
+ 9 0x0000000000c0f11b __esmf_fieldregridmod_MOD_esmf_fieldregridstorenx()  ??:0
+10 0x0000000000c23516 f_esmf_regridstore_()  ??:0
+11 0x00000000004fca4f _ZN5ESMCI5Field11regridstoreEPS0_S1_P18ESMC_InterArrayIntS3_PPNS_11RouteHandleEP22ESMC_RegridMethod_FlagP20ESMC_PoleMethod_FlagPiP18ESMC_LineType_FlagP18ESMC_NormType_FlagP22ESMC_ExtrapMethod_FlagSB_PfSB_P24ESMC_UnmappedAction_FlagP12ESMC_LogicalPPdPSB_SB_S1_S1_()  ??:0
+12 0x000000000081cd41 ESMC_FieldRegridStore()  ??:0
+13 0x000000000040373a main()  ??:0
+14 0x0000000000022555 __libc_start_main()  ??:0
+15 0x0000000000401129 _start()  ??:0
+===================
+srun: error: h14c03: task 0: Segmentation fault (core dumped)
+srun: launch/slurm: _step_signal: Terminating StepId=50275206.123
