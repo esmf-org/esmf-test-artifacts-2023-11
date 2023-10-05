@@ -1,0 +1,33 @@
+2023-10-05 01:42:42
+  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+  NUMBER_OF_PROCESSORS           1
+ Starting weight generation with these inputs: 
+   Source File: data/T42_grid.nc
+   Destination File: data/ll2.5deg_grid.nc
+   Weight File: data/T42_ll2.5_bilinear.nc
+   Source File is in SCRIP format
+   Source Grid is a global grid
+   Source Grid is a logically rectangular grid
+   Use the center coordinates of the source grid to do the regrid
+   Destination File is in SCRIP format
+   Destination Grid is a global grid
+   Destination Grid is a logically rectangular grid
+   Use the center coordinates of the destination grid to do the regrid
+   Regrid Method: bilinear
+   Pole option: ALL
+   Line Type: cartesian
+   Norm Type: dstarea
+   Extrap. Method: none
+ 
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  000014B17B5538C0  Unknown               Unknown  Unknown
+libesmf.so         000014B17E3F3B37  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         000014B17E3F3523  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         000014B17E0EF017  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         000014B17E0EC44A  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         000014B17E408541  esmf_regridweight     Unknown  Unknown
+ESMF_RegridWeight  00000000004146A2  Unknown               Unknown  Unknown
+ESMF_RegridWeight  000000000041424D  Unknown               Unknown  Unknown
+libc-2.31.so       000014B1776C929D  __libc_start_main     Unknown  Unknown
+ESMF_RegridWeight  000000000041417A  Unknown               Unknown  Unknown
