@@ -1,0 +1,146 @@
+2023-10-05 01:47:49
+[r5i2n31:2346 :0:2346] Caught signal 11 (Segmentation fault: Sent by the kernel at address (nil))
+[r5i2n31:2348 :0:2348] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x10100000000)
+==== backtrace (tid:   2346) ====
+==== backtrace (tid:   2348) ====
+ 0  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(ucs_handle_error+0xe4) [0x2b1cb7720574]
+ 1  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x2589c) [0x2b1cb772089c]
+ 2  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x25b0b) [0x2b1cb7720b0b]
+ 0  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(ucs_handle_error+0xe4) [0x2afbd6b16574]
+ 1  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x2589c) [0x2afbd6b1689c]
+ 2  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x25b0b) [0x2afbd6b16b0b]
+ 3  /glade/u/apps/ch/os/lib64/libpthread.so.0(+0x11c00) [0x2afbc6a8bc00]
+ 4  /glade/u/apps/ch/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/libgfortran.so.5(+0x17f560) [0x2afbc4de6560]
+ 5  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistadd+0x1bf) [0x2afbc3636ab8]
+ 3  /glade/u/apps/ch/os/lib64/libpthread.so.0(+0x11c00) [0x2b1cab675c00]
+ 4  /glade/u/apps/ch/opt/gnu/9.1.0/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../lib64/libgfortran.so.5(+0x17f560) [0x2b1ca99d0560]
+ 5  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistadd+0x1bf) [0x2b1ca8220ab8]
+ 6  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream+0x1905) [0x2b1ca822247f]
+ 7  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0xd39453) [0x2b1ca7fd7453]
+ 8  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_fieldregridmod_MOD_esmf_fieldregridstorenx+0x16a4) [0x2b1ca7fdcd74]
+ 9  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_fieldbundlemod_MOD_esmf_fieldbundleregridstorepair+0x3057) [0x2b1ca7e003b8]
+10  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x11978fc) [0x2b1ca84358fc]
+11  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x119f08f) [0x2b1ca843d08f]
+12  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x9c0) [0x2b1ca78c3780]
+13  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x24e) [0x2b1ca78c3af4]
+14  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI3VMK5enterEPNS_7VMKPlanEPvS3_+0xac) [0x2b1ca7bb94e2]
+15  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x65) [0x2b1ca7bce03b]
+16  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x24f) [0x2b1ca78c1aa7]
+ 6  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream+0x1905) [0x2afbc363847f]
+ 7  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0xd39453) [0x2afbc33ed453]
+ 8  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_fieldregridmod_MOD_esmf_fieldregridstorenx+0x16a4) [0x2afbc33f2d74]
+ 9  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_fieldbundlemod_MOD_esmf_fieldbundleregridstorepair+0x3057) [0x2afbc32163b8]
+10  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x11978fc) [0x2afbc384b8fc]
+11  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x119f08f) [0x2afbc385308f]
+12  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x9c0) [0x2afbc2cd9780]
+13  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x24e) [0x2afbc2cd9af4]
+14  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI3VMK5enterEPNS_7VMKPlanEPvS3_+0xac) [0x2afbc2fcf4e2]
+15  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x65) [0x2afbc2fe403b]
+16  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x24f) [0x2afbc2cd7aa7]
+17  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_compmod_MOD_esmf_compexecute+0x41f) [0x2afbc31ea57d]
+17  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_compmod_MOD_esmf_compexecute+0x41f) [0x2b1ca7dd457d]
+18  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_cplcompmod_MOD_esmf_cplcompinitialize+0xec) [0x2b1ca7de21c7]
+19  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x11dfaa1) [0x2b1ca847daa1]
+20  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x11ef9ed) [0x2b1ca848d9ed]
+18  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_cplcompmod_MOD_esmf_cplcompinitialize+0xec) [0x2afbc31f81c7]
+19  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x11dfaa1) [0x2afbc3893aa1]
+20  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x11ef9ed) [0x2afbc38a39ed]
+21  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x12228d7) [0x2afbc38d68d7]
+21  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(+0x12228d7) [0x2b1ca84c08d7]
+22  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x9c0) [0x2b1ca78c3780]
+23  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x24e) [0x2b1ca78c3af4]
+24  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI3VMK5enterEPNS_7VMKPlanEPvS3_+0xac) [0x2b1ca7bb94e2]
+25  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x65) [0x2b1ca7bce03b]
+26  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x24f) [0x2b1ca78c1aa7]
+27  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_compmod_MOD_esmf_compexecute+0x41f) [0x2b1ca7dd457d]
+28  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_gridcompmod_MOD_esmf_gridcompinitialize+0xec) [0x2b1ca801bee7]
+29  ./esmApp() [0x406b35]
+30  /glade/u/apps/ch/os/lib64/libc.so.6(__libc_start_main+0xf5) [0x2b1cab8a4a35]
+31  ./esmApp() [0x406659]
+=================================
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+22  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI6FTable12callVFuncPtrEPKcPNS_2VMEPi+0x9c0) [0x2afbc2cd9780]
+23  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(ESMCI_FTableCallEntryPointVMHop+0x24e) [0x2afbc2cd9af4]
+24  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI3VMK5enterEPNS_7VMKPlanEPvS3_+0xac) [0x2afbc2fcf4e2]
+25  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(_ZN5ESMCI2VM5enterEPNS_6VMPlanEPvS3_+0x65) [0x2afbc2fe403b]
+26  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(c_esmc_ftablecallentrypointvm_+0x24f) [0x2afbc2cd7aa7]
+27  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_compmod_MOD_esmf_compexecute+0x41f) [0x2afbc31ea57d]
+28  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_9.1.0_openmpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_gridcompmod_MOD_esmf_gridcompinitialize+0xec) [0x2afbc3431ee7]
+29  ./esmApp() [0x406b35]
+30  /glade/u/apps/ch/os/lib64/libc.so.6(__libc_start_main+0xf5) [0x2afbc6cbaa35]
+31  ./esmApp() [0x406659]
+=================================
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x2b1cab675bff in ???
+#0  0x2afbc6a8bbff in ???
+#1  0x2b1ca8220ab7 in ???
+#2  0x2b1ca822247e in ???
+#1  0x2afbc3636ab7 in ???
+#2  0x2afbc363847e in ???
+#3  0x2b1ca7fd7452 in ???
+#3  0x2afbc33ed452 in ???
+#4  0x2b1ca7fdcd73 in ???
+#5  0x2b1ca7e003b7 in ???
+#6  0x2b1ca84358fb in ???
+#4  0x2afbc33f2d73 in ???
+#5  0x2afbc32163b7 in ???
+#6  0x2afbc384b8fb in ???
+#7  0x2b1ca843d08e in ???
+#8  0x2b1ca78c377f in ???
+#9  0x2b1ca78c3af3 in ???
+#7  0x2afbc385308e in ???
+#8  0x2afbc2cd977f in ???
+#9  0x2afbc2cd9af3 in ???
+#10  0x2b1ca7bb94e1 in ???
+#11  0x2b1ca7bce03a in ???
+#10  0x2afbc2fcf4e1 in ???
+#11  0x2afbc2fe403a in ???
+#12  0x2b1ca78c1aa6 in ???
+#13  0x2b1ca7dd457c in ???
+#14  0x2b1ca7de21c6 in ???
+#15  0x2b1ca847daa0 in ???
+#16  0x2b1ca848d9ec in ???
+#12  0x2afbc2cd7aa6 in ???
+#13  0x2afbc31ea57c in ???
+#14  0x2afbc31f81c6 in ???
+#15  0x2afbc3893aa0 in ???
+#16  0x2afbc38a39ec in ???
+#17  0x2b1ca84c08d6 in ???
+#17  0x2afbc38d68d6 in ???
+#18  0x2afbc2cd977f in ???
+#19  0x2afbc2cd9af3 in ???
+#20  0x2afbc2fcf4e1 in ???
+#21  0x2afbc2fe403a in ???
+#22  0x2afbc2cd7aa6 in ???
+#18  0x2b1ca78c377f in ???
+#19  0x2b1ca78c3af3 in ???
+#20  0x2b1ca7bb94e1 in ???
+#21  0x2b1ca7bce03a in ???
+#22  0x2b1ca78c1aa6 in ???
+#23  0x2b1ca7dd457c in ???
+#23  0x2afbc31ea57c in ???
+#24  0x2afbc3431ee6 in ???
+#24  0x2b1ca801bee6 in ???
+#25  0x406b34 in ???
+#25  0x406b34 in ???
+#26  0x2afbc6cbaa34 in ???
+#27  0x406658 in ???
+	at ../sysdeps/x86_64/start.S:118
+#28  0xffffffffffffffff in ???
+#26  0x2b1cab8a4a34 in ???
+#27  0x406658 in ???
+	at ../sysdeps/x86_64/start.S:118
+#28  0xffffffffffffffff in ???
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 0 on node r5i2n31 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
