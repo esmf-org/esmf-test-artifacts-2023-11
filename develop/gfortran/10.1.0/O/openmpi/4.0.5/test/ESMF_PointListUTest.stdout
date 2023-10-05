@@ -1,0 +1,112 @@
+2023-10-05 01:48:02
+  Beginning Test, file ESMF_PointListUTest.F90, line 67
+  Beginning Test, file ESMF_PointListUTest.F90, line 67
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_PointListUTest.F90, line 67
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_PointListUTest.F90, line 67
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+[r3i4n30:51597:0:51597] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x88)
+[r3i4n30:51594:0:51594] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x88)
+[r3i4n30:51595:0:51595] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x88)
+[r3i4n30:51596:0:51596] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x88)
+==== backtrace (tid:  51594) ====
+ 0  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(ucs_handle_error+0xe4) [0x2b98ff720574]
+==== backtrace (tid:  51596) ====
+ 0  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(ucs_handle_error+0xe4) [0x2b6617d3d574]
+ 1  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x2589c) [0x2b6617d3d89c]
+ 2  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x25b0b) [0x2b6617d3db0b]
+ 1  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x2589c) [0x2b98ff72089c]
+ 2  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x25b0b) [0x2b98ff720b0b]
+ 3  /glade/u/apps/ch/os/lib64/libpthread.so.0(+0x11c00) [0x2b98f3731c00]
+ 4  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/esmf/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistadd+0x24f) [0x2b98f02b7003]
+ 5  ./ESMF_PointListUTest() [0x410d25]
+ 3  /glade/u/apps/ch/os/lib64/libpthread.so.0(+0x11c00) [0x2b660bd41c00]
+ 4  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/esmf/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistadd+0x24f) [0x2b66088c7003]
+ 5  ./ESMF_PointListUTest() [0x410d25]
+ 6  ./ESMF_PointListUTest() [0x4162cd]
+ 7  /glade/u/apps/ch/os/lib64/libc.so.6(__libc_start_main+0xf5) [0x2b660bf70a35]
+==== backtrace (tid:  51597) ====
+ 0  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(ucs_handle_error+0xe4) [0x2b49dccd2574]
+ 1  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x2589c) [0x2b49dccd289c]
+ 2  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x25b0b) [0x2b49dccd2b0b]
+ 3  /glade/u/apps/ch/os/lib64/libpthread.so.0(+0x11c00) [0x2b49cca5bc00]
+ 4  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/esmf/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistadd+0x24f) [0x2b49c95e1003]
+ 5  ./ESMF_PointListUTest() [0x410d25]
+ 6  ./ESMF_PointListUTest() [0x4162cd]
+ 7  /glade/u/apps/ch/os/lib64/libc.so.6(__libc_start_main+0xf5) [0x2b49ccc8aa35]
+ 8  ./ESMF_PointListUTest() [0x405429]
+=================================
+ 6  ./ESMF_PointListUTest() [0x4162cd]
+ 7  /glade/u/apps/ch/os/lib64/libc.so.6(__libc_start_main+0xf5) [0x2b98f3960a35]
+ 8  ./ESMF_PointListUTest() [0x405429]
+=================================
+==== backtrace (tid:  51595) ====
+ 0  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(ucs_handle_error+0xe4) [0x2ba4cad13574]
+ 1  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x2589c) [0x2ba4cad1389c]
+ 2  /glade/u/apps/ch/opt/ucx/1.9.0/lib/libucs.so.0(+0x25b0b) [0x2ba4cad13b0b]
+ 3  /glade/u/apps/ch/os/lib64/libpthread.so.0(+0x11c00) [0x2ba4bac3fc00]
+ 4  /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_10.1.0_openmpi_O_develop/esmf/lib/libO/Linux.gfortran.64.openmpi.default/libesmf.so(__esmf_pointlistmod_MOD_esmf_pointlistadd+0x24f) [0x2ba4b77c5003]
+ 5  ./ESMF_PointListUTest() [0x410d25]
+ 6  ./ESMF_PointListUTest() [0x4162cd]
+ 7  /glade/u/apps/ch/os/lib64/libc.so.6(__libc_start_main+0xf5) [0x2ba4bae6ea35]
+ 8  ./ESMF_PointListUTest() [0x405429]
+=================================
+ 8  ./ESMF_PointListUTest() [0x405429]
+=================================
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x2b660bd41bff in ???
+#1  0x2b66088c7003 in ???
+#2  0x410d24 in ???
+#3  0x4162cc in ???
+#0  0x2b98f3731bff in ???
+#1  0x2b98f02b7003 in ???
+#2  0x410d24 in ???
+#3  0x4162cc in ???
+#4  0x2b98f3960a34 in ???
+#4  0x2b660bf70a34 in ???
+#5  0x405428 in ???
+	at ../sysdeps/x86_64/start.S:118
+#5  0x405428 in ???
+	at ../sysdeps/x86_64/start.S:118
+#6  0xffffffffffffffff in ???
+#6  0xffffffffffffffff in ???
+#0  0x2b49cca5bbff in ???
+#1  0x2b49c95e1003 in ???
+#2  0x410d24 in ???
+#3  0x4162cc in ???
+#4  0x2b49ccc8aa34 in ???
+#0  0x2ba4bac3fbff in ???
+#1  0x2ba4b77c5003 in ???
+#2  0x410d24 in ???
+#3  0x4162cc in ???
+#4  0x2ba4bae6ea34 in ???
+#5  0x405428 in ???
+	at ../sysdeps/x86_64/start.S:118
+#5  0x405428 in ???
+	at ../sysdeps/x86_64/start.S:118
+#6  0xffffffffffffffff in ???
+#6  0xffffffffffffffff in ???
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node r3i4n30 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
