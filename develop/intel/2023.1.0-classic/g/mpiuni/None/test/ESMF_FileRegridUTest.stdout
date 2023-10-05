@@ -1,0 +1,41 @@
+2023-10-05 04:03:17
+  Beginning Test, file ESMF_FileRegridUTest.F90, line 63
+  NUMBER_OF_PROCESSORS           1
+ Starting weight generation with these inputs: 
+   Source File: data/BT42_ugrid.nc
+   Destination File: data/BT42_ugrid_dual.nc
+   Source variable names: nodedata
+   Destination variable names: nodedata
+   Source File is in UGRID format with mesh name mesh
+   Source Grid is a global grid
+   Destination File is in UGRID format with mesh name mesh
+   Destination Grid is a global grid
+   Regrid Method: bilinear
+   Pole option: ALL
+ 
+  PASS  FileRegrid bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 96
+  PASS  FileRegridCheck bilinear Test using UGRID, ESMF_FileRegridUTest.F90, lin
+ e 112
+ Starting weight generation with these inputs: 
+   Source File: data/BT42_ugrid.nc
+   Destination File: data/BT42_ugrid_dual.nc
+   Source variable names: nodedata
+   Destination variable names: nodedata
+   Source File is in UGRID format with mesh name mesh
+   Source Grid is a global grid
+   Destination File is in UGRID format with mesh name mesh
+   Destination Grid is a global grid
+   Regrid Method: nearest source to destination
+   Pole option: ALL
+ 
+
+ESMF_FileRegridUTest:81464 terminated with signal 11 at PC=7f94e490f2e9 SP=7ffeed26fd90.  Backtrace:
+/tmp/intel_2023.1.0-classic_mpiuni_g_develop/esmf/lib/libg/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_pointlistmod_mp_esmf_pointlistadd_+0x598)[0x7f94e490f2e9]
+/tmp/intel_2023.1.0-classic_mpiuni_g_develop/esmf/lib/libg/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_+0x4eac)[0x7f94e490cba9]
+/tmp/intel_2023.1.0-classic_mpiuni_g_develop/esmf/lib/libg/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_fieldregridmod_mp_getpointlistonfieldloc_+0x18aa)[0x7f94e3ff1322]
+/tmp/intel_2023.1.0-classic_mpiuni_g_develop/esmf/lib/libg/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_fieldregridmod_mp_esmf_fieldregridstorenx_+0x2a0b)[0x7f94e3fe9be0]
+/tmp/intel_2023.1.0-classic_mpiuni_g_develop/esmf/lib/libg/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_fileregridmod_mp_esmf_fileregrid_+0x1f6ad)[0x7f94e406ecd8]
+./ESMF_FileRegridUTest[0x415023]
+./ESMF_FileRegridUTest[0x41453d]
+/lib64/libc.so.6(__libc_start_main+0xef)[0x7f94e07b524d]
+./ESMF_FileRegridUTest[0x41446a]
