@@ -1,0 +1,57 @@
+2023-10-05 04:12:14
+Beginning Test, file ESMC_FieldRegridUTest.c, line 66
+Beginning Test, file ESMC_FieldRegridUTest.c, line 66NUMBER_OF_PROCESSORS 1
+PASS MeshCreate, ESMC_FieldRegridUTest.c, line 123
+PASS MeshAddNodes, ESMC_FieldRegridUTest.c, line 131
+PASS MeshAddElements, ESMC_FieldRegridUTest.c, line 140
+PASS MeshGetNodeCount, ESMC_FieldRegridUTest.c, line 150
+PASS MeshGetElementCount, ESMC_FieldRegridUTest.c, line 161
+PASS MeshCreate, ESMC_FieldRegridUTest.c, line 229
+PASS MeshAddNodes, ESMC_FieldRegridUTest.c, line 237
+PASS MeshAddElements, ESMC_FieldRegridUTest.c, line 246
+PASS MeshGetNodeCount, ESMC_FieldRegridUTest.c, line 256
+PASS MeshGetElementCount, ESMC_FieldRegridUTest.c, line 267
+PASS Create ESMC_Field object, ESMC_FieldRegridUTest.c, line 282
+PASS Create ESMC_Field object, ESMC_FieldRegridUTest.c, line 291
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.c, line 304
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.c, line 323
+PASS Create an InterArray for maskValues in ESMC_FieldRegridStore(), ESMC_FieldRegridUTest.c, line 341
+PASS Create an ESMC_RouteHandle via ESMC_FieldRegridStore(), ESMC_FieldRegridUTest.c, line 365
+PASS Execute ESMC_FieldRegrid(), ESMC_FieldRegridUTest.c, line 373
+PASS Execute ESMC_RouteHandlePrint(), ESMC_FieldRegridUTest.c, line 381
+PASS Release an ESMC_RouteHandle via ESMC_FieldRegridRelease(), ESMC_FieldRegridUTest.c, line 389
+PASS Validation of regrid operation(), ESMC_FieldRegridUTest.c, line 414
+PASS Destroy ESMC_Field object, ESMC_FieldRegridUTest.c, line 422
+PASS Destroy ESMC_Mesh object, ESMC_FieldRegridUTest.c, line 430
+PASS LocStreamCreateLocal, ESMC_FieldRegridUTest.c, line 439
+PASS LocStreamAddKeyAlloc, ESMC_FieldRegridUTest.c, line 448
+PASS LocStreamGetKeyPtr, ESMC_FieldRegridUTest.c, line 456
+PASS LocStreamAddKeyAlloc, ESMC_FieldRegridUTest.c, line 479
+PASS LocStreamGetKeyPtr, ESMC_FieldRegridUTest.c, line 487
+PASS LocStreamAddKeyAlloc, ESMC_FieldRegridUTest.c, line 511
+PASS LocStreamGetKeyPtr, ESMC_FieldRegridUTest.c, line 519
+PASS Create ESMC_Field object on LocStream, ESMC_FieldRegridUTest.c, line 543
+PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldRegridUTest.c, line 551
+[r12i7n14:63331] *** Process received signal ***
+[r12i7n14:63331] Signal: Segmentation fault (11)
+[r12i7n14:63331] Signal code: Address not mapped (1)
+[r12i7n14:63331] Failing at address: 0x18
+[r12i7n14:63331] [ 0] /glade/u/apps/ch/os/lib64/libpthread.so.0(+0x11c00)[0x2ba5d7abac00]
+[r12i7n14:63331] [ 1] /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_openmpi_O_develop/esmf/lib/libO/Linux.intel.64.openmpi.default/libesmf.so(esmf_pointlistmod_mp_esmf_pointlistadd_+0x163)[0x2ba5d354fc13]
+[r12i7n14:63331] [ 2] /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_openmpi_O_develop/esmf/lib/libO/Linux.intel.64.openmpi.default/libesmf.so(esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_+0x1bd9)[0x2ba5d354f619]
+[r12i7n14:63331] [ 3] /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_openmpi_O_develop/esmf/lib/libO/Linux.intel.64.openmpi.default/libesmf.so(esmf_fieldregridmod_mp_getpointlistonfieldloc_+0x431)[0x2ba5d326bf01]
+[r12i7n14:63331] [ 4] /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_openmpi_O_develop/esmf/lib/libO/Linux.intel.64.openmpi.default/libesmf.so(esmf_fieldregridmod_mp_esmf_fieldregridstorenx_+0x22d9)[0x2ba5d3269379]
+[r12i7n14:63331] [ 5] /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_openmpi_O_develop/esmf/lib/libO/Linux.intel.64.openmpi.default/libesmf.so(f_esmf_regridstore_+0x24b)[0x2ba5d30f5a1b]
+[r12i7n14:63331] [ 6] /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_openmpi_O_develop/esmf/lib/libO/Linux.intel.64.openmpi.default/libesmf.so(_ZN5ESMCI5Field11regridstoreEPS0_S1_P18ESMC_InterArrayIntS3_PPNS_11RouteHandleEP22ESMC_RegridMethod_FlagP20ESMC_PoleMethod_FlagPiP18ESMC_LineType_FlagP18ESMC_NormType_FlagP22ESMC_ExtrapMethod_FlagSB_PfSB_P24ESMC_UnmappedAction_FlagP12ESMC_LogicalPPdPSB_SB_S1_S1_+0x17d)[0x2ba5d2670d4d]
+[r12i7n14:63331] [ 7] /glade/scratch/theurich/ESMF-Nightly-Testing/intel_18.0.5_openmpi_O_develop/esmf/lib/libO/Linux.intel.64.openmpi.default/libesmf.so(ESMC_FieldRegridStore+0x121)[0x2ba5d22cbae1]
+[r12i7n14:63331] [ 8] ./ESMC_FieldRegridUTest[0x406b59]
+[r12i7n14:63331] [ 9] /glade/u/apps/ch/os/lib64/libc.so.6(__libc_start_main+0xf5)[0x2ba5d8b39a35]
+[r12i7n14:63331] [10] ./ESMC_FieldRegridUTest[0x404ca9]
+[r12i7n14:63331] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node r12i7n14 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
