@@ -1,0 +1,87 @@
+2023-10-05 07:41:53
+  Beginning Test, file ESMF_PointListUTest.F90, line 67
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_PointListUTest.F90, line 67
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_PointListUTest.F90, line 67
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_PointListUTest.F90, line 67
+  NUMBER_OF_PROCESSORS           4
+[h16c55:18758:0:18758] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+[h16c55:18760:0:18760] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+[h16c55:18761:0:18761] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+[h16c55:18759:0:18759] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+==== backtrace (tid:  18761) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000003049945 esmf_pointlistmod_mp_esmf_pointlistadd_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+ 2 0x000000000041af25 esmf_pointlistutest_IP_test_pointlist_from_inputs_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/tests/ESMF_PointListUTest.F90:288
+ 3 0x000000000041948f MAIN__()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/tests/ESMF_PointListUTest.F90:80
+ 4 0x000000000041925d main()  ???:0
+ 5 0x0000000000022555 __libc_start_main()  ???:0
+ 6 0x000000000041918b _start()  ???:0
+=================================
+==== backtrace (tid:  18759) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000003049945 esmf_pointlistmod_mp_esmf_pointlistadd_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+ 2 0x000000000041af25 esmf_pointlistutest_IP_test_pointlist_from_inputs_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/tests/ESMF_PointListUTest.F90:288
+ 3 0x000000000041948f MAIN__()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/tests/ESMF_PointListUTest.F90:80
+ 4 0x000000000041925d main()  ???:0
+ 5 0x0000000000022555 __libc_start_main()  ???:0
+ 6 0x000000000041918b _start()  ???:0
+=================================
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002ABABFFA8630  Unknown               Unknown  Unknown
+libesmf.so         00002ABABA1BB945  esmf_pointlistmod        1018  ESMF_PointList.F90
+ESMF_PointListUTe  000000000041AF25  esmf_pointlistute         288  ESMF_PointListUTest.F90
+ESMF_PointListUTe  000000000041948F  MAIN__                     80  ESMF_PointListUTest.F90
+ESMF_PointListUTe  000000000041925D  Unknown               Unknown  Unknown
+libc-2.17.so       00002ABAC0F11555  __libc_start_main     Unknown  Unknown
+ESMF_PointListUTe  000000000041918B  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B6ECC5FC630  Unknown               Unknown  Unknown
+libesmf.so         00002B6EC680F945  esmf_pointlistmod        1018  ESMF_PointList.F90
+ESMF_PointListUTe  000000000041AF25  esmf_pointlistute         288  ESMF_PointListUTest.F90
+ESMF_PointListUTe  000000000041948F  MAIN__                     80  ESMF_PointListUTest.F90
+ESMF_PointListUTe  000000000041925D  Unknown               Unknown  Unknown
+libc-2.17.so       00002B6ECD565555  __libc_start_main     Unknown  Unknown
+ESMF_PointListUTe  000000000041918B  Unknown               Unknown  Unknown
+==== backtrace (tid:  18760) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000003049945 esmf_pointlistmod_mp_esmf_pointlistadd_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+ 2 0x000000000041af25 esmf_pointlistutest_IP_test_pointlist_from_inputs_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/tests/ESMF_PointListUTest.F90:288
+ 3 0x000000000041948f MAIN__()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/tests/ESMF_PointListUTest.F90:80
+ 4 0x000000000041925d main()  ???:0
+ 5 0x0000000000022555 __libc_start_main()  ???:0
+ 6 0x000000000041918b _start()  ???:0
+=================================
+==== backtrace (tid:  18758) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000003049945 esmf_pointlistmod_mp_esmf_pointlistadd_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+ 2 0x000000000041af25 esmf_pointlistutest_IP_test_pointlist_from_inputs_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/tests/ESMF_PointListUTest.F90:288
+ 3 0x000000000041948f MAIN__()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_g_develop/esmf/src/Infrastructure/PointList/tests/ESMF_PointListUTest.F90:80
+ 4 0x000000000041925d main()  ???:0
+ 5 0x0000000000022555 __libc_start_main()  ???:0
+ 6 0x000000000041918b _start()  ???:0
+=================================
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B9091DF5630  Unknown               Unknown  Unknown
+libesmf.so         00002B908C008945  esmf_pointlistmod        1018  ESMF_PointList.F90
+ESMF_PointListUTe  000000000041AF25  esmf_pointlistute         288  ESMF_PointListUTest.F90
+ESMF_PointListUTe  000000000041948F  MAIN__                     80  ESMF_PointListUTest.F90
+ESMF_PointListUTe  000000000041925D  Unknown               Unknown  Unknown
+libc-2.17.so       00002B9092D5E555  __libc_start_main     Unknown  Unknown
+ESMF_PointListUTe  000000000041918B  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002AD94B08E630  Unknown               Unknown  Unknown
+libesmf.so         00002AD9452A1945  esmf_pointlistmod        1018  ESMF_PointList.F90
+ESMF_PointListUTe  000000000041AF25  esmf_pointlistute         288  ESMF_PointListUTest.F90
+ESMF_PointListUTe  000000000041948F  MAIN__                     80  ESMF_PointListUTest.F90
+ESMF_PointListUTe  000000000041925D  Unknown               Unknown  Unknown
+libc-2.17.so       00002AD94BFF7555  __libc_start_main     Unknown  Unknown
+ESMF_PointListUTe  000000000041918B  Unknown               Unknown  Unknown
+srun: error: h16c55: tasks 0-3: Exited with exit code 174
+srun: launch/slurm: _step_signal: Terminating StepId=50275395.121
