@@ -1,0 +1,43 @@
+2023-10-05 01:55:05
+  Beginning Test, file ESMF_FileRegridUTest.F90, line 63
+  NUMBER_OF_PROCESSORS           1
+ Starting weight generation with these inputs: 
+   Source File: data/BT42_ugrid.nc
+   Destination File: data/BT42_ugrid_dual.nc
+   Source variable names: nodedata
+   Destination variable names: nodedata
+   Source File is in UGRID format with mesh name mesh
+   Source Grid is a global grid
+   Destination File is in UGRID format with mesh name mesh
+   Destination Grid is a global grid
+   Regrid Method: bilinear
+   Pole option: ALL
+ 
+  PASS  FileRegrid bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 96
+  PASS  FileRegridCheck bilinear Test using UGRID, ESMF_FileRegridUTest.F90, lin
+ e 112
+ Starting weight generation with these inputs: 
+   Source File: data/BT42_ugrid.nc
+   Destination File: data/BT42_ugrid_dual.nc
+   Source variable names: nodedata
+   Destination variable names: nodedata
+   Source File is in UGRID format with mesh name mesh
+   Source Grid is a global grid
+   Destination File is in UGRID format with mesh name mesh
+   Destination Grid is a global grid
+   Regrid Method: nearest source to destination
+   Pole option: ALL
+ 
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+ESMF_FileRegridUT  0000000000442FDA  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F0F207C6630  Unknown               Unknown  Unknown
+libesmf.so         00007F0F2398F1A8  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00007F0F2398EBA3  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00007F0F2369FA4F  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00007F0F2369CA74  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00007F0F236BF3D2  esmf_fileregridmo     Unknown  Unknown
+ESMF_FileRegridUT  00000000004146D1  Unknown               Unknown  Unknown
+ESMF_FileRegridUT  0000000000414062  Unknown               Unknown  Unknown
+libc-2.17.so       00007F0F2040B555  __libc_start_main     Unknown  Unknown
+ESMF_FileRegridUT  0000000000413F69  Unknown               Unknown  Unknown
