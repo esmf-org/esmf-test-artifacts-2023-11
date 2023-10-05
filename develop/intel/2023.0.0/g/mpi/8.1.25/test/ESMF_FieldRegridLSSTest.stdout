@@ -1,0 +1,271 @@
+2023-10-05 01:37:41
+ -------------------------------- 
+ Start of System Test FieldRegridLS:
+ -------------------------------- 
+ -------------------------------- 
+ Start of System Test FieldRegridLS:
+ -------------------------------- 
+ -------------------------------- 
+ Start of System Test FieldRegridLS:
+ -------------------------------- 
+ -------------------------------- 
+ Start of System Test FieldRegridLS:
+ -------------------------------- 
+ -------------------------------- 
+ Start of System Test FieldRegridLS:
+ -------------------------------- 
+ -------------------------------- 
+ Start of System Test FieldRegridLS:
+ -------------------------------- 
+ Created component user model 1rc =           0
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Comp SetServices finished, rc=            0           0
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ in user register routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ in user register routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ in user setservices routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ In user register routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ in user setservices routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ In user register routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ in user setservices routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ in user setservices routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+           0 User Comp 1 Init starting
+           1 User Comp 1 Init starting
+ Comp 1 Initialize finished, rc =           0
+           0 User Comp 2 Init starting
+ Comp 1 Initialize finished, rc =           0
+ Comp 2 Initialize finished, rc =           0
+ Coupler Initialize finished, rc =           0
+ Comp 1 Run returned, rc =           0
+ Coupler Run returned, rc =           0
+ Comp 2 Run returned, rc =           0
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ Coupler Finalize finished, rc =           0           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            4
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ All Destroy routines done
+ System Test FieldRegridLS complete.
+  PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
+ dLSSTest.F90, line 393
+ Comp 1 Initialize finished, rc =           0
+ Comp 2 Initialize finished, rc =           0
+ Coupler Initialize finished, rc =           0
+ Comp 1 Run returned, rc =           0
+ Coupler Run returned, rc =           0
+ Comp 2 Run returned, rc =           0
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ Coupler Finalize finished, rc =           0           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            5
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ All Destroy routines done
+ System Test FieldRegridLS complete.
+  PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
+ dLSSTest.F90, line 393
+ Comp 1 Initialize finished, rc =           0
+           1 User Comp 2 Init starting
+           0 User Comp 1 Init returning
+           1 User Comp 1 Init returning
+ Comp 1 Initialize finished, rc =           0
+ Comp 2 Initialize finished, rc =           0
+ User Coupler Init starting
+           0 User Comp 2 Init returning
+ Comp 2 Initialize finished, rc =           0
+ User Coupler Init starting
+           1 User Comp 2 Init returning
+ Comp 2 Initialize finished, rc =           0
+ User Coupler Init starting
+ Comp 1 Initialize finished, rc =           0
+ Comp 2 Initialize finished, rc =           0
+ User Coupler Init starting
+ Import State contains            1  items.
+ Export State contains            1  items.
+ Import State contains            1  items.
+ Export State contains            1  items.
+ Import State contains            1  items.
+ Export State contains            1  items.
+ Import State contains            1  items.
+ Export State contains            1  items.
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  000014C3127A18C0  Unknown               Unknown  Unknown
+libesmf.so         000014C317036F71  esmf_pointlistmod        1018  ESMF_PointList.F90
+libesmf.so         000014C317034831  esmf_pointlistmod         677  ESMF_PointList.F90
+libesmf.so         000014C316717212  esmf_fieldregridm        1674  ESMF_FieldRegrid.F90
+libesmf.so         000014C31670FC3A  esmf_fieldregridm        1061  ESMF_FieldRegrid.F90
+ESMF_FieldRegridL  000000000041EC79  user_coupler_mp_u         114  user_coupler.F90
+libesmf.so         000014C315658B19  callVFuncPtr             2167  ESMCI_FTable.C
+libesmf.so         000014C315657B58  ESMCI_FTableCallE         824  ESMCI_FTable.C
+libesmf.so         000014C315AEEEF2  enter                    2316  ESMCI_VMKernel.C
+libesmf.so         000014C315B09AD0  enter                    1216  ESMCI_VM.C
+libesmf.so         000014C315658EFF  c_esmc_ftablecall         981  ESMCI_FTable.C
+libesmf.so         000014C316127529  esmf_compmod_mp_e        1223  ESMF_Comp.F90
+libesmf.so         000014C3161664AB  esmf_cplcompmod_m        1165  ESMF_CplComp.F90
+ESMF_FieldRegridL  00000000004224FA  MAIN__                    241  ESMF_FieldRegridLSSTest.F90
+ESMF_FieldRegridL  0000000000417ACD  Unknown               Unknown  Unknown
+libc-2.31.so       000014C30E91729D  __libc_start_main     Unknown  Unknown
+ESMF_FieldRegridL  00000000004179FA  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  000014C3E68C78C0  Unknown               Unknown  Unknown
+libesmf.so         000014C3EB15CF71  esmf_pointlistmod        1018  ESMF_PointList.F90
+libesmf.so         000014C3EB15A831  esmf_pointlistmod         677  ESMF_PointList.F90
+libesmf.so         000014C3EA83D212  esmf_fieldregridm        1674  ESMF_FieldRegrid.F90
+libesmf.so         000014C3EA835AD0  esmf_fieldregridm        1052  ESMF_FieldRegrid.F90
+ESMF_FieldRegridL  000000000041EC79  user_coupler_mp_u         114  user_coupler.F90
+libesmf.so         000014C3E977EB19  callVFuncPtr             2167  ESMCI_FTable.C
+libesmf.so         000014C3E977DB58  ESMCI_FTableCallE         824  ESMCI_FTable.C
+libesmf.so         000014C3E9C14EF2  enter                    2316  ESMCI_VMKernel.C
+libesmf.so         000014C3E9C2FAD0  enter                    1216  ESMCI_VM.C
+libesmf.so         000014C3E977EEFF  c_esmc_ftablecall         981  ESMCI_FTable.C
+libesmf.so         000014C3EA24D529  esmf_compmod_mp_e        1223  ESMF_Comp.F90
+libesmf.so         000014C3EA28C4AB  esmf_cplcompmod_m        1165  ESMF_CplComp.F90
+ESMF_FieldRegridL  00000000004224FA  MAIN__                    241  ESMF_FieldRegridLSSTest.F90
+ESMF_FieldRegridL  0000000000417ACD  Unknown               Unknown  Unknown
+libc-2.31.so       000014C3E2A3D29D  __libc_start_main     Unknown  Unknown
+ESMF_FieldRegridL  00000000004179FA  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  0000149E70A6F8C0  Unknown               Unknown  Unknown
+libesmf.so         0000149E75304F71  esmf_pointlistmod        1018  ESMF_PointList.F90
+libesmf.so         0000149E75302831  esmf_pointlistmod         677  ESMF_PointList.F90
+libesmf.so         0000149E749E5212  esmf_fieldregridm        1674  ESMF_FieldRegrid.F90
+libesmf.so         0000149E749DDAD0  esmf_fieldregridm        1052  ESMF_FieldRegrid.F90
+ESMF_FieldRegridL  000000000041EC79  user_coupler_mp_u         114  user_coupler.F90
+libesmf.so         0000149E73926B19  callVFuncPtr             2167  ESMCI_FTable.C
+libesmf.so         0000149E73925B58  ESMCI_FTableCallE         824  ESMCI_FTable.C
+libesmf.so         0000149E73DBCEF2  enter                    2316  ESMCI_VMKernel.C
+libesmf.so         0000149E73DD7AD0  enter                    1216  ESMCI_VM.C
+libesmf.so         0000149E73926EFF  c_esmc_ftablecall         981  ESMCI_FTable.C
+libesmf.so         0000149E743F5529  esmf_compmod_mp_e        1223  ESMF_Comp.F90
+libesmf.so         0000149E744344AB  esmf_cplcompmod_m        1165  ESMF_CplComp.F90
+ESMF_FieldRegridL  00000000004224FA  MAIN__                    241  ESMF_FieldRegridLSSTest.F90
+ESMF_FieldRegridL  0000000000417ACD  Unknown               Unknown  Unknown
+libc-2.31.so       0000149E6CBE529D  __libc_start_main     Unknown  Unknown
+ESMF_FieldRegridL  00000000004179FA  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  000014A0C61D58C0  Unknown               Unknown  Unknown
+libesmf.so         000014A0CAA6AF71  esmf_pointlistmod        1018  ESMF_PointList.F90
+libesmf.so         000014A0CAA68831  esmf_pointlistmod         677  ESMF_PointList.F90
+libesmf.so         000014A0CA14B212  esmf_fieldregridm        1674  ESMF_FieldRegrid.F90
+libesmf.so         000014A0CA143C3A  esmf_fieldregridm        1061  ESMF_FieldRegrid.F90
+ESMF_FieldRegridL  000000000041EC79  user_coupler_mp_u         114  user_coupler.F90
+libesmf.so         000014A0C908CB19  callVFuncPtr             2167  ESMCI_FTable.C
+libesmf.so         000014A0C908BB58  ESMCI_FTableCallE         824  ESMCI_FTable.C
+libesmf.so         000014A0C9522EF2  enter                    2316  ESMCI_VMKernel.C
+libesmf.so         000014A0C953DAD0  enter                    1216  ESMCI_VM.C
+libesmf.so         000014A0C908CEFF  c_esmc_ftablecall         981  ESMCI_FTable.C
+libesmf.so         000014A0C9B5B529  esmf_compmod_mp_e        1223  ESMF_Comp.F90
+libesmf.so         000014A0C9B9A4AB  esmf_cplcompmod_m        1165  ESMF_CplComp.F90
+ESMF_FieldRegridL  00000000004224FA  MAIN__                    241  ESMF_FieldRegridLSSTest.F90
+ESMF_FieldRegridL  0000000000417ACD  Unknown               Unknown  Unknown
+libc-2.31.so       000014A0C234B29D  __libc_start_main     Unknown  Unknown
+ESMF_FieldRegridL  00000000004179FA  Unknown               Unknown  Unknown
+dec2453.hsn.de.hpc.ucar.edu: rank 0 exited with code 174
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  000014696EFCA8C0  Unknown               Unknown  Unknown
+libc-2.31.so       000014696B207527  __sched_yield         Unknown  Unknown
+libmpi_intel.so.1  000014696CE7EADE  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696DC1AA16  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696DC2D169  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696DB3CC82  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696C20E011  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696C20E138  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696DE1B4CB  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696C20E200  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696E329E96  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696E3C7766  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696DFA4E80  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000014696C6B05BC  MPI_Finalize          Unknown  Unknown
+libesmf.so         000014697231285E  finalize                  690  ESMCI_VMKernel.C
+libesmf.so         000014697233E38E  finalize                 3592  ESMCI_VM.C
+libesmf.so         000014697230AC07  c_esmc_vmfinalize        1206  ESMCI_VM_F.C
+libesmf.so         0000146973A64896  esmf_vmmod_mp_esm        9429  ESMF_VM.F90
+libesmf.so         0000146973389265  esmf_initmod_mp_e        1671  ESMF_Init.F90
+ESMF_FieldRegridL  0000000000424586  MAIN__                    395  ESMF_FieldRegridLSSTest.F90
+ESMF_FieldRegridL  0000000000417ACD  Unknown               Unknown  Unknown
+libc-2.31.so       000014696B14029D  __libc_start_main     Unknown  Unknown
+ESMF_FieldRegridL  00000000004179FA  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  00001530D4BB28C0  Unknown               Unknown  Unknown
+libc-2.31.so       00001530D0DEF527  __sched_yield         Unknown  Unknown
+libmpi_intel.so.1  00001530D2A66ADE  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D3802A16  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D3815169  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D3724C82  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D1DF6011  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D1DF6138  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D3A034CB  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D1DF6200  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D3F11E96  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D3FAF766  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D3B8CE80  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001530D22985BC  MPI_Finalize          Unknown  Unknown
+libesmf.so         00001530D7EFA85E  finalize                  690  ESMCI_VMKernel.C
+libesmf.so         00001530D7F2638E  finalize                 3592  ESMCI_VM.C
+libesmf.so         00001530D7EF2C07  c_esmc_vmfinalize        1206  ESMCI_VM_F.C
+libesmf.so         00001530D964C896  esmf_vmmod_mp_esm        9429  ESMF_VM.F90
+libesmf.so         00001530D8F71265  esmf_initmod_mp_e        1671  ESMF_Init.F90
+ESMF_FieldRegridL  0000000000424586  MAIN__                    395  ESMF_FieldRegridLSSTest.F90
+ESMF_FieldRegridL  0000000000417ACD  Unknown               Unknown  Unknown
+libc-2.31.so       00001530D0D2829D  __libc_start_main     Unknown  Unknown
+ESMF_FieldRegridL  00000000004179FA  Unknown               Unknown  Unknown
+dec2453.hsn.de.hpc.ucar.edu: rank 4 exited with code 1
