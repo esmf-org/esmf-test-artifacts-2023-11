@@ -1,0 +1,42 @@
+2023-10-05 07:45:30
+  Beginning Test, file ESMF_FileRegridUTest.F90, line 63
+  NUMBER_OF_PROCESSORS           1
+ Starting weight generation with these inputs: 
+   Source File: data/BT42_ugrid.nc
+   Destination File: data/BT42_ugrid_dual.nc
+   Source variable names: nodedata
+   Destination variable names: nodedata
+   Source File is in UGRID format with mesh name mesh
+   Source Grid is a global grid
+   Destination File is in UGRID format with mesh name mesh
+   Destination Grid is a global grid
+   Regrid Method: bilinear
+   Pole option: ALL
+ 
+  PASS  FileRegrid bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 96
+  PASS  FileRegridCheck bilinear Test using UGRID, ESMF_FileRegridUTest.F90, lin
+ e 112
+ Starting weight generation with these inputs: 
+   Source File: data/BT42_ugrid.nc
+   Destination File: data/BT42_ugrid_dual.nc
+   Source variable names: nodedata
+   Destination variable names: nodedata
+   Source File is in UGRID format with mesh name mesh
+   Source Grid is a global grid
+   Destination File is in UGRID format with mesh name mesh
+   Destination Grid is a global grid
+   Regrid Method: nearest source to destination
+   Pole option: ALL
+ 
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B68B914F630  Unknown               Unknown  Unknown
+libesmf.so         00002B68B6581718  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B68B6581138  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B68B629A31F  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B68B6297340  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B68B62B69CA  esmf_fileregridmo     Unknown  Unknown
+ESMF_FileRegridUT  0000000000416241  Unknown               Unknown  Unknown
+ESMF_FileRegridUT  0000000000415BDD  Unknown               Unknown  Unknown
+libc-2.17.so       00002B68B937E555  __libc_start_main     Unknown  Unknown
+ESMF_FileRegridUT  0000000000415B0B  Unknown               Unknown  Unknown
