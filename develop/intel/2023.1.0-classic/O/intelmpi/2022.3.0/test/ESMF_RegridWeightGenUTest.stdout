@@ -1,0 +1,129 @@
+2023-10-05 07:47:32
+  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+  NUMBER_OF_PROCESSORS           4
+ Starting weight generation with these inputs: 
+   Source File: data/T42_grid.nc
+   Destination File: data/ll2.5deg_grid.nc
+   Weight File: data/T42_ll2.5_bilinear.nc
+   Source File is in SCRIP format
+   Source Grid is a global grid
+   Source Grid is a logically rectangular grid
+   Use the center coordinates of the source grid to do the regrid
+   Destination File is in SCRIP format
+   Destination Grid is a global grid
+   Destination Grid is a logically rectangular grid
+   Use the center coordinates of the destination grid to do the regrid
+   Regrid Method: bilinear
+   Pole option: ALL
+   Line Type: cartesian
+   Norm Type: dstarea
+   Extrap. Method: none
+ 
+[h17c37:242177:0:242177] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+[h17c37:242178:0:242178] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+[h17c37:242179:0:242179] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+[h17c37:242180:0:242180] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+==== backtrace (tid: 242179) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000159f578 esmf_pointlistmod_mp_esmf_pointlistadd_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+ 2 0x000000000159ef98 esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:677
+ 3 0x00000000012b78af esmf_fieldregridmod_mp_getpointlistonfieldloc_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1674
+ 4 0x00000000012b4d19 esmf_fieldregridmod_mp_esmf_fieldregridstorenx_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1002
+ 5 0x00000000015b0982 esmf_regridweightgenmod_mp_esmf_regridweightgenfile_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Superstructure/PreESMFMod/src/ESMF_RegridWeightGen.F90:1585
+ 6 0x0000000000419830 MAIN__()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Superstructure/PreESMFMod/tests/ESMF_RegridWeightGenUTest.F90:87
+ 7 0x00000000004193dd main()  ???:0
+ 8 0x0000000000022555 __libc_start_main()  ???:0
+ 9 0x000000000041930b _start()  ???:0
+=================================
+==== backtrace (tid: 242177) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000159f578 esmf_pointlistmod_mp_esmf_pointlistadd_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+ 2 0x000000000159ef98 esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:677
+ 3 0x00000000012b78af esmf_fieldregridmod_mp_getpointlistonfieldloc_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1674
+ 4 0x00000000012b4d19 esmf_fieldregridmod_mp_esmf_fieldregridstorenx_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1002
+ 5 0x00000000015b0982 esmf_regridweightgenmod_mp_esmf_regridweightgenfile_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Superstructure/PreESMFMod/src/ESMF_RegridWeightGen.F90:1585
+ 6 0x0000000000419830 MAIN__()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Superstructure/PreESMFMod/tests/ESMF_RegridWeightGenUTest.F90:87
+ 7 0x00000000004193dd main()  ???:0
+ 8 0x0000000000022555 __libc_start_main()  ???:0
+ 9 0x000000000041930b _start()  ???:0
+=================================
+==== backtrace (tid: 242180) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000159f578 esmf_pointlistmod_mp_esmf_pointlistadd_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+ 2 0x000000000159ef98 esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:677
+ 3 0x00000000012b78af esmf_fieldregridmod_mp_getpointlistonfieldloc_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1674
+ 4 0x00000000012b4d19 esmf_fieldregridmod_mp_esmf_fieldregridstorenx_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1002
+ 5 0x00000000015b0982 esmf_regridweightgenmod_mp_esmf_regridweightgenfile_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Superstructure/PreESMFMod/src/ESMF_RegridWeightGen.F90:1585
+ 6 0x0000000000419830 MAIN__()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Superstructure/PreESMFMod/tests/ESMF_RegridWeightGenUTest.F90:87
+ 7 0x00000000004193dd main()  ???:0
+ 8 0x0000000000022555 __libc_start_main()  ???:0
+ 9 0x000000000041930b _start()  ???:0
+=================================
+==== backtrace (tid: 242178) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x000000000159f578 esmf_pointlistmod_mp_esmf_pointlistadd_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+ 2 0x000000000159ef98 esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:677
+ 3 0x00000000012b78af esmf_fieldregridmod_mp_getpointlistonfieldloc_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1674
+ 4 0x00000000012b4d19 esmf_fieldregridmod_mp_esmf_fieldregridstorenx_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1002
+ 5 0x00000000015b0982 esmf_regridweightgenmod_mp_esmf_regridweightgenfile_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Superstructure/PreESMFMod/src/ESMF_RegridWeightGen.F90:1585
+ 6 0x0000000000419830 MAIN__()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-classic_intelmpi_O_develop/esmf/src/Superstructure/PreESMFMod/tests/ESMF_RegridWeightGenUTest.F90:87
+ 7 0x00000000004193dd main()  ???:0
+ 8 0x0000000000022555 __libc_start_main()  ???:0
+ 9 0x000000000041930b _start()  ???:0
+=================================
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B1FC71D2630  Unknown               Unknown  Unknown
+libesmf.so         00002B1FC3749578  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B1FC3748F98  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B1FC34618AF  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B1FC345ED19  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B1FC375A982  esmf_regridweight     Unknown  Unknown
+ESMF_RegridWeight  0000000000419830  Unknown               Unknown  Unknown
+ESMF_RegridWeight  00000000004193DD  Unknown               Unknown  Unknown
+libc-2.17.so       00002B1FC813B555  __libc_start_main     Unknown  Unknown
+ESMF_RegridWeight  000000000041930B  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B8F12D5B630  Unknown               Unknown  Unknown
+libesmf.so         00002B8F0F2D2578  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B8F0F2D1F98  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B8F0EFEA8AF  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B8F0EFE7D19  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B8F0F2E3982  esmf_regridweight     Unknown  Unknown
+ESMF_RegridWeight  0000000000419830  Unknown               Unknown  Unknown
+ESMF_RegridWeight  00000000004193DD  Unknown               Unknown  Unknown
+libc-2.17.so       00002B8F13CC4555  __libc_start_main     Unknown  Unknown
+ESMF_RegridWeight  000000000041930B  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B040D966630  Unknown               Unknown  Unknown
+libesmf.so         00002B0409EDD578  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B0409EDCF98  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B0409BF58AF  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B0409BF2D19  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B0409EEE982  esmf_regridweight     Unknown  Unknown
+ESMF_RegridWeight  0000000000419830  Unknown               Unknown  Unknown
+ESMF_RegridWeight  00000000004193DD  Unknown               Unknown  Unknown
+libc-2.17.so       00002B040E8CF555  __libc_start_main     Unknown  Unknown
+ESMF_RegridWeight  000000000041930B  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B648353A630  Unknown               Unknown  Unknown
+libesmf.so         00002B647FAB1578  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B647FAB0F98  esmf_pointlistmod     Unknown  Unknown
+libesmf.so         00002B647F7C98AF  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B647F7C6D19  esmf_fieldregridm     Unknown  Unknown
+libesmf.so         00002B647FAC2982  esmf_regridweight     Unknown  Unknown
+ESMF_RegridWeight  0000000000419830  Unknown               Unknown  Unknown
+ESMF_RegridWeight  00000000004193DD  Unknown               Unknown  Unknown
+libc-2.17.so       00002B64844A3555  __libc_start_main     Unknown  Unknown
+ESMF_RegridWeight  000000000041930B  Unknown               Unknown  Unknown
+srun: error: h17c37: tasks 0-3: Exited with exit code 174
+srun: launch/slurm: _step_signal: Terminating StepId=50275391.209
