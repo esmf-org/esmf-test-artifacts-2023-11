@@ -1,0 +1,119 @@
+2023-10-05 07:43:26
+  Beginning Test, file ESMF_FieldSMMFromFileUTest.F90, line 287
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FieldSMMFromFileUTest.F90, line 287
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FieldSMMFromFileUTest.F90, line 287
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FieldSMMFromFileUTest.F90, line 287
+  NUMBER_OF_PROCESSORS           4
+[h14c25:297837:0:297837] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+[h14c25:297838:0:297838] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+[h14c25:297839:0:297839] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+[h14c25:297840:0:297840] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x18)
+==== backtrace (tid: 297840) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000002598508 esmf_pointlistmod_mp_esmf_pointlistadd_()  ???:0
+ 2 0x00000000025968d9 esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_()  ???:0
+ 3 0x0000000001f51376 esmf_fieldregridmod_mp_getpointlistonfieldloc_()  ???:0
+ 4 0x0000000001f4c364 esmf_fieldregridmod_mp_esmf_fieldregridstorenx_()  ???:0
+ 5 0x00000000025bde8f esmf_regridweightgenmod_mp_esmf_regridweightgenfile_()  ???:0
+ 6 0x00000000004159c1 esmf_fieldsmmfromfileutestmod_mp_test_smm_from_file_()  ???:0
+ 7 0x0000000000418d23 MAIN__()  ???:0
+ 8 0x000000000041575d main()  ???:0
+ 9 0x0000000000022555 __libc_start_main()  ???:0
+10 0x000000000041568b _start()  ???:0
+=================================
+==== backtrace (tid: 297838) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000002598508 esmf_pointlistmod_mp_esmf_pointlistadd_()  ???:0
+ 2 0x00000000025968d9 esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_()  ???:0
+ 3 0x0000000001f51376 esmf_fieldregridmod_mp_getpointlistonfieldloc_()  ???:0
+ 4 0x0000000001f4c364 esmf_fieldregridmod_mp_esmf_fieldregridstorenx_()  ???:0
+ 5 0x00000000025bde8f esmf_regridweightgenmod_mp_esmf_regridweightgenfile_()  ???:0
+ 6 0x00000000004159c1 esmf_fieldsmmfromfileutestmod_mp_test_smm_from_file_()  ???:0
+ 7 0x0000000000418d23 MAIN__()  ???:0
+ 8 0x000000000041575d main()  ???:0
+ 9 0x0000000000022555 __libc_start_main()  ???:0
+10 0x000000000041568b _start()  ???:0
+=================================
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B5ABF8EF630  Unknown               Unknown  Unknown
+libesmf.so         00002B5ABAD77508  esmf_pointlistadd        1018  ESMF_PointList.F90
+libesmf.so         00002B5ABAD758D9  esmf_pointlistcre         677  ESMF_PointList.F90
+libesmf.so         00002B5ABA730376  getpointlistonfie        1674  ESMF_FieldRegrid.F90
+libesmf.so         00002B5ABA72B364  esmf_fieldregrids        1002  ESMF_FieldRegrid.F90
+libesmf.so         00002B5ABAD9CE8F  esmf_regridweight        1585  ESMF_RegridWeightGen.F90
+ESMF_FieldSMMFrom  00000000004159C1  test_smm_from_fil          41  ESMF_FieldSMMFromFileUTest.F90
+ESMF_FieldSMMFrom  0000000000418D23  esmf_fieldsmmfrom         296  ESMF_FieldSMMFromFileUTest.F90
+ESMF_FieldSMMFrom  000000000041575D  Unknown               Unknown  Unknown
+libc-2.17.so       00002B5AC0C42555  __libc_start_main     Unknown  Unknown
+ESMF_FieldSMMFrom  000000000041568B  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B6F81F77630  Unknown               Unknown  Unknown
+libesmf.so         00002B6F7D3FF508  esmf_pointlistadd        1018  ESMF_PointList.F90
+libesmf.so         00002B6F7D3FD8D9  esmf_pointlistcre         677  ESMF_PointList.F90
+libesmf.so         00002B6F7CDB8376  getpointlistonfie        1674  ESMF_FieldRegrid.F90
+libesmf.so         00002B6F7CDB3364  esmf_fieldregrids        1002  ESMF_FieldRegrid.F90
+libesmf.so         00002B6F7D424E8F  esmf_regridweight        1585  ESMF_RegridWeightGen.F90
+ESMF_FieldSMMFrom  00000000004159C1  test_smm_from_fil          41  ESMF_FieldSMMFromFileUTest.F90
+ESMF_FieldSMMFrom  0000000000418D23  esmf_fieldsmmfrom         296  ESMF_FieldSMMFromFileUTest.F90
+ESMF_FieldSMMFrom  000000000041575D  Unknown               Unknown  Unknown
+libc-2.17.so       00002B6F832CA555  __libc_start_main     Unknown  Unknown
+ESMF_FieldSMMFrom  000000000041568B  Unknown               Unknown  Unknown
+==== backtrace (tid: 297839) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000002598508 esmf_pointlistmod_mp_esmf_pointlistadd_()  ???:0
+ 2 0x00000000025968d9 esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_()  ???:0
+ 3 0x0000000001f51376 esmf_fieldregridmod_mp_getpointlistonfieldloc_()  ???:0
+ 4 0x0000000001f4c364 esmf_fieldregridmod_mp_esmf_fieldregridstorenx_()  ???:0
+ 5 0x00000000025bde8f esmf_regridweightgenmod_mp_esmf_regridweightgenfile_()  ???:0
+ 6 0x00000000004159c1 esmf_fieldsmmfromfileutestmod_mp_test_smm_from_file_()  ???:0
+ 7 0x0000000000418d23 MAIN__()  ???:0
+ 8 0x000000000041575d main()  ???:0
+ 9 0x0000000000022555 __libc_start_main()  ???:0
+10 0x000000000041568b _start()  ???:0
+=================================
+==== backtrace (tid: 297837) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000002598508 esmf_pointlistmod_mp_esmf_pointlistadd_()  ???:0
+ 2 0x00000000025968d9 esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_()  ???:0
+ 3 0x0000000001f51376 esmf_fieldregridmod_mp_getpointlistonfieldloc_()  ???:0
+ 4 0x0000000001f4c364 esmf_fieldregridmod_mp_esmf_fieldregridstorenx_()  ???:0
+ 5 0x00000000025bde8f esmf_regridweightgenmod_mp_esmf_regridweightgenfile_()  ???:0
+ 6 0x00000000004159c1 esmf_fieldsmmfromfileutestmod_mp_test_smm_from_file_()  ???:0
+ 7 0x0000000000418d23 MAIN__()  ???:0
+ 8 0x000000000041575d main()  ???:0
+ 9 0x0000000000022555 __libc_start_main()  ???:0
+10 0x000000000041568b _start()  ???:0
+=================================
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B6C9D87E630  Unknown               Unknown  Unknown
+libesmf.so         00002B6C98D06508  esmf_pointlistadd        1018  ESMF_PointList.F90
+libesmf.so         00002B6C98D048D9  esmf_pointlistcre         677  ESMF_PointList.F90
+libesmf.so         00002B6C986BF376  getpointlistonfie        1674  ESMF_FieldRegrid.F90
+libesmf.so         00002B6C986BA364  esmf_fieldregrids        1002  ESMF_FieldRegrid.F90
+libesmf.so         00002B6C98D2BE8F  esmf_regridweight        1585  ESMF_RegridWeightGen.F90
+ESMF_FieldSMMFrom  00000000004159C1  test_smm_from_fil          41  ESMF_FieldSMMFromFileUTest.F90
+ESMF_FieldSMMFrom  0000000000418D23  esmf_fieldsmmfrom         296  ESMF_FieldSMMFromFileUTest.F90
+ESMF_FieldSMMFrom  000000000041575D  Unknown               Unknown  Unknown
+libc-2.17.so       00002B6C9EBD1555  __libc_start_main     Unknown  Unknown
+ESMF_FieldSMMFrom  000000000041568B  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B434F4C6630  Unknown               Unknown  Unknown
+libesmf.so         00002B434A94E508  esmf_pointlistadd        1018  ESMF_PointList.F90
+libesmf.so         00002B434A94C8D9  esmf_pointlistcre         677  ESMF_PointList.F90
+libesmf.so         00002B434A307376  getpointlistonfie        1674  ESMF_FieldRegrid.F90
+libesmf.so         00002B434A302364  esmf_fieldregrids        1002  ESMF_FieldRegrid.F90
+libesmf.so         00002B434A973E8F  esmf_regridweight        1585  ESMF_RegridWeightGen.F90
+ESMF_FieldSMMFrom  00000000004159C1  test_smm_from_fil          41  ESMF_FieldSMMFromFileUTest.F90
+ESMF_FieldSMMFrom  0000000000418D23  esmf_fieldsmmfrom         296  ESMF_FieldSMMFromFileUTest.F90
+ESMF_FieldSMMFrom  000000000041575D  Unknown               Unknown  Unknown
+libc-2.17.so       00002B4350819555  __libc_start_main     Unknown  Unknown
+ESMF_FieldSMMFrom  000000000041568B  Unknown               Unknown  Unknown
+srun: error: h14c25: tasks 0-3: Exited with exit code 174
+srun: launch/slurm: _step_signal: Terminating StepId=50275448.151
