@@ -1,0 +1,48 @@
+2023-10-05 03:06:40
+  Beginning Test, file ESMF_FieldBundleRegridUTest.F90, line 56
+  NUMBER_OF_PROCESSORS           1
+  PASS  FieldBundleRegrid between a 0 to 360 sphere and a -180 to 180 sphere, ES
+ MF_FieldBundleRegridUTest.F90, line 67
+ utest src field name = 
+ src360_L                                                        
+ utest dst field name = 
+ dst360_B                                                        
+ utest src field name = 
+ src360_G                                                        
+ utest dst field name = 
+ dst360_Y                                                        
+ utest src field name = 
+ src360_X                                                        
+ utest dst field name = 
+ dst360_T                                                        
+ utest src field name = 
+ src360_A                                                        
+ utest dst field name = 
+ dst360_S                                                        
+ utest src field name = 
+ src360_C                                                        
+ utest dst field name = 
+ dst360_P                                                        
+ utest src field name = 
+ src360_H                                                        
+ utest dst field name = 
+ dst360_N                                                        
+  PASS  FieldBundleRegrid between a 0 to 360 sphere and a -180 to 180 sphere, ES
+ MF_FieldBundleRegridUTest.F90, line 74
+  PASS  FieldBundleRegrid sphere with mask, ESMF_FieldBundleRegridUTest.F90, lin
+ e 90
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+ESMF_FieldBundleR  0000000000443F7D  Unknown               Unknown  Unknown
+libpthread-2.22.s  00002AD1DEA94C00  Unknown               Unknown  Unknown
+libesmf.so         00002AD1DA36F50B  esmf_pointlistmod        1018  ESMF_PointList.F90
+libesmf.so         00002AD1DA36D1B9  esmf_pointlistmod         677  ESMF_PointList.F90
+libesmf.so         00002AD1D9A9DF2B  esmf_fieldregridm        1674  ESMF_FieldRegrid.F90
+libesmf.so         00002AD1D9A96BB0  esmf_fieldregridm        1002  ESMF_FieldRegrid.F90
+libesmf.so         00002AD1D9635E28  esmf_fieldbundlem       16165  ESMF_FieldBundle.F90
+libesmf.so         00002AD1D962C04B  esmf_fieldbundlem       15735  ESMF_FieldBundle.F90
+ESMF_FieldBundleR  0000000000427E82  esmf_fieldbundler        1781  ESMF_FieldBundleRegridUTest.F90
+ESMF_FieldBundleR  00000000004077E8  MAIN__                     94  ESMF_FieldBundleRegridUTest.F90
+ESMF_FieldBundleR  000000000040719E  Unknown               Unknown  Unknown
+libc-2.22.so       00002AD1DECC3A35  __libc_start_main     Unknown  Unknown
+ESMF_FieldBundleR  00000000004070A9  Unknown               Unknown  Unknown
