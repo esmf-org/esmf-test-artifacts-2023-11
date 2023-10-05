@@ -1,0 +1,60 @@
+2023-10-05 01:48:05
+Operating system error: Operating system error: Operating system error: Cannot allocate memory
+Memory allocation failed in xmallocarray
+
+Error termination. Backtrace:
+Cannot allocate memory
+Memory allocation failed in xmallocarray
+
+Error termination. Backtrace:
+Cannot allocate memory
+Memory allocation failed in xmallocarray
+
+Error termination. Backtrace:
+#0  0x2b059a68c5cb in __esmf_pointlistmod_MOD_esmf_pointlistadd
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+#1  0x2b059a68f18f in __esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:671
+#0  0x2b88802015cb in __esmf_pointlistmod_MOD_esmf_pointlistadd
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+#1  0x2b888020418f in __esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:671
+#0  0x2b2e0d92e5cb in __esmf_pointlistmod_MOD_esmf_pointlistadd
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+#1  0x2b2e0d93118f in __esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:671
+#2  0x2b887fd15bd7 in getpointlistonfieldloc
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1676
+#3  0x2b887fd1821f in __esmf_fieldregridmod_MOD_esmf_fieldregridstorenx
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1003
+#2  0x2b059a1a0bd7 in getpointlistonfieldloc
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1676
+#3  0x2b059a1a321f in __esmf_fieldregridmod_MOD_esmf_fieldregridstorenx
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1003
+#4  0x4097b6 in esmf_locstreamex
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/LocStream/examples/ESMF_LocStreamEx.F90:702
+#5  0x40a238 in main
+#4  0x4097b6 in esmf_locstreamex
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/LocStream/examples/ESMF_LocStreamEx.F90:702
+#5  0x40a238 in main
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/LocStream/examples/ESMF_LocStreamEx.F90:26
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/LocStream/examples/ESMF_LocStreamEx.F90:26
+#2  0x2b2e0d442bd7 in getpointlistonfieldloc
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1676
+#3  0x2b2e0d44521f in __esmf_fieldregridmod_MOD_esmf_fieldregridstorenx
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1003
+#4  0x4097b6 in esmf_locstreamex
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/LocStream/examples/ESMF_LocStreamEx.F90:702
+#5  0x40a238 in main
+	at /glade/scratch/theurich/ESMF-Nightly-Testing/gfortran_7.4.0_openmpi_g_develop/esmf/src/Infrastructure/LocStream/examples/ESMF_LocStreamEx.F90:26
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[9908,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------
