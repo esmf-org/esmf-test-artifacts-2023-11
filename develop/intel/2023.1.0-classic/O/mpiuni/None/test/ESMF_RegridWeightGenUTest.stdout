@@ -1,0 +1,32 @@
+2023-10-05 04:03:49
+  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+  NUMBER_OF_PROCESSORS           1
+ Starting weight generation with these inputs: 
+   Source File: data/T42_grid.nc
+   Destination File: data/ll2.5deg_grid.nc
+   Weight File: data/T42_ll2.5_bilinear.nc
+   Source File is in SCRIP format
+   Source Grid is a global grid
+   Source Grid is a logically rectangular grid
+   Use the center coordinates of the source grid to do the regrid
+   Destination File is in SCRIP format
+   Destination Grid is a global grid
+   Destination Grid is a logically rectangular grid
+   Use the center coordinates of the destination grid to do the regrid
+   Regrid Method: bilinear
+   Pole option: ALL
+   Line Type: cartesian
+   Norm Type: dstarea
+   Extrap. Method: none
+ 
+
+ESMF_RegridWeightGenUTest:185254 terminated with signal 11 at PC=7f8eba094737 SP=7fffc04905c0.  Backtrace:
+/tmp/intel_2023.1.0-classic_mpiuni_O_develop/esmf/lib/libO/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_pointlistmod_mp_esmf_pointlistadd_+0x187)[0x7f8eba094737]
+/tmp/intel_2023.1.0-classic_mpiuni_O_develop/esmf/lib/libO/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_pointlistmod_mp_esmf_pointlistcreatefrmlocstream_+0x1d13)[0x7f8eba094123]
+/tmp/intel_2023.1.0-classic_mpiuni_O_develop/esmf/lib/libO/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_fieldregridmod_mp_getpointlistonfieldloc_+0x427)[0x7f8eb9d8fcc7]
+/tmp/intel_2023.1.0-classic_mpiuni_O_develop/esmf/lib/libO/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_fieldregridmod_mp_esmf_fieldregridstorenx_+0x235a)[0x7f8eb9d8d0fa]
+/tmp/intel_2023.1.0-classic_mpiuni_O_develop/esmf/lib/libO/Unicos.intel.64.mpiuni.default/libesmf.so(esmf_regridweightgenmod_mp_esmf_regridweightgenfile_+0x7b81)[0x7f8eba0a9141]
+./ESMF_RegridWeightGenUTest[0x414352]
+./ESMF_RegridWeightGenUTest[0x413efd]
+/lib64/libc.so.6(__libc_start_main+0xef)[0x7f8eb70fb24d]
+./ESMF_RegridWeightGenUTest[0x413e2a]
