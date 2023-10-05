@@ -1,0 +1,23 @@
+2023-10-05 07:36:00
+Operating system error: Cannot allocate memory
+Memory allocation failed in xmallocarray
+
+Error termination. Backtrace:
+#0  0x2ab75086fe5b in __esmf_pointlistmod_MOD_esmf_pointlistadd
+	at /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/gfortran_9.2.0_mpiuni_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:1018
+#1  0x2ab750872bc9 in __esmf_pointlistmod_MOD_esmf_pointlistcreatefrmlocstream
+	at /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/gfortran_9.2.0_mpiuni_g_develop/esmf/src/Infrastructure/PointList/interface/ESMF_PointList.F90:671
+#2  0x2ab750348564 in getpointlistonfieldloc
+	at /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/gfortran_9.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1676
+#3  0x2ab75034ac97 in __esmf_fieldregridmod_MOD_esmf_fieldregridstorenx
+	at /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/gfortran_9.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Field/src/ESMF_FieldRegrid.F90:1003
+#4  0x2ab7508a22ef in __esmf_regridweightgenmod_MOD_esmf_regridweightgenfile
+	at /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/gfortran_9.2.0_mpiuni_g_develop/esmf/src/Superstructure/PreESMFMod/src/ESMF_RegridWeightGen.F90:1600
+#5  0x400f24 in __esmf_arraysmmfromfileutestmod_MOD_test_smm_from_file
+	at /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/gfortran_9.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Array/tests/ESMF_ArraySMMFromFileUTest.F90:40
+#6  0x4011af in esmf_arraysmmfromfileutest
+	at /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/gfortran_9.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Array/tests/ESMF_ArraySMMFromFileUTest.F90:115
+#7  0x401479 in main
+	at /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/gfortran_9.2.0_mpiuni_g_develop/esmf/src/Infrastructure/Array/tests/ESMF_ArraySMMFromFileUTest.F90:70
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 104
+  NUMBER_OF_PROCESSORS           1
