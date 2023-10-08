@@ -1,0 +1,821 @@
+2023-10-08 07:53:38
+20231008 090409.700 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231008 090409.701 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231008 090409.701 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231008 090409.701 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231008 090409.701 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231008 090409.701 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231008 090409.701 INFO             PET0 Running with ESMF Version   : v8.6.0b07-67-gb347190ad6
+20231008 090409.701 INFO             PET0 ESMF library build date/time: "Oct  8 2023" "07:50:52"
+20231008 090409.701 INFO             PET0 ESMF library build location : /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/nvhpc_23.3_openmpi_g_develop/esmf
+20231008 090409.701 INFO             PET0 ESMF_COMM                   : openmpi
+20231008 090409.701 INFO             PET0 ESMF_MOAB                   : enabled
+20231008 090409.701 INFO             PET0 ESMF_LAPACK                 : enabled
+20231008 090409.701 INFO             PET0 ESMF_NETCDF                 : disabled
+20231008 090409.701 INFO             PET0 ESMF_PNETCDF                : disabled
+20231008 090409.701 INFO             PET0 ESMF_PIO                    : disabled
+20231008 090409.701 INFO             PET0 ESMF_YAMLCPP                : enabled
+20231008 090409.702 INFO             PET0 mainApp STARTING
+20231008 090409.707 INFO             PET0 driver: InitializeGeneric intro.
+20231008 090409.707 INFO             PET0   driver: InitializeP0 intro.
+20231008 090409.707 INFO             PET0   driver: InitializeP0 extro.
+20231008 090409.707 INFO             PET0   driver: InitializeIPDv02p1 intro.
+20231008 090409.707 INFO             PET0     >>>driver: entered Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.708 INFO             PET0     driver - Creating model component MODEL without petList.
+20231008 090409.711 INFO             PET0      GridCompIsPetLocal:   T
+20231008 090409.711 INFO             PET0      VmIsCreated:   T
+20231008 090409.711 INFO             PET0      valid MPI_COMM with size=            4
+20231008 090409.711 INFO             PET0     driver - Creating state: modelComp 1 Import State
+20231008 090409.711 INFO             PET0     driver - Creating state: modelComp 1 Export State
+20231008 090409.712 INFO             PET0     MODEL: InitializeP0 intro.
+20231008 090409.712 INFO             PET0       >>>MODEL: entered Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.714 INFO             PET0       <<<MODEL: leaving Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.714 INFO             PET0     MODEL: InitializeP0 extro.
+20231008 090409.716 INFO             PET0     driver: IInitAdvertise intro.
+20231008 090409.716 INFO             PET0     driver: IInitAdvertise extro.
+20231008 090409.716 INFO             PET0     MODEL: InitializeIPDvXp01 intro.
+20231008 090409.716 INFO             PET0       >>>MODEL: entered Initialize (phase=IPDvXp01) without valid internal Clock.
+20231008 090409.718 INFO             PET0       <<<MODEL: leaving Initialize (phase=IPDvXp01) without valid internal Clock.
+20231008 090409.718 INFO             PET0     MODEL: InitializeIPDvXp01 extro.
+20231008 090409.719 INFO             PET0     driver: IInitAdvertiseFinish intro.
+20231008 090409.719 INFO             PET0     driver: IInitAdvertiseFinish extro.
+20231008 090409.719 INFO             PET0     driver: IInitModifyCplLists intro.
+20231008 090409.719 INFO             PET0     driver: IInitModifyCplLists extro.
+20231008 090409.719 INFO             PET0     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.719 INFO             PET0   driver: InitializeIPDv02p1 extro.
+20231008 090409.719 INFO             PET0   driver: InitializeIPDv02p3 intro.
+20231008 090409.719 INFO             PET0     >>>driver: entered Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.720 INFO             PET0     driver: IInitCheck intro.
+20231008 090409.720 INFO             PET0     driver: IInitCheck extro.
+20231008 090409.720 INFO             PET0     MODEL: InitializeIPDvXp04 intro.
+20231008 090409.720 INFO             PET0       >>>MODEL: entered Initialize (phase=IPDvXp04) without valid internal Clock.
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemTotal:       97470520 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemFree:        88045480 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemAvailable:   90571276 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/meminfo - SSI]	Committed_AS:    1009432 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/meminfo - SSI]	CommittedPercent: 1.03563 %
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmPeak:	  504856 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmSize:	  496456 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmLck:	       0 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmPin:	   13592 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmHWM:	   49584 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmRSS:	   49584 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmData:	  160792 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmStk:	     204 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmExe:	      28 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmLib:	   87192 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmPTE:	     428 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmSwap:	       0 kB
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [/proc/self/status]	VmRSSPercent: 0.0508708 %
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [malloc] Non-mmapped space allocated:                 2670592 Byte
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [malloc] Space allocated in mmapped regions:          7639040 Byte
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [malloc] Maximum total allocated space:                     0 Byte
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [malloc] Space in freed fastbin blocks:                   848 Byte
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [malloc] Total allocated space:                       2418624 Byte
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [malloc] Total free space:                             251968 Byte
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [malloc] Top-most, releasable space:                    55520 Byte
+20231008 090409.724 INFO             PET0       After Realize: - MemInfo: [malloc] Total space in use, mmap + non-mmap:        10057664 Byte
+20231008 090409.725 INFO             PET0       After Realize: - MemInfo: [malloc] Total space held (mmap + non-mmap):         10309632 Byte
+20231008 090409.725 INFO             PET0       After Realize: - MemInfo: [malloc] Total space used (mmap + non-mmap):         10066800 Byte
+20231008 090409.725 INFO             PET0       After Realize: - MemInfo: Wall-clock time since execution start:              0.0286796 seconds
+20231008 090409.725 INFO             PET0       <<<MODEL: leaving Initialize (phase=IPDvXp04) without valid internal Clock.
+20231008 090409.725 INFO             PET0     MODEL: InitializeIPDvXp04 extro.
+20231008 090409.726 INFO             PET0     driver: IInitRealize intro.
+20231008 090409.726 INFO             PET0     driver: IInitRealize extro.
+20231008 090409.726 INFO             PET0     MODEL: InitializeIPDvXp07 intro.
+20231008 090409.726 INFO             PET0       >>>MODEL: entered Initialize (phase=IPDvXp07) without valid internal Clock.
+20231008 090409.726 INFO             PET0       <<<MODEL: leaving Initialize (phase=IPDvXp07) with current time:    0  1  1  0  0  0   0
+20231008 090409.726 INFO             PET0     MODEL: InitializeIPDvXp07 extro.
+20231008 090409.726 INFO             PET0     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.726 INFO             PET0   driver: InitializeIPDv02p3 extro.
+20231008 090409.726 INFO             PET0   driver: InitializeIPDv02p5 intro.
+20231008 090409.726 INFO             PET0     >>>driver: entered Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.727 INFO             PET0     driver: this is a top level driver, no 'Updated' and 'InitializeDataComplete' info on this level.
+20231008 090409.727 INFO             PET0     driver: InitializeIPDv02p5Data intro.
+20231008 090409.727 INFO             PET0       driver: InternalInitializeComplete intro.
+20231008 090409.727 INFO             PET0         driver: InitializeDataComplete='true'
+20231008 090409.727 INFO             PET0       driver: InternalInitializeComplete extro.
+20231008 090409.727 INFO             PET0       MODEL: InitializeIPDvXp08 intro.
+20231008 090409.727 INFO             PET0         >>>MODEL: entered Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.728 INFO             PET0         MODEL: InitializeDataProgress='false', InitializeDataComplete='false'
+20231008 090409.728 INFO             PET0         <<<MODEL: leaving Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.728 INFO             PET0       MODEL: InitializeIPDvXp08 extro.
+20231008 090409.729 INFO             PET0       driver: components present that trigger loopDataDependentInitialize().
+20231008 090409.729 INFO             PET0       driver: loopDataDependentInitialize intro.
+20231008 090409.729 INFO             PET0         driver: component    0=driver, dataComplete (local): true
+20231008 090409.729 INFO             PET0         driver: component    0=driver, dataComplete (global):  T
+20231008 090409.729 INFO             PET0         driver: component    1=MODEL, dataComplete (local): false
+20231008 090409.729 INFO             PET0         driver: component    1=MODEL, dataComplete (global):  F
+20231008 090409.729 INFO             PET0         MODEL: InitializeIPDvXp08 intro.
+20231008 090409.729 INFO             PET0           >>>MODEL: entered Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.730 INFO             PET0           MODEL: InitializeDataProgress='true', InitializeDataComplete='true'
+20231008 090409.730 INFO             PET0           <<<MODEL: leaving Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.730 INFO             PET0         MODEL: InitializeIPDvXp08 extro.
+20231008 090409.730 INFO             PET0         driver: component    1=MODEL, someProgress (local): true
+20231008 090409.731 INFO             PET0         driver: component    1=MODEL, someProgress (global):  T
+20231008 090409.731 INFO             PET0         driver: someProgress= T, allComplete= F, present(dataDepAllComplete)= T
+20231008 090409.731 INFO             PET0         driver: component    0=driver, dataComplete (local): true
+20231008 090409.731 INFO             PET0         driver: component    0=driver, dataComplete (global):  T
+20231008 090409.731 INFO             PET0         driver: component    1=MODEL, dataComplete (local): true
+20231008 090409.731 INFO             PET0         driver: component    1=MODEL, dataComplete (global):  T
+20231008 090409.731 INFO             PET0         driver: someProgress= F, allComplete= T, present(dataDepAllComplete)= T
+20231008 090409.731 INFO             PET0         driver: finished resolving initialize data dependencies on this level.
+20231008 090409.731 INFO             PET0       driver: loopDataDependentInitialize extro.
+20231008 090409.731 INFO             PET0       driver: loopDataDependentInitialize() returned with dataDepAllComplete:  T
+20231008 090409.731 INFO             PET0     driver: InitializeIPDv02p5Data extro.
+20231008 090409.731 INFO             PET0     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET0   driver: InitializeIPDv02p5 extro.
+20231008 090409.731 INFO             PET0 driver: InitializeGeneric extro.
+20231008 090409.731 INFO             PET0 driver: Run intro.
+20231008 090409.731 INFO             PET0   >>>driver entered Run (phase=RunPhase1) with current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET0   driver: after lable_SetRunClock, current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET0   driver: begin -------> RunSequence.
+20231008 090409.731 INFO             PET0     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   1, current time:    0  1  1  0  0  0   0
+20231008 090409.732 INFO             PET0     MODEL: Run intro.
+20231008 090409.732 INFO             PET0       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  0  0   0
+20231008 090409.732 INFO             PET0       MODEL: time step-loop starting, current time:    0  1  1  0  0  0   0
+20231008 090409.733 INFO             PET0       thread_num=   1   currentSsiPe=  54   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.733 INFO             PET0       thread_num=   2   currentSsiPe=  57   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.733 INFO             PET0       thread_num=   0   currentSsiPe=  13   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.733 INFO             PET0       ---->Advancing Model from:    0  1  1  0  0  0   0
+20231008 090409.733 INFO             PET0       ---------------------> to:    0  1  1  0  0 30   0
+20231008 090409.733 INFO             PET0       MODEL: time step-loop ending,   current time:    0  1  1  0  0 30   0
+20231008 090409.733 INFO             PET0       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  0 30   0
+20231008 090409.733 INFO             PET0     MODEL: Run extro.
+20231008 090409.733 INFO             PET0     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   2, current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET0     MODEL: Run intro.
+20231008 090409.734 INFO             PET0       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET0       MODEL: time step-loop starting, current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET0       thread_num=   1   currentSsiPe=  54   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET0       thread_num=   0   currentSsiPe=  13   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET0       thread_num=   2   currentSsiPe=  57   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET0       ---->Advancing Model from:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET0       ---------------------> to:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET0       MODEL: time step-loop ending,   current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET0       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET0     MODEL: Run extro.
+20231008 090409.734 INFO             PET0     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   3, current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET0     MODEL: Run intro.
+20231008 090409.734 INFO             PET0       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET0       MODEL: time step-loop starting, current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET0       thread_num=   1   currentSsiPe=  54   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET0       thread_num=   2   currentSsiPe=  57   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET0       thread_num=   0   currentSsiPe=  13   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET0       ---->Advancing Model from:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET0       ---------------------> to:    0  1  1  0  1 30   0
+20231008 090409.734 INFO             PET0       MODEL: time step-loop ending,   current time:    0  1  1  0  1 30   0
+20231008 090409.734 INFO             PET0       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  1 30   0
+20231008 090409.734 INFO             PET0     MODEL: Run extro.
+20231008 090409.734 INFO             PET0     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   4, current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET0     MODEL: Run intro.
+20231008 090409.735 INFO             PET0       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET0       MODEL: time step-loop starting, current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET0       thread_num=   1   currentSsiPe=  54   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET0       thread_num=   2   currentSsiPe=  57   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET0       thread_num=   0   currentSsiPe=  13   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET0       ---->Advancing Model from:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET0       ---------------------> to:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET0       MODEL: time step-loop ending,   current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET0       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET0     MODEL: Run extro.
+20231008 090409.735 INFO             PET0     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   5, current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET0     MODEL: Run intro.
+20231008 090409.735 INFO             PET0       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET0       MODEL: time step-loop starting, current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET0       thread_num=   2   currentSsiPe=  57   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET0       thread_num=   1   currentSsiPe=  54   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET0       thread_num=   0   currentSsiPe=  13   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET0       ---->Advancing Model from:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET0       ---------------------> to:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET0       MODEL: time step-loop ending,   current time:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET0       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET0     MODEL: Run extro.
+20231008 090409.735 INFO             PET0   driver: end <--------- RunSequence
+20231008 090409.735 INFO             PET0   <<<driver - leaving Run with current time:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET0 driver: Run extro.
+20231008 090409.736 INFO             PET0 driver: Finalize intro.
+20231008 090409.736 INFO             PET0   Calling Finalize phase 1 for modelComp: MODEL
+20231008 090409.736 INFO             PET0   MODEL: Finalize intro.
+20231008 090409.736 INFO             PET0     >>>MODEL: entered Finalize (phase=FinalizePhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET0     <<<MODEL: leaving Finalize (phase=FinalizePhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET0   MODEL: Finalize extro.
+20231008 090409.736 INFO             PET0   Delete modelComp: MODEL
+20231008 090409.736 INFO             PET0   Delete Import-/Export State for modelComp: MODEL
+20231008 090409.736 INFO             PET0 driver: Finalize extro.
+20231008 090409.736 INFO             PET0 mainApp FINISHED
+20231008 090409.736 INFO             PET0 Finalizing ESMF
+20231008 090409.700 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231008 090409.701 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231008 090409.701 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231008 090409.701 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231008 090409.701 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231008 090409.701 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231008 090409.701 INFO             PET1 Running with ESMF Version   : v8.6.0b07-67-gb347190ad6
+20231008 090409.701 INFO             PET1 ESMF library build date/time: "Oct  8 2023" "07:50:52"
+20231008 090409.701 INFO             PET1 ESMF library build location : /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/nvhpc_23.3_openmpi_g_develop/esmf
+20231008 090409.701 INFO             PET1 ESMF_COMM                   : openmpi
+20231008 090409.701 INFO             PET1 ESMF_MOAB                   : enabled
+20231008 090409.701 INFO             PET1 ESMF_LAPACK                 : enabled
+20231008 090409.701 INFO             PET1 ESMF_NETCDF                 : disabled
+20231008 090409.701 INFO             PET1 ESMF_PNETCDF                : disabled
+20231008 090409.701 INFO             PET1 ESMF_PIO                    : disabled
+20231008 090409.701 INFO             PET1 ESMF_YAMLCPP                : enabled
+20231008 090409.702 INFO             PET1 mainApp STARTING
+20231008 090409.707 INFO             PET1 driver: InitializeGeneric intro.
+20231008 090409.707 INFO             PET1   driver: InitializeP0 intro.
+20231008 090409.707 INFO             PET1   driver: InitializeP0 extro.
+20231008 090409.707 INFO             PET1   driver: InitializeIPDv02p1 intro.
+20231008 090409.707 INFO             PET1     >>>driver: entered Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.708 INFO             PET1     driver - Creating model component MODEL without petList.
+20231008 090409.710 INFO             PET1      GridCompIsPetLocal:   T
+20231008 090409.711 INFO             PET1      VmIsCreated:   T
+20231008 090409.711 INFO             PET1      valid MPI_COMM with size=            4
+20231008 090409.711 INFO             PET1     driver - Creating state: modelComp 1 Import State
+20231008 090409.711 INFO             PET1     driver - Creating state: modelComp 1 Export State
+20231008 090409.712 INFO             PET1     MODEL: InitializeP0 intro.
+20231008 090409.712 INFO             PET1       >>>MODEL: entered Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.713 INFO             PET1       <<<MODEL: leaving Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.714 INFO             PET1     MODEL: InitializeP0 extro.
+20231008 090409.716 INFO             PET1     driver: IInitAdvertise intro.
+20231008 090409.716 INFO             PET1     driver: IInitAdvertise extro.
+20231008 090409.716 INFO             PET1     MODEL: InitializeIPDvXp01 intro.
+20231008 090409.716 INFO             PET1       >>>MODEL: entered Initialize (phase=IPDvXp01) without valid internal Clock.
+20231008 090409.718 INFO             PET1       <<<MODEL: leaving Initialize (phase=IPDvXp01) without valid internal Clock.
+20231008 090409.718 INFO             PET1     MODEL: InitializeIPDvXp01 extro.
+20231008 090409.719 INFO             PET1     driver: IInitAdvertiseFinish intro.
+20231008 090409.719 INFO             PET1     driver: IInitAdvertiseFinish extro.
+20231008 090409.719 INFO             PET1     driver: IInitModifyCplLists intro.
+20231008 090409.719 INFO             PET1     driver: IInitModifyCplLists extro.
+20231008 090409.719 INFO             PET1     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.719 INFO             PET1   driver: InitializeIPDv02p1 extro.
+20231008 090409.719 INFO             PET1   driver: InitializeIPDv02p3 intro.
+20231008 090409.720 INFO             PET1     >>>driver: entered Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.720 INFO             PET1     driver: IInitCheck intro.
+20231008 090409.720 INFO             PET1     driver: IInitCheck extro.
+20231008 090409.720 INFO             PET1     MODEL: InitializeIPDvXp04 intro.
+20231008 090409.720 INFO             PET1       >>>MODEL: entered Initialize (phase=IPDvXp04) without valid internal Clock.
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemTotal:       97470520 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemFree:        88045480 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemAvailable:   90571276 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/meminfo - SSI]	Committed_AS:    1009432 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/meminfo - SSI]	CommittedPercent: 1.03563 %
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmPeak:	  504984 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmSize:	  496460 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmLck:	       0 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmPin:	   13592 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmHWM:	   49560 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmRSS:	   49560 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmData:	  160796 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmStk:	     204 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmExe:	      28 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmLib:	   87192 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmPTE:	     416 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmSwap:	       0 kB
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [/proc/self/status]	VmRSSPercent: 0.0508461 %
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Non-mmapped space allocated:                 2674688 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Space allocated in mmapped regions:          7639040 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Maximum total allocated space:                     0 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Space in freed fastbin blocks:                   848 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Total allocated space:                       2420064 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Total free space:                             254624 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Top-most, releasable space:                    57936 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Total space in use, mmap + non-mmap:        10059104 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Total space held (mmap + non-mmap):         10313728 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: [malloc] Total space used (mmap + non-mmap):         10068240 Byte
+20231008 090409.724 INFO             PET1       After Realize: - MemInfo: Wall-clock time since execution start:              0.0284454 seconds
+20231008 090409.725 INFO             PET1       <<<MODEL: leaving Initialize (phase=IPDvXp04) without valid internal Clock.
+20231008 090409.725 INFO             PET1     MODEL: InitializeIPDvXp04 extro.
+20231008 090409.726 INFO             PET1     driver: IInitRealize intro.
+20231008 090409.726 INFO             PET1     driver: IInitRealize extro.
+20231008 090409.726 INFO             PET1     MODEL: InitializeIPDvXp07 intro.
+20231008 090409.726 INFO             PET1       >>>MODEL: entered Initialize (phase=IPDvXp07) without valid internal Clock.
+20231008 090409.726 INFO             PET1       <<<MODEL: leaving Initialize (phase=IPDvXp07) with current time:    0  1  1  0  0  0   0
+20231008 090409.726 INFO             PET1     MODEL: InitializeIPDvXp07 extro.
+20231008 090409.726 INFO             PET1     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.726 INFO             PET1   driver: InitializeIPDv02p3 extro.
+20231008 090409.727 INFO             PET1   driver: InitializeIPDv02p5 intro.
+20231008 090409.727 INFO             PET1     >>>driver: entered Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.727 INFO             PET1     driver: this is a top level driver, no 'Updated' and 'InitializeDataComplete' info on this level.
+20231008 090409.727 INFO             PET1     driver: InitializeIPDv02p5Data intro.
+20231008 090409.727 INFO             PET1       driver: InternalInitializeComplete intro.
+20231008 090409.727 INFO             PET1         driver: InitializeDataComplete='true'
+20231008 090409.727 INFO             PET1       driver: InternalInitializeComplete extro.
+20231008 090409.727 INFO             PET1       MODEL: InitializeIPDvXp08 intro.
+20231008 090409.727 INFO             PET1         >>>MODEL: entered Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.728 INFO             PET1         MODEL: InitializeDataProgress='false', InitializeDataComplete='false'
+20231008 090409.728 INFO             PET1         <<<MODEL: leaving Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.728 INFO             PET1       MODEL: InitializeIPDvXp08 extro.
+20231008 090409.729 INFO             PET1       driver: components present that trigger loopDataDependentInitialize().
+20231008 090409.729 INFO             PET1       driver: loopDataDependentInitialize intro.
+20231008 090409.729 INFO             PET1         driver: component    0=driver, dataComplete (local): true
+20231008 090409.729 INFO             PET1         driver: component    0=driver, dataComplete (global):  T
+20231008 090409.729 INFO             PET1         driver: component    1=MODEL, dataComplete (local): false
+20231008 090409.729 INFO             PET1         driver: component    1=MODEL, dataComplete (global):  F
+20231008 090409.729 INFO             PET1         MODEL: InitializeIPDvXp08 intro.
+20231008 090409.729 INFO             PET1           >>>MODEL: entered Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.730 INFO             PET1           MODEL: InitializeDataProgress='true', InitializeDataComplete='true'
+20231008 090409.730 INFO             PET1           <<<MODEL: leaving Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.730 INFO             PET1         MODEL: InitializeIPDvXp08 extro.
+20231008 090409.731 INFO             PET1         driver: component    1=MODEL, someProgress (local): true
+20231008 090409.731 INFO             PET1         driver: component    1=MODEL, someProgress (global):  T
+20231008 090409.731 INFO             PET1         driver: someProgress= T, allComplete= F, present(dataDepAllComplete)= T
+20231008 090409.731 INFO             PET1         driver: component    0=driver, dataComplete (local): true
+20231008 090409.731 INFO             PET1         driver: component    0=driver, dataComplete (global):  T
+20231008 090409.731 INFO             PET1         driver: component    1=MODEL, dataComplete (local): true
+20231008 090409.731 INFO             PET1         driver: component    1=MODEL, dataComplete (global):  T
+20231008 090409.731 INFO             PET1         driver: someProgress= F, allComplete= T, present(dataDepAllComplete)= T
+20231008 090409.731 INFO             PET1         driver: finished resolving initialize data dependencies on this level.
+20231008 090409.731 INFO             PET1       driver: loopDataDependentInitialize extro.
+20231008 090409.731 INFO             PET1       driver: loopDataDependentInitialize() returned with dataDepAllComplete:  T
+20231008 090409.731 INFO             PET1     driver: InitializeIPDv02p5Data extro.
+20231008 090409.731 INFO             PET1     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET1   driver: InitializeIPDv02p5 extro.
+20231008 090409.731 INFO             PET1 driver: InitializeGeneric extro.
+20231008 090409.731 INFO             PET1 driver: Run intro.
+20231008 090409.731 INFO             PET1   >>>driver entered Run (phase=RunPhase1) with current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET1   driver: after lable_SetRunClock, current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET1   driver: begin -------> RunSequence.
+20231008 090409.731 INFO             PET1     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   1, current time:    0  1  1  0  0  0   0
+20231008 090409.732 INFO             PET1     MODEL: Run intro.
+20231008 090409.732 INFO             PET1       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  0  0   0
+20231008 090409.732 INFO             PET1       MODEL: time step-loop starting, current time:    0  1  1  0  0  0   0
+20231008 090409.733 INFO             PET1       thread_num=   1   currentSsiPe=  63   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.733 INFO             PET1       thread_num=   2   currentSsiPe=  65   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.733 INFO             PET1       thread_num=   0   currentSsiPe=  62   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.733 INFO             PET1       ---->Advancing Model from:    0  1  1  0  0  0   0
+20231008 090409.733 INFO             PET1       ---------------------> to:    0  1  1  0  0 30   0
+20231008 090409.733 INFO             PET1       MODEL: time step-loop ending,   current time:    0  1  1  0  0 30   0
+20231008 090409.733 INFO             PET1       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  0 30   0
+20231008 090409.733 INFO             PET1     MODEL: Run extro.
+20231008 090409.733 INFO             PET1     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   2, current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET1     MODEL: Run intro.
+20231008 090409.734 INFO             PET1       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET1       MODEL: time step-loop starting, current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET1       thread_num=   2   currentSsiPe=  65   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET1       thread_num=   0   currentSsiPe=  62   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET1       thread_num=   1   currentSsiPe=  63   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET1       ---->Advancing Model from:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET1       ---------------------> to:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET1       MODEL: time step-loop ending,   current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET1       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET1     MODEL: Run extro.
+20231008 090409.734 INFO             PET1     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   3, current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET1     MODEL: Run intro.
+20231008 090409.734 INFO             PET1       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET1       MODEL: time step-loop starting, current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET1       thread_num=   2   currentSsiPe=  65   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET1       thread_num=   0   currentSsiPe=  62   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET1       thread_num=   1   currentSsiPe=  63   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET1       ---->Advancing Model from:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET1       ---------------------> to:    0  1  1  0  1 30   0
+20231008 090409.734 INFO             PET1       MODEL: time step-loop ending,   current time:    0  1  1  0  1 30   0
+20231008 090409.734 INFO             PET1       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  1 30   0
+20231008 090409.734 INFO             PET1     MODEL: Run extro.
+20231008 090409.734 INFO             PET1     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   4, current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET1     MODEL: Run intro.
+20231008 090409.735 INFO             PET1       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET1       MODEL: time step-loop starting, current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET1       thread_num=   1   currentSsiPe=  63   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET1       thread_num=   2   currentSsiPe=  65   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET1       thread_num=   0   currentSsiPe=  62   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET1       ---->Advancing Model from:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET1       ---------------------> to:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET1       MODEL: time step-loop ending,   current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET1       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET1     MODEL: Run extro.
+20231008 090409.735 INFO             PET1     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   5, current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET1     MODEL: Run intro.
+20231008 090409.735 INFO             PET1       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET1       MODEL: time step-loop starting, current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET1       thread_num=   1   currentSsiPe=  63   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET1       thread_num=   2   currentSsiPe=  65   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET1       thread_num=   0   currentSsiPe=  62   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET1       ---->Advancing Model from:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET1       ---------------------> to:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET1       MODEL: time step-loop ending,   current time:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET1       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET1     MODEL: Run extro.
+20231008 090409.735 INFO             PET1   driver: end <--------- RunSequence
+20231008 090409.735 INFO             PET1   <<<driver - leaving Run with current time:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET1 driver: Run extro.
+20231008 090409.736 INFO             PET1 driver: Finalize intro.
+20231008 090409.736 INFO             PET1   Calling Finalize phase 1 for modelComp: MODEL
+20231008 090409.736 INFO             PET1   MODEL: Finalize intro.
+20231008 090409.736 INFO             PET1     >>>MODEL: entered Finalize (phase=FinalizePhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET1     <<<MODEL: leaving Finalize (phase=FinalizePhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET1   MODEL: Finalize extro.
+20231008 090409.736 INFO             PET1   Delete modelComp: MODEL
+20231008 090409.736 INFO             PET1   Delete Import-/Export State for modelComp: MODEL
+20231008 090409.736 INFO             PET1 driver: Finalize extro.
+20231008 090409.736 INFO             PET1 mainApp FINISHED
+20231008 090409.736 INFO             PET1 Finalizing ESMF
+20231008 090409.701 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231008 090409.701 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231008 090409.701 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231008 090409.701 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231008 090409.701 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231008 090409.701 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231008 090409.701 INFO             PET2 Running with ESMF Version   : v8.6.0b07-67-gb347190ad6
+20231008 090409.701 INFO             PET2 ESMF library build date/time: "Oct  8 2023" "07:50:52"
+20231008 090409.701 INFO             PET2 ESMF library build location : /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/nvhpc_23.3_openmpi_g_develop/esmf
+20231008 090409.701 INFO             PET2 ESMF_COMM                   : openmpi
+20231008 090409.701 INFO             PET2 ESMF_MOAB                   : enabled
+20231008 090409.701 INFO             PET2 ESMF_LAPACK                 : enabled
+20231008 090409.701 INFO             PET2 ESMF_NETCDF                 : disabled
+20231008 090409.701 INFO             PET2 ESMF_PNETCDF                : disabled
+20231008 090409.701 INFO             PET2 ESMF_PIO                    : disabled
+20231008 090409.701 INFO             PET2 ESMF_YAMLCPP                : enabled
+20231008 090409.702 INFO             PET2 mainApp STARTING
+20231008 090409.707 INFO             PET2 driver: InitializeGeneric intro.
+20231008 090409.707 INFO             PET2   driver: InitializeP0 intro.
+20231008 090409.707 INFO             PET2   driver: InitializeP0 extro.
+20231008 090409.707 INFO             PET2   driver: InitializeIPDv02p1 intro.
+20231008 090409.707 INFO             PET2     >>>driver: entered Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.708 INFO             PET2     driver - Creating model component MODEL without petList.
+20231008 090409.710 INFO             PET2      GridCompIsPetLocal:   T
+20231008 090409.711 INFO             PET2      VmIsCreated:   T
+20231008 090409.711 INFO             PET2      valid MPI_COMM with size=            4
+20231008 090409.711 INFO             PET2     driver - Creating state: modelComp 1 Import State
+20231008 090409.711 INFO             PET2     driver - Creating state: modelComp 1 Export State
+20231008 090409.712 INFO             PET2     MODEL: InitializeP0 intro.
+20231008 090409.712 INFO             PET2       >>>MODEL: entered Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.713 INFO             PET2       <<<MODEL: leaving Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.714 INFO             PET2     MODEL: InitializeP0 extro.
+20231008 090409.716 INFO             PET2     driver: IInitAdvertise intro.
+20231008 090409.716 INFO             PET2     driver: IInitAdvertise extro.
+20231008 090409.716 INFO             PET2     MODEL: InitializeIPDvXp01 intro.
+20231008 090409.716 INFO             PET2       >>>MODEL: entered Initialize (phase=IPDvXp01) without valid internal Clock.
+20231008 090409.718 INFO             PET2       <<<MODEL: leaving Initialize (phase=IPDvXp01) without valid internal Clock.
+20231008 090409.718 INFO             PET2     MODEL: InitializeIPDvXp01 extro.
+20231008 090409.719 INFO             PET2     driver: IInitAdvertiseFinish intro.
+20231008 090409.719 INFO             PET2     driver: IInitAdvertiseFinish extro.
+20231008 090409.719 INFO             PET2     driver: IInitModifyCplLists intro.
+20231008 090409.719 INFO             PET2     driver: IInitModifyCplLists extro.
+20231008 090409.719 INFO             PET2     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.719 INFO             PET2   driver: InitializeIPDv02p1 extro.
+20231008 090409.720 INFO             PET2   driver: InitializeIPDv02p3 intro.
+20231008 090409.720 INFO             PET2     >>>driver: entered Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.720 INFO             PET2     driver: IInitCheck intro.
+20231008 090409.720 INFO             PET2     driver: IInitCheck extro.
+20231008 090409.720 INFO             PET2     MODEL: InitializeIPDvXp04 intro.
+20231008 090409.720 INFO             PET2       >>>MODEL: entered Initialize (phase=IPDvXp04) without valid internal Clock.
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemTotal:       97470520 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemFree:        88045480 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemAvailable:   90571276 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/meminfo - SSI]	Committed_AS:    1009432 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/meminfo - SSI]	CommittedPercent: 1.03563 %
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmPeak:	  504984 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmSize:	  496456 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmLck:	       0 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmPin:	   13592 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmHWM:	   51608 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmRSS:	   51608 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmData:	  160796 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmStk:	     200 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmExe:	      28 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmLib:	   87192 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmPTE:	     424 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmSwap:	       0 kB
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [/proc/self/status]	VmRSSPercent: 0.0529473 %
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [malloc] Non-mmapped space allocated:                 2674688 Byte
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [malloc] Space allocated in mmapped regions:          7639040 Byte
+20231008 090409.724 INFO             PET2       After Realize: - MemInfo: [malloc] Maximum total allocated space:                     0 Byte
+20231008 090409.725 INFO             PET2       After Realize: - MemInfo: [malloc] Space in freed fastbin blocks:                   848 Byte
+20231008 090409.725 INFO             PET2       After Realize: - MemInfo: [malloc] Total allocated space:                       2418016 Byte
+20231008 090409.725 INFO             PET2       After Realize: - MemInfo: [malloc] Total free space:                             256672 Byte
+20231008 090409.725 INFO             PET2       After Realize: - MemInfo: [malloc] Top-most, releasable space:                    60176 Byte
+20231008 090409.725 INFO             PET2       After Realize: - MemInfo: [malloc] Total space in use, mmap + non-mmap:        10057056 Byte
+20231008 090409.725 INFO             PET2       After Realize: - MemInfo: [malloc] Total space held (mmap + non-mmap):         10313728 Byte
+20231008 090409.725 INFO             PET2       After Realize: - MemInfo: [malloc] Total space used (mmap + non-mmap):         10066192 Byte
+20231008 090409.725 INFO             PET2       After Realize: - MemInfo: Wall-clock time since execution start:              0.0287148 seconds
+20231008 090409.725 INFO             PET2       <<<MODEL: leaving Initialize (phase=IPDvXp04) without valid internal Clock.
+20231008 090409.725 INFO             PET2     MODEL: InitializeIPDvXp04 extro.
+20231008 090409.726 INFO             PET2     driver: IInitRealize intro.
+20231008 090409.726 INFO             PET2     driver: IInitRealize extro.
+20231008 090409.726 INFO             PET2     MODEL: InitializeIPDvXp07 intro.
+20231008 090409.726 INFO             PET2       >>>MODEL: entered Initialize (phase=IPDvXp07) without valid internal Clock.
+20231008 090409.726 INFO             PET2       <<<MODEL: leaving Initialize (phase=IPDvXp07) with current time:    0  1  1  0  0  0   0
+20231008 090409.726 INFO             PET2     MODEL: InitializeIPDvXp07 extro.
+20231008 090409.726 INFO             PET2     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.726 INFO             PET2   driver: InitializeIPDv02p3 extro.
+20231008 090409.727 INFO             PET2   driver: InitializeIPDv02p5 intro.
+20231008 090409.727 INFO             PET2     >>>driver: entered Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.727 INFO             PET2     driver: this is a top level driver, no 'Updated' and 'InitializeDataComplete' info on this level.
+20231008 090409.727 INFO             PET2     driver: InitializeIPDv02p5Data intro.
+20231008 090409.727 INFO             PET2       driver: InternalInitializeComplete intro.
+20231008 090409.727 INFO             PET2         driver: InitializeDataComplete='true'
+20231008 090409.727 INFO             PET2       driver: InternalInitializeComplete extro.
+20231008 090409.727 INFO             PET2       MODEL: InitializeIPDvXp08 intro.
+20231008 090409.727 INFO             PET2         >>>MODEL: entered Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.728 INFO             PET2         MODEL: InitializeDataProgress='false', InitializeDataComplete='false'
+20231008 090409.728 INFO             PET2         <<<MODEL: leaving Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.728 INFO             PET2       MODEL: InitializeIPDvXp08 extro.
+20231008 090409.729 INFO             PET2       driver: components present that trigger loopDataDependentInitialize().
+20231008 090409.729 INFO             PET2       driver: loopDataDependentInitialize intro.
+20231008 090409.729 INFO             PET2         driver: component    0=driver, dataComplete (local): true
+20231008 090409.729 INFO             PET2         driver: component    0=driver, dataComplete (global):  T
+20231008 090409.729 INFO             PET2         driver: component    1=MODEL, dataComplete (local): false
+20231008 090409.729 INFO             PET2         driver: component    1=MODEL, dataComplete (global):  F
+20231008 090409.729 INFO             PET2         MODEL: InitializeIPDvXp08 intro.
+20231008 090409.729 INFO             PET2           >>>MODEL: entered Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.730 INFO             PET2           MODEL: InitializeDataProgress='true', InitializeDataComplete='true'
+20231008 090409.730 INFO             PET2           <<<MODEL: leaving Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.730 INFO             PET2         MODEL: InitializeIPDvXp08 extro.
+20231008 090409.731 INFO             PET2         driver: component    1=MODEL, someProgress (local): true
+20231008 090409.731 INFO             PET2         driver: component    1=MODEL, someProgress (global):  T
+20231008 090409.731 INFO             PET2         driver: someProgress= T, allComplete= F, present(dataDepAllComplete)= T
+20231008 090409.731 INFO             PET2         driver: component    0=driver, dataComplete (local): true
+20231008 090409.731 INFO             PET2         driver: component    0=driver, dataComplete (global):  T
+20231008 090409.731 INFO             PET2         driver: component    1=MODEL, dataComplete (local): true
+20231008 090409.731 INFO             PET2         driver: component    1=MODEL, dataComplete (global):  T
+20231008 090409.731 INFO             PET2         driver: someProgress= F, allComplete= T, present(dataDepAllComplete)= T
+20231008 090409.731 INFO             PET2         driver: finished resolving initialize data dependencies on this level.
+20231008 090409.731 INFO             PET2       driver: loopDataDependentInitialize extro.
+20231008 090409.731 INFO             PET2       driver: loopDataDependentInitialize() returned with dataDepAllComplete:  T
+20231008 090409.731 INFO             PET2     driver: InitializeIPDv02p5Data extro.
+20231008 090409.731 INFO             PET2     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET2   driver: InitializeIPDv02p5 extro.
+20231008 090409.731 INFO             PET2 driver: InitializeGeneric extro.
+20231008 090409.731 INFO             PET2 driver: Run intro.
+20231008 090409.731 INFO             PET2   >>>driver entered Run (phase=RunPhase1) with current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET2   driver: after lable_SetRunClock, current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET2   driver: begin -------> RunSequence.
+20231008 090409.731 INFO             PET2     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   1, current time:    0  1  1  0  0  0   0
+20231008 090409.732 INFO             PET2     MODEL: Run intro.
+20231008 090409.732 INFO             PET2       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  0  0   0
+20231008 090409.732 INFO             PET2       MODEL: time step-loop starting, current time:    0  1  1  0  0  0   0
+20231008 090409.733 INFO             PET2       thread_num=   1   currentSsiPe=  56   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.733 INFO             PET2       thread_num=   2   currentSsiPe=  58   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.733 INFO             PET2       thread_num=   0   currentSsiPe=  15   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.733 INFO             PET2       ---->Advancing Model from:    0  1  1  0  0  0   0
+20231008 090409.733 INFO             PET2       ---------------------> to:    0  1  1  0  0 30   0
+20231008 090409.733 INFO             PET2       MODEL: time step-loop ending,   current time:    0  1  1  0  0 30   0
+20231008 090409.733 INFO             PET2       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  0 30   0
+20231008 090409.733 INFO             PET2     MODEL: Run extro.
+20231008 090409.733 INFO             PET2     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   2, current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET2     MODEL: Run intro.
+20231008 090409.734 INFO             PET2       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET2       MODEL: time step-loop starting, current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET2       thread_num=   2   currentSsiPe=  58   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET2       thread_num=   1   currentSsiPe=  56   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET2       thread_num=   0   currentSsiPe=  15   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET2       ---->Advancing Model from:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET2       ---------------------> to:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET2       MODEL: time step-loop ending,   current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET2       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET2     MODEL: Run extro.
+20231008 090409.734 INFO             PET2     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   3, current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET2     MODEL: Run intro.
+20231008 090409.734 INFO             PET2       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET2       MODEL: time step-loop starting, current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET2       thread_num=   1   currentSsiPe=  56   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET2       thread_num=   2   currentSsiPe=  58   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET2       thread_num=   0   currentSsiPe=  15   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET2       ---->Advancing Model from:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET2       ---------------------> to:    0  1  1  0  1 30   0
+20231008 090409.734 INFO             PET2       MODEL: time step-loop ending,   current time:    0  1  1  0  1 30   0
+20231008 090409.734 INFO             PET2       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  1 30   0
+20231008 090409.734 INFO             PET2     MODEL: Run extro.
+20231008 090409.734 INFO             PET2     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   4, current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET2     MODEL: Run intro.
+20231008 090409.735 INFO             PET2       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET2       MODEL: time step-loop starting, current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET2       thread_num=   2   currentSsiPe=  58   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET2       thread_num=   1   currentSsiPe=  56   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET2       thread_num=   0   currentSsiPe=  15   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET2       ---->Advancing Model from:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET2       ---------------------> to:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET2       MODEL: time step-loop ending,   current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET2       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET2     MODEL: Run extro.
+20231008 090409.735 INFO             PET2     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   5, current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET2     MODEL: Run intro.
+20231008 090409.735 INFO             PET2       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET2       MODEL: time step-loop starting, current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET2       thread_num=   1   currentSsiPe=  56   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET2       thread_num=   0   currentSsiPe=  15   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET2       thread_num=   2   currentSsiPe=  58   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET2       ---->Advancing Model from:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET2       ---------------------> to:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET2       MODEL: time step-loop ending,   current time:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET2       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET2     MODEL: Run extro.
+20231008 090409.735 INFO             PET2   driver: end <--------- RunSequence
+20231008 090409.735 INFO             PET2   <<<driver - leaving Run with current time:    0  1  1  0  2 30   0
+20231008 090409.735 INFO             PET2 driver: Run extro.
+20231008 090409.735 INFO             PET2 driver: Finalize intro.
+20231008 090409.736 INFO             PET2   Calling Finalize phase 1 for modelComp: MODEL
+20231008 090409.736 INFO             PET2   MODEL: Finalize intro.
+20231008 090409.736 INFO             PET2     >>>MODEL: entered Finalize (phase=FinalizePhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET2     <<<MODEL: leaving Finalize (phase=FinalizePhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET2   MODEL: Finalize extro.
+20231008 090409.736 INFO             PET2   Delete modelComp: MODEL
+20231008 090409.736 INFO             PET2   Delete Import-/Export State for modelComp: MODEL
+20231008 090409.736 INFO             PET2 driver: Finalize extro.
+20231008 090409.736 INFO             PET2 mainApp FINISHED
+20231008 090409.736 INFO             PET2 Finalizing ESMF
+20231008 090409.700 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231008 090409.701 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231008 090409.701 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231008 090409.701 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231008 090409.701 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231008 090409.701 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231008 090409.701 INFO             PET3 Running with ESMF Version   : v8.6.0b07-67-gb347190ad6
+20231008 090409.701 INFO             PET3 ESMF library build date/time: "Oct  8 2023" "07:50:52"
+20231008 090409.701 INFO             PET3 ESMF library build location : /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/nvhpc_23.3_openmpi_g_develop/esmf
+20231008 090409.701 INFO             PET3 ESMF_COMM                   : openmpi
+20231008 090409.701 INFO             PET3 ESMF_MOAB                   : enabled
+20231008 090409.701 INFO             PET3 ESMF_LAPACK                 : enabled
+20231008 090409.701 INFO             PET3 ESMF_NETCDF                 : disabled
+20231008 090409.701 INFO             PET3 ESMF_PNETCDF                : disabled
+20231008 090409.701 INFO             PET3 ESMF_PIO                    : disabled
+20231008 090409.701 INFO             PET3 ESMF_YAMLCPP                : enabled
+20231008 090409.702 INFO             PET3 mainApp STARTING
+20231008 090409.707 INFO             PET3 driver: InitializeGeneric intro.
+20231008 090409.707 INFO             PET3   driver: InitializeP0 intro.
+20231008 090409.707 INFO             PET3   driver: InitializeP0 extro.
+20231008 090409.707 INFO             PET3   driver: InitializeIPDv02p1 intro.
+20231008 090409.707 INFO             PET3     >>>driver: entered Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.708 INFO             PET3     driver - Creating model component MODEL without petList.
+20231008 090409.711 INFO             PET3      GridCompIsPetLocal:   T
+20231008 090409.711 INFO             PET3      VmIsCreated:   T
+20231008 090409.711 INFO             PET3      valid MPI_COMM with size=            4
+20231008 090409.711 INFO             PET3     driver - Creating state: modelComp 1 Import State
+20231008 090409.711 INFO             PET3     driver - Creating state: modelComp 1 Export State
+20231008 090409.712 INFO             PET3     MODEL: InitializeP0 intro.
+20231008 090409.712 INFO             PET3       >>>MODEL: entered Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.713 INFO             PET3       <<<MODEL: leaving Initialize (phase=<none>) without valid internal Clock.
+20231008 090409.714 INFO             PET3     MODEL: InitializeP0 extro.
+20231008 090409.716 INFO             PET3     driver: IInitAdvertise intro.
+20231008 090409.716 INFO             PET3     driver: IInitAdvertise extro.
+20231008 090409.716 INFO             PET3     MODEL: InitializeIPDvXp01 intro.
+20231008 090409.716 INFO             PET3       >>>MODEL: entered Initialize (phase=IPDvXp01) without valid internal Clock.
+20231008 090409.718 INFO             PET3       <<<MODEL: leaving Initialize (phase=IPDvXp01) without valid internal Clock.
+20231008 090409.718 INFO             PET3     MODEL: InitializeIPDvXp01 extro.
+20231008 090409.719 INFO             PET3     driver: IInitAdvertiseFinish intro.
+20231008 090409.719 INFO             PET3     driver: IInitAdvertiseFinish extro.
+20231008 090409.719 INFO             PET3     driver: IInitModifyCplLists intro.
+20231008 090409.719 INFO             PET3     driver: IInitModifyCplLists extro.
+20231008 090409.719 INFO             PET3     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.719 INFO             PET3   driver: InitializeIPDv02p1 extro.
+20231008 090409.719 INFO             PET3   driver: InitializeIPDv02p3 intro.
+20231008 090409.720 INFO             PET3     >>>driver: entered Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.720 INFO             PET3     driver: IInitCheck intro.
+20231008 090409.720 INFO             PET3     driver: IInitCheck extro.
+20231008 090409.720 INFO             PET3     MODEL: InitializeIPDvXp04 intro.
+20231008 090409.720 INFO             PET3       >>>MODEL: entered Initialize (phase=IPDvXp04) without valid internal Clock.
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemTotal:       97470520 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemFree:        88045480 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/meminfo - SSI]	MemAvailable:   90571276 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/meminfo - SSI]	Committed_AS:    1009432 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/meminfo - SSI]	CommittedPercent: 1.03563 %
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmPeak:	  504984 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmSize:	  496460 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmLck:	       0 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmPin:	   13592 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmHWM:	   51588 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmRSS:	   51588 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmData:	  160796 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmStk:	     204 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmExe:	      28 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmLib:	   87192 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmPTE:	     424 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmSwap:	       0 kB
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [/proc/self/status]	VmRSSPercent: 0.0529268 %
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Non-mmapped space allocated:                 2674688 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Space allocated in mmapped regions:          7639040 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Maximum total allocated space:                     0 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Space in freed fastbin blocks:                   848 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Total allocated space:                       2418256 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Total free space:                             256432 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Top-most, releasable space:                    59936 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Total space in use, mmap + non-mmap:        10057296 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Total space held (mmap + non-mmap):         10313728 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: [malloc] Total space used (mmap + non-mmap):         10066432 Byte
+20231008 090409.724 INFO             PET3       After Realize: - MemInfo: Wall-clock time since execution start:               0.028527 seconds
+20231008 090409.725 INFO             PET3       <<<MODEL: leaving Initialize (phase=IPDvXp04) without valid internal Clock.
+20231008 090409.725 INFO             PET3     MODEL: InitializeIPDvXp04 extro.
+20231008 090409.726 INFO             PET3     driver: IInitRealize intro.
+20231008 090409.726 INFO             PET3     driver: IInitRealize extro.
+20231008 090409.726 INFO             PET3     MODEL: InitializeIPDvXp07 intro.
+20231008 090409.726 INFO             PET3       >>>MODEL: entered Initialize (phase=IPDvXp07) without valid internal Clock.
+20231008 090409.726 INFO             PET3       <<<MODEL: leaving Initialize (phase=IPDvXp07) with current time:    0  1  1  0  0  0   0
+20231008 090409.726 INFO             PET3     MODEL: InitializeIPDvXp07 extro.
+20231008 090409.726 INFO             PET3     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.726 INFO             PET3   driver: InitializeIPDv02p3 extro.
+20231008 090409.727 INFO             PET3   driver: InitializeIPDv02p5 intro.
+20231008 090409.727 INFO             PET3     >>>driver: entered Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.727 INFO             PET3     driver: this is a top level driver, no 'Updated' and 'InitializeDataComplete' info on this level.
+20231008 090409.727 INFO             PET3     driver: InitializeIPDv02p5Data intro.
+20231008 090409.727 INFO             PET3       driver: InternalInitializeComplete intro.
+20231008 090409.727 INFO             PET3         driver: InitializeDataComplete='true'
+20231008 090409.727 INFO             PET3       driver: InternalInitializeComplete extro.
+20231008 090409.727 INFO             PET3       MODEL: InitializeIPDvXp08 intro.
+20231008 090409.727 INFO             PET3         >>>MODEL: entered Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.728 INFO             PET3         MODEL: InitializeDataProgress='false', InitializeDataComplete='false'
+20231008 090409.728 INFO             PET3         <<<MODEL: leaving Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.728 INFO             PET3       MODEL: InitializeIPDvXp08 extro.
+20231008 090409.729 INFO             PET3       driver: components present that trigger loopDataDependentInitialize().
+20231008 090409.729 INFO             PET3       driver: loopDataDependentInitialize intro.
+20231008 090409.729 INFO             PET3         driver: component    0=driver, dataComplete (local): true
+20231008 090409.729 INFO             PET3         driver: component    0=driver, dataComplete (global):  T
+20231008 090409.729 INFO             PET3         driver: component    1=MODEL, dataComplete (local): false
+20231008 090409.729 INFO             PET3         driver: component    1=MODEL, dataComplete (global):  F
+20231008 090409.729 INFO             PET3         MODEL: InitializeIPDvXp08 intro.
+20231008 090409.729 INFO             PET3           >>>MODEL: entered Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.730 INFO             PET3           MODEL: InitializeDataProgress='true', InitializeDataComplete='true'
+20231008 090409.730 INFO             PET3           <<<MODEL: leaving Initialize (phase=IPDv05p8) with current time:    0  1  1  0  0  0   0
+20231008 090409.730 INFO             PET3         MODEL: InitializeIPDvXp08 extro.
+20231008 090409.731 INFO             PET3         driver: component    1=MODEL, someProgress (local): true
+20231008 090409.731 INFO             PET3         driver: component    1=MODEL, someProgress (global):  T
+20231008 090409.731 INFO             PET3         driver: someProgress= T, allComplete= F, present(dataDepAllComplete)= T
+20231008 090409.731 INFO             PET3         driver: component    0=driver, dataComplete (local): true
+20231008 090409.731 INFO             PET3         driver: component    0=driver, dataComplete (global):  T
+20231008 090409.731 INFO             PET3         driver: component    1=MODEL, dataComplete (local): true
+20231008 090409.731 INFO             PET3         driver: component    1=MODEL, dataComplete (global):  T
+20231008 090409.731 INFO             PET3         driver: someProgress= F, allComplete= T, present(dataDepAllComplete)= T
+20231008 090409.731 INFO             PET3         driver: finished resolving initialize data dependencies on this level.
+20231008 090409.731 INFO             PET3       driver: loopDataDependentInitialize extro.
+20231008 090409.731 INFO             PET3       driver: loopDataDependentInitialize() returned with dataDepAllComplete:  T
+20231008 090409.731 INFO             PET3     driver: InitializeIPDv02p5Data extro.
+20231008 090409.731 INFO             PET3     <<<driver: leaving Initialize (phase=<none>) with current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET3   driver: InitializeIPDv02p5 extro.
+20231008 090409.731 INFO             PET3 driver: InitializeGeneric extro.
+20231008 090409.731 INFO             PET3 driver: Run intro.
+20231008 090409.731 INFO             PET3   >>>driver entered Run (phase=RunPhase1) with current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET3   driver: after lable_SetRunClock, current time:    0  1  1  0  0  0   0
+20231008 090409.731 INFO             PET3   driver: begin -------> RunSequence.
+20231008 090409.731 INFO             PET3     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   1, current time:    0  1  1  0  0  0   0
+20231008 090409.732 INFO             PET3     MODEL: Run intro.
+20231008 090409.732 INFO             PET3       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  0  0   0
+20231008 090409.732 INFO             PET3       MODEL: time step-loop starting, current time:    0  1  1  0  0  0   0
+20231008 090409.734 INFO             PET3       thread_num=   1   currentSsiPe=  66   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET3       thread_num=   2   currentSsiPe=  67   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET3       thread_num=   0   currentSsiPe=  24   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET3       ---->Advancing Model from:    0  1  1  0  0  0   0
+20231008 090409.734 INFO             PET3       ---------------------> to:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET3       MODEL: time step-loop ending,   current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET3       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET3     MODEL: Run extro.
+20231008 090409.734 INFO             PET3     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   2, current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET3     MODEL: Run intro.
+20231008 090409.734 INFO             PET3       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET3       MODEL: time step-loop starting, current time:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET3       thread_num=   1   currentSsiPe=  66   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET3       thread_num=   2   currentSsiPe=  67   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET3       thread_num=   0   currentSsiPe=  24   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.734 INFO             PET3       ---->Advancing Model from:    0  1  1  0  0 30   0
+20231008 090409.734 INFO             PET3       ---------------------> to:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET3       MODEL: time step-loop ending,   current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET3       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  1  0   0
+20231008 090409.734 INFO             PET3     MODEL: Run extro.
+20231008 090409.734 INFO             PET3     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   3, current time:    0  1  1  0  1  0   0
+20231008 090409.735 INFO             PET3     MODEL: Run intro.
+20231008 090409.735 INFO             PET3       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  1  0   0
+20231008 090409.735 INFO             PET3       MODEL: time step-loop starting, current time:    0  1  1  0  1  0   0
+20231008 090409.735 INFO             PET3       thread_num=   2   currentSsiPe=  67   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET3       thread_num=   0   currentSsiPe=  24   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET3       thread_num=   1   currentSsiPe=  66   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET3       ---->Advancing Model from:    0  1  1  0  1  0   0
+20231008 090409.735 INFO             PET3       ---------------------> to:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET3       MODEL: time step-loop ending,   current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET3       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET3     MODEL: Run extro.
+20231008 090409.735 INFO             PET3     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   4, current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET3     MODEL: Run intro.
+20231008 090409.735 INFO             PET3       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET3       MODEL: time step-loop starting, current time:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET3       thread_num=   1   currentSsiPe=  66   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET3       thread_num=   2   currentSsiPe=  67   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET3       thread_num=   0   currentSsiPe=  24   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.735 INFO             PET3       ---->Advancing Model from:    0  1  1  0  1 30   0
+20231008 090409.735 INFO             PET3       ---------------------> to:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET3       MODEL: time step-loop ending,   current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET3       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  2  0   0
+20231008 090409.735 INFO             PET3     MODEL: Run extro.
+20231008 090409.735 INFO             PET3     driver: RunSequence event loopLevel=   1  levelMember=   1  loopIteration=   5, current time:    0  1  1  0  2  0   0
+20231008 090409.736 INFO             PET3     MODEL: Run intro.
+20231008 090409.736 INFO             PET3       >>>MODEL: entered Run (phase=RunPhase1) with current time:    0  1  1  0  2  0   0
+20231008 090409.736 INFO             PET3       MODEL: time step-loop starting, current time:    0  1  1  0  2  0   0
+20231008 090409.736 INFO             PET3       thread_num=   2   currentSsiPe=  67   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.736 INFO             PET3       thread_num=   0   currentSsiPe=  24   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.736 INFO             PET3       thread_num=   1   currentSsiPe=  66   num_threads=   3   max_threads=   3   num_procs=  40
+20231008 090409.736 INFO             PET3       ---->Advancing Model from:    0  1  1  0  2  0   0
+20231008 090409.736 INFO             PET3       ---------------------> to:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET3       MODEL: time step-loop ending,   current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET3       <<<MODEL: leaving Run (phase=RunPhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET3     MODEL: Run extro.
+20231008 090409.736 INFO             PET3   driver: end <--------- RunSequence
+20231008 090409.736 INFO             PET3   <<<driver - leaving Run with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET3 driver: Run extro.
+20231008 090409.736 INFO             PET3 driver: Finalize intro.
+20231008 090409.736 INFO             PET3   Calling Finalize phase 1 for modelComp: MODEL
+20231008 090409.736 INFO             PET3   MODEL: Finalize intro.
+20231008 090409.736 INFO             PET3     >>>MODEL: entered Finalize (phase=FinalizePhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET3     <<<MODEL: leaving Finalize (phase=FinalizePhase1) with current time:    0  1  1  0  2 30   0
+20231008 090409.736 INFO             PET3   MODEL: Finalize extro.
+20231008 090409.736 INFO             PET3   Delete modelComp: MODEL
+20231008 090409.736 INFO             PET3   Delete Import-/Export State for modelComp: MODEL
+20231008 090409.737 INFO             PET3 driver: Finalize extro.
+20231008 090409.737 INFO             PET3 mainApp FINISHED
+20231008 090409.737 INFO             PET3 Finalizing ESMF
