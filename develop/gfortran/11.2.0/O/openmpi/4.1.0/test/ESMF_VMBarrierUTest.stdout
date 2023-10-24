@@ -1,0 +1,86 @@
+2023-10-24 01:18:17
+  Beginning Test, file ESMF_VMBarrierUTest.F90, line 66
+  NUMBER_OF_PROCESSORS           4
+ timing precision is:    1.0000000000001327E-006
+  Beginning Test, file ESMF_VMBarrierUTest.F90, line 66
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_VMBarrierUTest.F90, line 66
+  NUMBER_OF_PROCESSORS           4
+ timing precision is:    1.0000000000001327E-006
+  Beginning Test, file ESMF_VMBarrierUTest.F90, line 66
+  NUMBER_OF_PROCESSORS           4
+ timing precision is:    1.0000000000001327E-006
+ max timing precision is:    1.0000000000001327E-006
+  PASS  Timer Precision test, ESMF_VMBarrierUTest.F90, line 87
+ max timing precision is:    1.0000000000001327E-006
+  PASS  Timer Precision test, ESMF_VMBarrierUTest.F90, line 87
+ max timing precision is:    1.0000000000001327E-006
+  PASS  Timer Precision test, ESMF_VMBarrierUTest.F90, line 87
+ timing precision is:    1.0000000000001327E-006
+ max timing precision is:    1.0000000000001327E-006
+  PASS  Timer Precision test, ESMF_VMBarrierUTest.F90, line 87
+ slow Pet=           0 Pet=           0 time delay =    1.0003560000000000      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           0 Pet=           1 time delay =    1.0003280000000001      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           0 Pet=           2 time delay =    1.0003570000000002      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           0 Pet=           3 time delay =    1.0003590000000000      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           1 Pet=           0 time delay =    1.0000600000000002      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           1 Pet=           1 time delay =    1.0000530000000001      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           1 Pet=           2 time delay =    1.0000660000000001      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           1 Pet=           3 time delay =    1.0000779999999998      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           2 Pet=           0 time delay =    1.0000380000000000      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           2 Pet=           1 time delay =    1.0000410000000000      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           2 Pet=           2 time delay =    1.0000410000000000      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           2 Pet=           3 time delay =    1.0000320000000000      [  -- should be >=    1.0000000000000000      --  ]
+ slow Pet=           3 Pet=           0 time delay =    1.0000310000000003      [  -- should be >=    1.0000000000000000      --  ]
+  PASS  Barrier Test, ESMF_VMBarrierUTest.F90, line 122
+ slow Pet=           3 Pet=           1 time delay =    1.0000349999999996      [  -- should be >=    1.0000000000000000      --  ]
+  PASS  Barrier Test, ESMF_VMBarrierUTest.F90, line 122
+ slow Pet=           3 Pet=           2 time delay =    1.0000299999999998      [  -- should be >=    1.0000000000000000      --  ]
+  PASS  Barrier Test, ESMF_VMBarrierUTest.F90, line 122
+ slow Pet=           3 Pet=           3 time delay =    1.0000370000000003      [  -- should be >=    1.0000000000000000      --  ]
+  PASS  Barrier Test, ESMF_VMBarrierUTest.F90, line 122
+  Ending Test, file ESMF_VMBarrierUTest.F90, line 124
+  Ending Test, file ESMF_VMBarrierUTest.F90, line 124
+  Ending Test, file ESMF_VMBarrierUTest.F90, line 124
+  Ending Test, file ESMF_VMBarrierUTest.F90, line 124
+
+Program received signal SIGILL: Illegal instruction.
+
+Backtrace for this error:
+  PET           1  Test Elapsed Time    4008.1290000000004       msec.
+  PET           3  Test Elapsed Time    4006.9169999999995       msec.
+  PET           2  Test Elapsed Time    4007.4139999999998       msec.
+
+Could not print backtrace: executable file is not an executable
+#0  0x1028620d0
+#1  0x10286175e
+#2  0x7ff8005d9dfc
+#3  0x7ff8005ddee4
+#4  0x7ff8005d82d9
+#5  0x7ff8005c320d
+#6  0x10248e207
+#7  0x1024b5f77
+#8  0x1024b82f2
+#9  0x102bf3b71
+#10  0x102bdc923
+#11  0x102bba76f
+#12  0x102b7d1a3
+#13  0x102b433b9
+#14  0x102389ff4
+#15  0x1026a03d0
+#16  0x10251b17b
+#17  0x103e0d9a2
+#18  0x103dfdbc6
+#19  0x103e1b1d6
+#20  0x1044aef6c
+#21  0x104397e3b
+#22  0x1044991a9
+#23  0x101bedb5a
+#24  0x101bedb95
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node cgdm-catania exited on signal 4 (Illegal instruction: 4).
+--------------------------------------------------------------------------
