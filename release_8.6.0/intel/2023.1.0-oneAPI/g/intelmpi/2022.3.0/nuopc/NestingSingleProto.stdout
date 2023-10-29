@@ -1,0 +1,135 @@
+2023-10-29 07:44:53
+[h13c44:306007:0:306007] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7ffd70ad8008)
+[h13c44:306008:0:306008] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7ffc6ed8b010)
+[h13c44:306005:0:306005] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7fff149ec000)
+[h13c44:306006:0:306006] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7ffe5fe30010)
+==== backtrace (tid: 306007) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x0000000000453511 do_deallocate_all()  for_alloc_copy.c:0
+ 2 0x00000000004544d0 process_allocation_records_deallocate()  for_alloc_copy.c:0
+ 3 0x0000000000453675 do_deallocate_all()  for_alloc_copy.c:0
+ 4 0x0000000001b9dc1c f_esmf_compcollectgarbage2_()  ???:0
+ 5 0x00000000016ec4b2 ESMCI::VM::finalize()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_release_8.6.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:3515
+ 6 0x0000000001717247 c_esmc_vmfinalize_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_release_8.6.0/esmf/src/Infrastructure/VM/interface/ESMCI_VM_F.C:1241
+ 7 0x000000000270b0db c_esmc_vmfinalize_.t33799p.t33801p()  ifxf4gG6Y.i90:0
+ 8 0x00000000027033f2 esmf_vmmod_mp_esmf_vmfinalize_()  ???:0
+ 9 0x000000000233b31e esmf_initmod_mp_esmf_finalize_()  ???:0
+10 0x0000000000417019 MAIN__()  ???:0
+11 0x000000000041655d main()  ???:0
+12 0x0000000000022555 __libc_start_main()  ???:0
+13 0x000000000041648b _start()  ???:0
+=================================
+==== backtrace (tid: 306008) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x00000000004534e7 do_deallocate_all()  for_alloc_copy.c:0
+ 2 0x00000000004544d0 process_allocation_records_deallocate()  for_alloc_copy.c:0
+ 3 0x0000000000453675 do_deallocate_all()  for_alloc_copy.c:0
+ 4 0x0000000001b9dc1c f_esmf_compcollectgarbage2_()  ???:0
+ 5 0x00000000016ec4b2 ESMCI::VM::finalize()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_release_8.6.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:3515
+ 6 0x0000000001717247 c_esmc_vmfinalize_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_release_8.6.0/esmf/src/Infrastructure/VM/interface/ESMCI_VM_F.C:1241
+ 7 0x000000000270b0db c_esmc_vmfinalize_.t33799p.t33801p()  ifxf4gG6Y.i90:0
+ 8 0x00000000027033f2 esmf_vmmod_mp_esmf_vmfinalize_()  ???:0
+ 9 0x000000000233b31e esmf_initmod_mp_esmf_finalize_()  ???:0
+10 0x0000000000417019 MAIN__()  ???:0
+11 0x000000000041655d main()  ???:0
+12 0x0000000000022555 __libc_start_main()  ???:0
+13 0x000000000041648b _start()  ???:0
+=================================
+==== backtrace (tid: 306006) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x00000000004534e7 do_deallocate_all()  for_alloc_copy.c:0
+ 2 0x00000000004544d0 process_allocation_records_deallocate()  for_alloc_copy.c:0
+ 3 0x0000000000453675 do_deallocate_all()  for_alloc_copy.c:0
+ 4 0x0000000001b9dc1c f_esmf_compcollectgarbage2_()  ???:0
+ 5 0x00000000016ec4b2 ESMCI::VM::finalize()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_release_8.6.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:3515
+ 6 0x0000000001717247 c_esmc_vmfinalize_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_release_8.6.0/esmf/src/Infrastructure/VM/interface/ESMCI_VM_F.C:1241
+ 7 0x000000000270b0db c_esmc_vmfinalize_.t33799p.t33801p()  ifxf4gG6Y.i90:0
+ 8 0x00000000027033f2 esmf_vmmod_mp_esmf_vmfinalize_()  ???:0
+ 9 0x000000000233b31e esmf_initmod_mp_esmf_finalize_()  ???:0
+10 0x0000000000417019 MAIN__()  ???:0
+11 0x000000000041655d main()  ???:0
+12 0x0000000000022555 __libc_start_main()  ???:0
+13 0x000000000041648b _start()  ???:0
+=================================
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B04C4DFD630  Unknown               Unknown  Unknown
+mainApp            0000000000453511  Unknown               Unknown  Unknown
+mainApp            00000000004544D0  Unknown               Unknown  Unknown
+mainApp            0000000000453675  Unknown               Unknown  Unknown
+libesmf.so         00002B04BF875C1C  f_esmf_compcollec         516  ESMF_Comp_C.F90
+libesmf.so         00002B04BF3C44B2  finalize                 3515  ESMCI_VM.C
+libesmf.so         00002B04BF3EF247  c_esmc_vmfinalize        1241  ESMCI_VM_F.C
+libesmf.so         00002B04C03E30DB  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         00002B04C03DB3F2  esmf_vmfinalize          9474  ESMF_VM.F90
+libesmf.so         00002B04C001331E  esmf_finalize            1693  ESMF_Init.F90
+mainApp            0000000000417019  mainapp                   112  mainApp.F90
+mainApp            000000000041655D  Unknown               Unknown  Unknown
+libc-2.17.so       00002B04C6150555  __libc_start_main     Unknown  Unknown
+mainApp            000000000041648B  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002AECA6BFE630  Unknown               Unknown  Unknown
+mainApp            00000000004534E7  Unknown               Unknown  Unknown
+mainApp            00000000004544D0  Unknown               Unknown  Unknown
+mainApp            0000000000453675  Unknown               Unknown  Unknown
+libesmf.so         00002AECA1676C1C  f_esmf_compcollec         516  ESMF_Comp_C.F90
+libesmf.so         00002AECA11C54B2  finalize                 3515  ESMCI_VM.C
+libesmf.so         00002AECA11F0247  c_esmc_vmfinalize        1241  ESMCI_VM_F.C
+libesmf.so         00002AECA21E40DB  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         00002AECA21DC3F2  esmf_vmfinalize          9474  ESMF_VM.F90
+libesmf.so         00002AECA1E1431E  esmf_finalize            1693  ESMF_Init.F90
+mainApp            0000000000417019  mainapp                   112  mainApp.F90
+mainApp            000000000041655D  Unknown               Unknown  Unknown
+libc-2.17.so       00002AECA7F51555  __libc_start_main     Unknown  Unknown
+mainApp            000000000041648B  Unknown               Unknown  Unknown
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B919BC14630  Unknown               Unknown  Unknown
+mainApp            00000000004534E7  Unknown               Unknown  Unknown
+mainApp            00000000004544D0  Unknown               Unknown  Unknown
+mainApp            0000000000453675  Unknown               Unknown  Unknown
+libesmf.so         00002B919668CC1C  f_esmf_compcollec         516  ESMF_Comp_C.F90
+libesmf.so         00002B91961DB4B2  finalize                 3515  ESMCI_VM.C
+libesmf.so         00002B9196206247  c_esmc_vmfinalize        1241  ESMCI_VM_F.C
+libesmf.so         00002B91971FA0DB  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         00002B91971F23F2  esmf_vmfinalize          9474  ESMF_VM.F90
+libesmf.so         00002B9196E2A31E  esmf_finalize            1693  ESMF_Init.F90
+mainApp            0000000000417019  mainapp                   112  mainApp.F90
+mainApp            000000000041655D  Unknown               Unknown  Unknown
+libc-2.17.so       00002B919CF67555  __libc_start_main     Unknown  Unknown
+mainApp            000000000041648B  Unknown               Unknown  Unknown
+==== backtrace (tid: 306005) ====
+ 0 0x000000000004d455 ucs_debug_print_backtrace()  ???:0
+ 1 0x00000000004534e7 do_deallocate_all()  for_alloc_copy.c:0
+ 2 0x00000000004544d0 process_allocation_records_deallocate()  for_alloc_copy.c:0
+ 3 0x0000000000453675 do_deallocate_all()  for_alloc_copy.c:0
+ 4 0x0000000001b9dc1c f_esmf_compcollectgarbage2_()  ???:0
+ 5 0x00000000016ec4b2 ESMCI::VM::finalize()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_release_8.6.0/esmf/src/Infrastructure/VM/src/ESMCI_VM.C:3515
+ 6 0x0000000001717247 c_esmc_vmfinalize_()  /scratch2/NCEPDEV/stmp1/Gerhard.Theurich/ESMF-Nightly-Testing/intel_2023.1.0-oneAPI_intelmpi_g_release_8.6.0/esmf/src/Infrastructure/VM/interface/ESMCI_VM_F.C:1241
+ 7 0x000000000270b0db c_esmc_vmfinalize_.t33799p.t33801p()  ifxf4gG6Y.i90:0
+ 8 0x00000000027033f2 esmf_vmmod_mp_esmf_vmfinalize_()  ???:0
+ 9 0x000000000233b31e esmf_initmod_mp_esmf_finalize_()  ???:0
+10 0x0000000000417019 MAIN__()  ???:0
+11 0x000000000041655d main()  ???:0
+12 0x0000000000022555 __libc_start_main()  ???:0
+13 0x000000000041648b _start()  ???:0
+=================================
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.17.s  00002B54B8B06630  Unknown               Unknown  Unknown
+mainApp            00000000004534E7  Unknown               Unknown  Unknown
+mainApp            00000000004544D0  Unknown               Unknown  Unknown
+mainApp            0000000000453675  Unknown               Unknown  Unknown
+libesmf.so         00002B54B357EC1C  f_esmf_compcollec         516  ESMF_Comp_C.F90
+libesmf.so         00002B54B30CD4B2  finalize                 3515  ESMCI_VM.C
+libesmf.so         00002B54B30F8247  c_esmc_vmfinalize        1241  ESMCI_VM_F.C
+libesmf.so         00002B54B40EC0DB  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         00002B54B40E43F2  esmf_vmfinalize          9474  ESMF_VM.F90
+libesmf.so         00002B54B3D1C31E  esmf_finalize            1693  ESMF_Init.F90
+mainApp            0000000000417019  mainapp                   112  mainApp.F90
+mainApp            000000000041655D  Unknown               Unknown  Unknown
+libc-2.17.so       00002B54B9E59555  __libc_start_main     Unknown  Unknown
+mainApp            000000000041648B  Unknown               Unknown  Unknown
+srun: error: h13c44: tasks 0-3: Exited with exit code 174
+srun: launch/slurm: _step_signal: Terminating StepId=51203424.385
