@@ -1,0 +1,100 @@
+2023-11-09 05:17:11
+slurmstepd: error: couldn't chdir to `/tmp/intel_2023.1.0-oneAPI_mpi_g_release_8.6.0/nuopc-app-prototypes/SingleModelOpenMPProto': No such file or directory: going to /tmp instead
+forrtl: severe (174): SIGSEGV, segmentation fault occurred
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  0000148352F30910  Unknown               Unknown  Unknown
+mainApp            000000000044DAF0  Unknown               Unknown  Unknown
+mainApp            000000000044EA90  Unknown               Unknown  Unknown
+mainApp            000000000044DC35  Unknown               Unknown  Unknown
+libesmf.so         00001483590645DC  f_esmf_compcollec         516  ESMF_Comp_C.F90
+libesmf.so         0000148358C09332  finalize                 3515  ESMCI_VM.C
+libesmf.so         0000148358BD3E37  c_esmc_vmfinalize        1241  ESMCI_VM_F.C
+libesmf.so         0000148359C7E45B  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         0000148359C76022  esmf_vmfinalize          9474  ESMF_VM.F90
+libesmf.so         000014835979BA9A  esmf_finalize            1693  ESMF_Init.F90
+mainApp            00000000004182FE  mainapp                   118  mainApp.F90
+mainApp            000000000041783D  Unknown               Unknown  Unknown
+libc-2.31.so       0000148352D5824D  __libc_start_main     Unknown  Unknown
+mainApp            000000000041776A  Unknown               Unknown  Unknown
+srun: error: nid004982: task 1: Exited with exit code 174
+srun: Terminating StepId=18035086.388
+slurmstepd: error: *** STEP 18035086.388 ON nid004982 CANCELLED AT 2023-11-09T15:15:31 ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  0000154D76EA7910  Unknown               Unknown  Unknown
+libc-2.31.so       0000154D76D96AF7  __sched_yield         Unknown  Unknown
+libmpi_intel.so.1  0000154D78D7AADE  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D79B16A16  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D79B29169  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D79A38C82  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D7810A011  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D7810A138  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D79D174CB  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D7810A200  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D79D0D9D2  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D79B59E15  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D79EA0EDF  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000154D785AC5BC  MPI_Finalize          Unknown  Unknown
+libesmf.so         0000154D7CB530EC  finalize                  798  ESMCI_VMKernel.C
+libesmf.so         0000154D7CB804AE  finalize                 3592  ESMCI_VM.C
+libesmf.so         0000154D7CB4AE37  c_esmc_vmfinalize        1241  ESMCI_VM_F.C
+libesmf.so         0000154D7DBF545B  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         0000154D7DBED022  esmf_vmfinalize          9474  ESMF_VM.F90
+libesmf.so         0000154D7D712A9A  esmf_finalize            1693  ESMF_Init.F90
+mainApp            00000000004182FE  mainapp                   118  mainApp.F90
+mainApp            000000000041783D  Unknown               Unknown  Unknown
+libc-2.31.so       0000154D76CCF24D  __libc_start_main     Unknown  Unknown
+mainApp            000000000041776A  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  000015242EB1E910  Unknown               Unknown  Unknown
+libc-2.31.so       000015242EA0DAF7  __sched_yield         Unknown  Unknown
+libmpi_intel.so.1  00001524309F1ADE  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000015243178DA16  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001524317A0169  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001524316AFC82  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000015242FD81011  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000015242FD81138  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000015243198E4CB  Unknown               Unknown  Unknown
+libmpi_intel.so.1  000015242FD81200  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001524319849D2  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001524317D0E15  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000152431B17EDF  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00001524302235BC  MPI_Finalize          Unknown  Unknown
+libesmf.so         00001524347CA0EC  finalize                  798  ESMCI_VMKernel.C
+libesmf.so         00001524347F74AE  finalize                 3592  ESMCI_VM.C
+libesmf.so         00001524347C1E37  c_esmc_vmfinalize        1241  ESMCI_VM_F.C
+libesmf.so         000015243586C45B  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         0000152435864022  esmf_vmfinalize          9474  ESMF_VM.F90
+libesmf.so         0000152435389A9A  esmf_finalize            1693  ESMF_Init.F90
+mainApp            00000000004182FE  mainapp                   118  mainApp.F90
+mainApp            000000000041783D  Unknown               Unknown  Unknown
+libc-2.31.so       000015242E94624D  __libc_start_main     Unknown  Unknown
+mainApp            000000000041776A  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libpthread-2.31.s  0000146D3F3B9910  Unknown               Unknown  Unknown
+libc-2.31.so       0000146D3F2A8AF7  __sched_yield         Unknown  Unknown
+libmpi_intel.so.1  0000146D4128CADE  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D42028A16  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D4203B169  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D41F4AC82  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D4061C011  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D4061C138  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D422294CB  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D4061C200  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D4221F9D2  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D4206BE15  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D423B2EDF  Unknown               Unknown  Unknown
+libmpi_intel.so.1  0000146D40ABE5BC  MPI_Finalize          Unknown  Unknown
+libesmf.so         0000146D450650EC  finalize                  798  ESMCI_VMKernel.C
+libesmf.so         0000146D450924AE  finalize                 3592  ESMCI_VM.C
+libesmf.so         0000146D4505CE37  c_esmc_vmfinalize        1241  ESMCI_VM_F.C
+libesmf.so         0000146D4610745B  c_esmc_vmfinalize           0  ESMF_VM.F90
+libesmf.so         0000146D460FF022  esmf_vmfinalize          9474  ESMF_VM.F90
+libesmf.so         0000146D45C24A9A  esmf_finalize            1693  ESMF_Init.F90
+mainApp            00000000004182FE  mainapp                   118  mainApp.F90
+mainApp            000000000041783D  Unknown               Unknown  Unknown
+libc-2.31.so       0000146D3F1E124D  __libc_start_main     Unknown  Unknown
+mainApp            000000000041776A  Unknown               Unknown  Unknown
+srun: error: nid004982: tasks 0,2-3: Exited with exit code 1
