@@ -1,0 +1,881 @@
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:30:29 AM PST
+STARTING: AsyncIOBlockingProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f asyncIOApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf model.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf io.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf asyncIODriver.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf asyncIOApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o asyncIOApp asyncIOApp.o asyncIODriver.o model.o io.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./asyncIOApp
++ local result=0
++ set +x
+FINISHED: AsyncIOBlockingProto
+Wed 15 Nov 2023 03:32:21 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:32:21 AM PST
+STARTING: AsyncIONonblockingProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f asyncIOApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf model.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf io.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf conn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf asyncIODriver.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf asyncIOApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o asyncIOApp asyncIOApp.o asyncIODriver.o model.o io.o conn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./asyncIOApp
++ local result=0
++ set +x
+FINISHED: AsyncIONonblockingProto
+Wed 15 Nov 2023 03:32:36 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:32:36 AM PST
+STARTING: AtmOcnConOptsProto
+rm -rf PET*.ESMF_LogFile traceout *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+atm.F90:477:27:
+
+  477 |         lclZero(1) = COUNT(farrayPtr(:,:).eq.zeroValue)
+      |                           1
+Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
+atm.F90:478:30:
+
+  478 |         lclMissing(1) = COUNT(farrayPtr(:,:).eq.missingValue)
+      |                              1
+Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ocn.F90:496:27:
+
+  496 |         lclZero(1) = COUNT(farrayPtr(:,:).eq.zeroValue)
+      |                           1
+Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
+ocn.F90:497:30:
+
+  497 |         lclMissing(1) = COUNT(farrayPtr(:,:).eq.missingValue)
+      |                              1
+Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnConOptsProto
+Wed 15 Nov 2023 03:33:01 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:33:01 AM PST
+STARTING: AtmOcnConProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf conn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o conn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnConProto
+Wed 15 Nov 2023 03:33:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:33:12 AM PST
+STARTING: AtmOcnCplListProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnCplListProto
+Wed 15 Nov 2023 03:34:01 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:34:01 AM PST
+STARTING: AtmOcnCplSetProto
+rm -f PET*.ESMF_LogFile err out core* *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -g -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -g -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -g -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -g -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnCplSetProto
+Wed 15 Nov 2023 03:34:24 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:34:24 AM PST
+STARTING: AtmOcnFDSynoProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnFDSynoProto
+Wed 15 Nov 2023 03:34:58 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:34:58 AM PST
+STARTING: AtmOcnIceSimpleImplicitProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ice.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o ice.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnIceSimpleImplicitProto
+Wed 15 Nov 2023 03:35:13 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:35:13 AM PST
+STARTING: AtmOcnImplicitProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnImplicitProto
+Wed 15 Nov 2023 03:35:31 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:35:31 AM PST
+STARTING: AtmOcnLndProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf lnd.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o lnd.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnLndProto
+Wed 15 Nov 2023 03:36:59 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:36:59 AM PST
+STARTING: AtmOcnLogNoneProto
+rm -rf PET*.ESMF_LogFile traceout *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+cat: 'PET*.ESMF_LogFile': No such file or directory
+FINISHED: AtmOcnLogNoneProto
+Wed 15 Nov 2023 03:37:17 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:37:17 AM PST
+STARTING: AtmOcnMedIngestFromConfigProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf med.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnMedIngestFromConfigProto
+Wed 15 Nov 2023 03:37:26 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:37:26 AM PST
+STARTING: AtmOcnMedIngestFromInternalProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf med.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnMedIngestFromInternalProto
+Wed 15 Nov 2023 03:37:49 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:37:49 AM PST
+STARTING: AtmOcnMedPetListProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf med.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnMedPetListProto
+Wed 15 Nov 2023 03:38:02 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:38:02 AM PST
+STARTING: AtmOcnMedPetListTimescalesProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf med.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnMedPetListTimescalesProto
+Wed 15 Nov 2023 03:38:09 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:38:09 AM PST
+STARTING: AtmOcnMedPetListTimescalesSplitFastProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf med.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnMedPetListTimescalesSplitFastProto
+Wed 15 Nov 2023 03:39:10 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:39:10 AM PST
+STARTING: AtmOcnMedProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf med.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o med.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnMedProto
+Wed 15 Nov 2023 03:39:31 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:39:31 AM PST
+STARTING: AtmOcnMirrorFieldsProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnMirrorFieldsProto
+Wed 15 Nov 2023 03:39:37 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:39:37 AM PST
+STARTING: AtmOcnPetListProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnPetListProto
+Wed 15 Nov 2023 03:39:43 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:39:43 AM PST
+STARTING: AtmOcnProto
+rm -rf PET*.ESMF_LogFile traceout *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnProto
+Wed 15 Nov 2023 03:40:05 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:40:05 AM PST
+STARTING: AtmOcnRtmTwoTimescalesProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf rtm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o rtm.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnRtmTwoTimescalesProto
+Wed 15 Nov 2023 03:40:33 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:40:33 AM PST
+STARTING: AtmOcnScalarProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnScalarProto
+Wed 15 Nov 2023 03:40:53 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:40:53 AM PST
+STARTING: AtmOcnSelectProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -DWITH_ATM_A -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atmA.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atmB.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocnA.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocnB.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atmA.o atmB.o ocnA.o ocnB.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+
+rm -f esmApp *.o *.mod
+ftn -c -DWITH_ATM_B -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atmA.F90
+ftn -c -DWITH_ATM_B -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atmB.F90
+ftn -c -DWITH_ATM_B -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocnA.F90
+ftn -c -DWITH_ATM_B -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocnB.F90
+ftn -c -DWITH_ATM_B -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -DWITH_ATM_B -DWITH_OCN_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atmA.o atmB.o ocnA.o ocnB.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+
+rm -f esmApp *.o *.mod
+ftn -c -DWITH_ATM_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atmA.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atmB.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocnA.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocnB.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -DWITH_ATM_A -DWITH_OCN_B -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atmA.o atmB.o ocnA.o ocnB.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnSelectProto
+Wed 15 Nov 2023 03:41:33 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:41:33 AM PST
+STARTING: AtmOcnSimpleImplicitProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnSimpleImplicitProto
+Wed 15 Nov 2023 03:41:37 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:41:37 AM PST
+STARTING: AtmOcnTransferGridProto
+rm -f PET*.ESMF_LogFile *.nc *.vtk *.stdout fort.*
+rm -f esmApp *.o *.mod
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf atm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf ocn.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esm.F90
+ftn -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=all,no-pointer -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/mod/modg/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_g_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_g_develop/esmf/DEFAULTINSTALLDIR/lib/libg/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=143
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: No such file or directory
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnTransferGridProto.Log: No such file or directory
+FINISHED: AtmOcnTransferGridProto
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: AtmOcnTransferLocStreamProto
+./testProtos.sh: line 41: cd: AtmOcnTransferLocStreamProto: No such file or directory
+make: getcwd: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: getcwd: No such file or directory
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: No such file or directory
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: No such file or directory
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnTransferLocStreamProto.Log: No such file or directory
+FINISHED: AtmOcnTransferLocStreamProto
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: AtmOcnTransferMeshProto
+./testProtos.sh: line 41: cd: AtmOcnTransferMeshProto: No such file or directory
+make: getcwd: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: getcwd: No such file or directory
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: No such file or directory
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: No such file or directory
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnTransferMeshProto.Log: No such file or directory
+FINISHED: AtmOcnTransferMeshProto
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: CustomFieldDictionaryProto
+./testProtos.sh: line 41: cd: CustomFieldDictionaryProto: No such file or directory
+make: getcwd: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: getcwd: No such file or directory
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: No such file or directory
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/CustomFieldDictionaryProto.Log: No such file or directory
+FINISHED: CustomFieldDictionaryProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: DriverInDriverDataDepProto
+./testProtos.sh: line 41: cd: DriverInDriverDataDepProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/DriverInDriverDataDepProto.Log: No such file or directory
+FINISHED: DriverInDriverDataDepProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: DriverInDriverProto
+./testProtos.sh: line 41: cd: DriverInDriverProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/DriverInDriverProto.Log: No such file or directory
+FINISHED: DriverInDriverProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: DynPhyProto
+./testProtos.sh: line 41: cd: DynPhyProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/DynPhyProto.Log: No such file or directory
+FINISHED: DynPhyProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: ExternalDriverAPIProto
+./testProtos.sh: line 41: cd: ExternalDriverAPIProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./externalApp
+./testProtos.sh: line 45: externalApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'externalApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/ExternalDriverAPIProto.Log: No such file or directory
+FINISHED: ExternalDriverAPIProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: ExternalDriverAPIWeakCplDAProto
+./testProtos.sh: line 41: cd: ExternalDriverAPIWeakCplDAProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./externalApp
+./testProtos.sh: line 45: externalApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'externalApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/ExternalDriverAPIWeakCplDAProto.Log: No such file or directory
+FINISHED: ExternalDriverAPIWeakCplDAProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: GenericMediatorProto
+./testProtos.sh: line 41: cd: GenericMediatorProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./app
+./testProtos.sh: line 45: app.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'app.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/GenericMediatorProto.Log: No such file or directory
+FINISHED: GenericMediatorProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: HierarchyProto
+./testProtos.sh: line 41: cd: HierarchyProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/HierarchyProto.Log: No such file or directory
+FINISHED: HierarchyProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: NamespaceProto
+./testProtos.sh: line 41: cd: NamespaceProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/NamespaceProto.Log: No such file or directory
+FINISHED: NamespaceProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: NestingMultipleProto
+./testProtos.sh: line 41: cd: NestingMultipleProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/NestingMultipleProto.Log: No such file or directory
+FINISHED: NestingMultipleProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: NestingSingleProto
+./testProtos.sh: line 41: cd: NestingSingleProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/NestingSingleProto.Log: No such file or directory
+FINISHED: NestingSingleProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: NestingTelescopeMultipleProto
+./testProtos.sh: line 41: cd: NestingTelescopeMultipleProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/NestingTelescopeMultipleProto.Log: No such file or directory
+FINISHED: NestingTelescopeMultipleProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: SingleModelProto
+./testProtos.sh: line 41: cd: SingleModelProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/SingleModelProto.Log: No such file or directory
+FINISHED: SingleModelProto
+Wed 15 Nov 2023 03:42:07 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:07 AM PST
+STARTING: SingleModelOpenMPProto
+./testProtos.sh: line 41: cd: SingleModelOpenMPProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/SingleModelOpenMPProto.Log: No such file or directory
+FINISHED: SingleModelOpenMPProto
+Wed 15 Nov 2023 03:42:08 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:08 AM PST
+STARTING: SingleModelOpenMPUnawareProto
+./testProtos.sh: line 41: cd: SingleModelOpenMPUnawareProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/SingleModelOpenMPUnawareProto.Log: No such file or directory
+FINISHED: SingleModelOpenMPUnawareProto
+Wed 15 Nov 2023 03:42:08 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:08 AM PST
+STARTING: ESMX_AtmOcnProto
+./testProtos.sh: line 239: cd: ESMX_AtmOcnProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./install/bin/esmx_app
+./testProtos.sh: line 243: esmx_app.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmx_app.stdout': No such file or directory
+./testProtos.sh: line 254: ../NUOPC-PROTO-RESULTS/ESMX_AtmOcnProto.Log: No such file or directory
+---------------------------------------------------------------------------
+make: *** No rule to make target 'dust'.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./install/bin/esmx_app esmxRunAlt.yaml
+./testProtos.sh: line 260: esmx_app.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmx_app.stdout': No such file or directory
+./testProtos.sh: line 271: ../NUOPC-PROTO-RESULTS/ESMX_AtmOcnProto-Alt.Log: No such file or directory
+FINISHED: ESMX_AtmOcnProto
+Wed 15 Nov 2023 03:42:08 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Wed 15 Nov 2023 03:42:08 AM PST
+STARTING: ESMX_ExternalDriverAPIProto
+./testProtos.sh: line 210: cd: ESMX_ExternalDriverAPIProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_g_develop/esmf/scripts/mpirun.srun -np 4 ./install/bin/externalApp
+./testProtos.sh: line 214: externalApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'externalApp.stdout': No such file or directory
+./testProtos.sh: line 225: ../NUOPC-PROTO-RESULTS/ESMX_ExternalDriverAPIProto.Log: No such file or directory
+FINISHED: ESMX_ExternalDriverAPIProto
+Wed 15 Nov 2023 03:42:08 AM PST
+---------------------------------------------------------------------------
+
+Wed 15 Nov 2023 03:42:08 AM PST
+== TEST SUMMARY START ==
+PASS: AsyncIOBlockingProto
+PASS: AsyncIONonblockingProto
+PASS: AtmOcnConOptsProto
+PASS: AtmOcnConProto
+PASS: AtmOcnCplListProto
+PASS: AtmOcnCplSetProto
+PASS: AtmOcnFDSynoProto
+PASS: AtmOcnIceSimpleImplicitProto
+PASS: AtmOcnImplicitProto
+PASS: AtmOcnLndProto
+PASS: AtmOcnLogNoneProto
+PASS: AtmOcnMedIngestFromConfigProto
+PASS: AtmOcnMedIngestFromInternalProto
+PASS: AtmOcnMedPetListProto
+PASS: AtmOcnMedPetListTimescalesProto
+PASS: AtmOcnMedPetListTimescalesSplitFastProto
+PASS: AtmOcnMedProto
+PASS: AtmOcnMirrorFieldsProto
+PASS: AtmOcnPetListProto
+PASS: AtmOcnProto
+PASS: AtmOcnRtmTwoTimescalesProto
+PASS: AtmOcnScalarProto
+PASS: AtmOcnSelectProto
+PASS: AtmOcnSelectProto
+PASS: AtmOcnSelectProto
+PASS: AtmOcnSimpleImplicitProto
+FAIL: AtmOcnTransferGridProto
+FAIL: AtmOcnTransferLocStreamProto
+FAIL: AtmOcnTransferMeshProto
+FAIL: CustomFieldDictionaryProto
+FAIL: DriverInDriverDataDepProto
+FAIL: DriverInDriverProto
+FAIL: DynPhyProto
+FAIL: ExternalDriverAPIProto
+FAIL: ExternalDriverAPIWeakCplDAProto
+FAIL: GenericMediatorProto
+FAIL: HierarchyProto
+FAIL: NamespaceProto
+FAIL: NestingMultipleProto
+FAIL: NestingSingleProto
+FAIL: NestingTelescopeMultipleProto
+FAIL: SingleModelProto
+FAIL: SingleModelOpenMPProto
+FAIL: SingleModelOpenMPUnawareProto
+FAIL: ESMX_AtmOcnProto
+FAIL: ESMX_AtmOcnProto-Alt
+FAIL: ESMX_ExternalDriverAPIProto
+== TEST SUMMARY STOP ==
+Wed 15 Nov 2023 03:42:08 AM PST
+
+---------------------------------------------------------------------------
+grep: */PET*.ESMF_LogFile: No such file or directory
