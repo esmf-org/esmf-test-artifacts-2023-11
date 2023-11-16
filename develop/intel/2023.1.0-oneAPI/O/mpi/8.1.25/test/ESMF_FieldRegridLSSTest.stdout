@@ -1,4 +1,4 @@
-2023-11-15 02:47:41
+2023-11-16 02:48:13
  -------------------------------- 
  Start of System Test FieldRegridLS:
  -------------------------------- 
@@ -50,53 +50,35 @@
  Comp SetServices finished, rc=            0           0
  Comp SetServices finished, rc=            0           0
  in user register routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
  in user register routine
  Registered Initialize, Run, and Finalize routines
- Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
  Comp SetServices finished, rc=            0           0
  In user register routine
  Registered Initialize, Run, and Finalize routines
- Comp SetServices finished, rc=            0           0
- Comp SetServices finished, rc=            0           0
- Comp SetServices finished, rc=            0           0
  Comp SetServices finished, rc=            0           0
  In user register routine
  Registered Initialize, Run, and Finalize routines
  Comp SetServices finished, rc=            0           0
  Comp 1 Initialize finished, rc =           0
  Comp 2 Initialize finished, rc =           0
+ Comp 1 Initialize finished, rc =           0
+ Comp 2 Initialize finished, rc =           0
+ Coupler Initialize finished, rc =           0
  Coupler Initialize finished, rc =           0
  Comp 1 Run returned, rc =           0
  Coupler Run returned, rc =           0
  Comp 2 Run returned, rc =           0
- Comp 1 Initialize finished, rc =           0
- Comp 2 Initialize finished, rc =           0
+ Comp 1 Run returned, rc =           0
+ Coupler Run returned, rc =           0
+ Comp 2 Run returned, rc =           0
+ Comp 1 Finalize finished, rc =           0           0
  Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
  Coupler Finalize finished, rc =           0           0
- ------------------------------------------------------------
- ------------------------------------------------------------
- Test finished, pet_id =            5
- ------------------------------------------------------------
- ------------------------------------------------------------
- Coupler Initialize finished, rc =           0
- Comp Finalize returned
- in user setservices routine
- Registered Initialize, Run, and Finalize routines
- Comp SetServices finished, rc=            0           0
- in user setservices routine
- Registered Initialize, Run, and Finalize routines
- Comp SetServices finished, rc=            0           0
- in user setservices routine
- Registered Initialize, Run, and Finalize routines
- Comp SetServices finished, rc=            0           0
- in user setservices routine
- Registered Initialize, Run, and Finalize routines
- Comp SetServices finished, rc=            0           0
- Comp 1 Run returned, rc =           0
- Coupler Run returned, rc =           0
- Comp 2 Run returned, rc =           0
- Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
  Coupler Finalize finished, rc =           0           0
  ------------------------------------------------------------
@@ -105,20 +87,38 @@
  ------------------------------------------------------------
  ------------------------------------------------------------
  Comp Finalize returned
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            5
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ in user setservices routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ in user setservices routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ in user setservices routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ in user setservices routine
+ Registered Initialize, Run, and Finalize routines
+ Comp SetServices finished, rc=            0           0
+ All Destroy routines done
+ System Test FieldRegridLS complete.
  All Destroy routines done
  System Test FieldRegridLS complete.
   PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
  dLSSTest.F90, line 393
- Comp 1 Initialize finished, rc =           0
+  PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
+ dLSSTest.F90, line 393
            0 User Comp 1 Init starting
-           1 User Comp 2 Init starting
-           1 User Comp 1 Init starting
  Comp 1 Initialize finished, rc =           0
            0 User Comp 2 Init starting
- All Destroy routines done
- System Test FieldRegridLS complete.
-  PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
- dLSSTest.F90, line 393
+           1 User Comp 1 Init starting
+ Comp 1 Initialize finished, rc =           0
+           1 User Comp 2 Init starting
            0 User Comp 1 Init returning
  Comp 1 Initialize finished, rc =           0
  Comp 2 Initialize finished, rc =           0
@@ -148,7 +148,6 @@
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
  Comp 1 Run returned, rc =           0
- User Coupler Run starting
  User Coupler Init returning
  Coupler Initialize finished, rc =           0
  Comp 1 Run returned, rc =           0
@@ -161,19 +160,20 @@
  User Comp Run returning
  Comp 1 Run returned, rc =           0
  User Coupler Run starting
+ User Coupler Run starting
  User Coupler Run returning
  Coupler Run returned, rc =           0
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ Comp 2 Run returned, rc =           0
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ User Comp2 Run starting
  User Coupler Run returning
  Coupler Run returned, rc =           0
  User Comp2 Run starting
  Comp 2 Run returned, rc =           0
  User Comp Final starting
- User Coupler Run returning
- Coupler Run returned, rc =           0
- Comp 2 Run returned, rc =           0
- User Coupler Run returning
- Coupler Run returned, rc =           0
- User Comp2 Run starting
  User Comp Final starting
  User Comp Final returning
  Comp 1 Finalize finished, rc =           0           0
@@ -183,15 +183,18 @@
  Comp 1 Finalize finished, rc =           0           0
  Comp 2 Finalize finished, rc =           0           0
  User Coupler Final starting
- User Comp2 Run returning
- Comp 2 Run returned, rc =           0
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
  ------------------------------------------------------------
+ User Comp2 Run returning
+ Comp 2 Run returned, rc =           0
+ User Comp2 Run returning
+ Comp 2 Run returned, rc =           0
  ------------------------------------------------------------
  Test finished, pet_id =            0
  ------------------------------------------------------------
  ------------------------------------------------------------
+ Comp Finalize returned
  User Coupler Final returning
  Coupler Finalize finished, rc =           0           0
  ------------------------------------------------------------
@@ -200,167 +203,164 @@
  ------------------------------------------------------------
  ------------------------------------------------------------
  Comp Finalize returned
- User Comp2 Run returning
- Comp 2 Run returned, rc =           0
- Comp Finalize returned
-MPICH ERROR [Rank 2] [job id 134671195.250] [Wed Nov 15 03:05:28 2023] [c5n0116] - Abort(1) (rank 2 in comm 480): application called MPI_Abort(comm=0x84000003, 1) - process 2
+ All Destroy routines done
+ System Test FieldRegridLS complete.
+MPICH ERROR [Rank 2] [job id 134672411.250] [Thu Nov 16 03:06:00 2023] [c5n2022] - Abort(1) (rank 2 in comm 480): application called MPI_Abort(comm=0x84000003, 1) - process 2
 
- All Destroy routines done
- System Test FieldRegridLS complete.
- All Destroy routines done
- System Test FieldRegridLS complete.
-MPICH ERROR [Rank 3] [job id 134671195.250] [Wed Nov 15 03:05:28 2023] [c5n0116] - Abort(1) (rank 3 in comm 480): application called MPI_Abort(comm=0x84000003, 1) - process 3
+MPICH ERROR [Rank 3] [job id 134672411.250] [Thu Nov 16 03:06:00 2023] [c5n2022] - Abort(1) (rank 3 in comm 480): application called MPI_Abort(comm=0x84000003, 1) - process 3
 
   PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
  dLSSTest.F90, line 393
+ All Destroy routines done
+ System Test FieldRegridLS complete.
   PASS  System Test FieldRegridLS: LocStream based Field Regrid, ESMF_FieldRegri
  dLSSTest.F90, line 393
 
-ESMF_FieldRegridLSSTest:26352 terminated with signal 11 at PC=7fa2952d60ea SP=7ffe3b607860.  Backtrace:
+ESMF_FieldRegridLSSTest:78172 terminated with signal 11 at PC=7f16fa38f0ea SP=7ffe2aa25690.  Backtrace:
 
-ESMF_FieldRegridLSSTest:26353 terminated with signal 11 at PC=7fe99d4d40ea SP=7ffee8d82970.  Backtrace:
-/opt/cray/pe/lib64/libmpi_intel.so.12(+0x214e0ea)[0x7fa2952d60ea]
-/opt/cray/pe/lib64/libmpi_intel.so.12(+0x202663f)[0x7fa2951ae63f]
-/opt/cray/pe/lib64/libmpi_intel.so.12(MPI_Abort+0x228)[0x7fa2938ba478]
-/opt/cray/pe/lib64/libmpi_intel.so.12(+0x214e0ea)[0x7fe99d4d40ea]
-/opt/cray/pe/lib64/libmpi_intel.so.12(+0x202663f)[0x7fe99d3ac63f]
-/opt/cray/pe/lib64/libmpi_intel.so.12(MPI_Abort+0x228)[0x7fe99bab8478]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(_ZN5ESMCI3VMK5abortEv+0x27)[0x7fa29708a057]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(_ZN5ESMCI3VMK5abortEv+0x27)[0x7fe99f288057]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(_ZN5ESMCI2VM5abortEPi+0x24)[0x7fa2970a6be4]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(_ZN5ESMCI2VM5abortEPi+0x24)[0x7fe99f2a4be4]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(c_esmc_vmabort_+0x25)[0x7fa297084b65]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(c_esmc_vmabort_+0x25)[0x7fe99f282b65]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(esmf_vmmod_mp_esmf_vmabort_+0x1c)[0x7fa2977a0edc]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(esmf_vmmod_mp_esmf_vmabort_+0x1c)[0x7fe99f99eedc]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(esmf_initmod_mp_esmf_finalize_+0x762)[0x7fa2975ac892]
+ESMF_FieldRegridLSSTest:78173 terminated with signal 11 at PC=7f6c43e990ea SP=7ffc09608f50.  Backtrace:
+/opt/cray/pe/lib64/libmpi_intel.so.12(+0x214e0ea)[0x7f16fa38f0ea]
+/opt/cray/pe/lib64/libmpi_intel.so.12(+0x202663f)[0x7f16fa26763f]
+/opt/cray/pe/lib64/libmpi_intel.so.12(MPI_Abort+0x228)[0x7f16f8973478]
+/opt/cray/pe/lib64/libmpi_intel.so.12(+0x214e0ea)[0x7f6c43e990ea]
+/opt/cray/pe/lib64/libmpi_intel.so.12(+0x202663f)[0x7f6c43d7163f]
+/opt/cray/pe/lib64/libmpi_intel.so.12(MPI_Abort+0x228)[0x7f6c4247d478]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(_ZN5ESMCI3VMK5abortEv+0x27)[0x7f16fc143057]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(_ZN5ESMCI3VMK5abortEv+0x27)[0x7f6c45c4d057]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(_ZN5ESMCI2VM5abortEPi+0x24)[0x7f16fc15fbe4]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(_ZN5ESMCI2VM5abortEPi+0x24)[0x7f6c45c69be4]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(c_esmc_vmabort_+0x25)[0x7f16fc13db65]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(c_esmc_vmabort_+0x25)[0x7f6c45c47b65]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(esmf_vmmod_mp_esmf_vmabort_+0x1c)[0x7f16fc859edc]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(esmf_vmmod_mp_esmf_vmabort_+0x1c)[0x7f6c46363edc]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(esmf_initmod_mp_esmf_finalize_+0x762)[0x7f16fc665892]
 /tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/test/testO/Unicos.intel.64.mpi.default/./ESMF_FieldRegridLSSTest[0x41b472]
 /tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/test/testO/Unicos.intel.64.mpi.default/./ESMF_FieldRegridLSSTest[0x416bfd]
-/lib64/libc.so.6(__libc_start_main+0xef)[0x7fa291fdc24d]
+/lib64/libc.so.6(__libc_start_main+0xef)[0x7f16f709524d]
 /tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/test/testO/Unicos.intel.64.mpi.default/./ESMF_FieldRegridLSSTest[0x416b2a]
-/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(esmf_initmod_mp_esmf_finalize_+0x762)[0x7fe99f7aa892]
+/tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/lib/libO/Unicos.intel.64.mpi.default/libesmf.so(esmf_initmod_mp_esmf_finalize_+0x762)[0x7f6c4616f892]
 /tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/test/testO/Unicos.intel.64.mpi.default/./ESMF_FieldRegridLSSTest[0x41b472]
 /tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/test/testO/Unicos.intel.64.mpi.default/./ESMF_FieldRegridLSSTest[0x416bfd]
-/lib64/libc.so.6(__libc_start_main+0xef)[0x7fe99a1da24d]
+/lib64/libc.so.6(__libc_start_main+0xef)[0x7f6c40b9f24d]
 /tmp/intel_2023.1.0-oneAPI_mpi_O_develop/esmf/test/testO/Unicos.intel.64.mpi.default/./ESMF_FieldRegridLSSTest[0x416b2a]
-srun: error: c5n0116: tasks 2-3: Exited with exit code 1
-srun: Terminating StepId=134671195.250
-slurmstepd: error: *** STEP 134671195.250 ON c5n0116 CANCELLED AT 2023-11-15T03:05:28 ***
+srun: error: c5n2022: tasks 2-3: Exited with exit code 1
+srun: Terminating StepId=134672411.250
+slurmstepd: error: *** STEP 134672411.250 ON c5n2022 CANCELLED AT 2023-11-16T03:06:00 ***
 forrtl: error (78): process killed (SIGTERM)
 Image              PC                Routine            Line        Source             
-libpthread-2.31.s  00007FDE12D6F910  Unknown               Unknown  Unknown
-libc-2.31.so       00007FDE12C5EAF7  __sched_yield         Unknown  Unknown
-libmpi_intel.so.1  00007FDE14C44ADE  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE159E0A16  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE159E6B02  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE158FB6E4  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE13EE6D11  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE13EE6EF5  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE15BE05F0  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE15A200FC  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE15A1E00C  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE141AAC01  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE15A22380  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE15BE13D3  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE13FD4200  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FDE13FD473F  PMPI_Barrier          Unknown  Unknown
-libdarshan.so.0.0  00007FDE16CA95A7  darshan_core_shut     Unknown  Unknown
-libdarshan.so.0.0  00007FDE16CA823E  MPI_Finalize          Unknown  Unknown
-libesmf.so         00007FDE17C44E7F  _ZN5ESMCI3VMK8fin     Unknown  Unknown
-libesmf.so         00007FDE17C61A82  _ZN5ESMCI2VM8fina     Unknown  Unknown
-libesmf.so         00007FDE17C3FB15  c_esmc_vmfinalize     Unknown  Unknown
-libesmf.so         00007FDE1835BE7C  esmf_vmmod_mp_esm     Unknown  Unknown
-libesmf.so         00007FDE1816779B  esmf_initmod_mp_e     Unknown  Unknown
+libpthread-2.31.s  00007FD24341C910  Unknown               Unknown  Unknown
+libc-2.31.so       00007FD24330BAF7  __sched_yield         Unknown  Unknown
+libmpi_intel.so.1  00007FD2452F1ADE  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD24608DA16  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD2460A0169  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD245FA858C  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD244593D11  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD244593EF5  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD24628D5F0  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD2460CD0FC  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD2460CB00C  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD244857C01  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD2460CF380  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD24628E3D3  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD244681200  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007FD24468173F  PMPI_Barrier          Unknown  Unknown
+libdarshan.so.0.0  00007FD2473565A7  darshan_core_shut     Unknown  Unknown
+libdarshan.so.0.0  00007FD24735523E  MPI_Finalize          Unknown  Unknown
+libesmf.so         00007FD2482F1E7F  _ZN5ESMCI3VMK8fin     Unknown  Unknown
+libesmf.so         00007FD24830EA82  _ZN5ESMCI2VM8fina     Unknown  Unknown
+libesmf.so         00007FD2482ECB15  c_esmc_vmfinalize     Unknown  Unknown
+libesmf.so         00007FD248A08E7C  esmf_vmmod_mp_esm     Unknown  Unknown
+libesmf.so         00007FD24881479B  esmf_initmod_mp_e     Unknown  Unknown
 ESMF_FieldRegridL  000000000041C0DC  Unknown               Unknown  Unknown
 ESMF_FieldRegridL  0000000000416BFD  Unknown               Unknown  Unknown
-libc-2.31.so       00007FDE12B9724D  __libc_start_main     Unknown  Unknown
+libc-2.31.so       00007FD24324424D  __libc_start_main     Unknown  Unknown
 ESMF_FieldRegridL  0000000000416B2A  Unknown               Unknown  Unknown
 forrtl: error (78): process killed (SIGTERM)
 Image              PC                Routine            Line        Source             
-libpthread-2.31.s  00007FB3E3764910  Unknown               Unknown  Unknown
-libc-2.31.so       00007FB3E3653AF7  __sched_yield         Unknown  Unknown
-libmpi_intel.so.1  00007FB3E5639ADE  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E63D5A16  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E63E8169  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E62F058C  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E48DBD11  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E48DBEF5  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E65D55F0  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E64150FC  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E641300C  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E4B9FC01  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E6417380  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E65D63D3  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E49C9200  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FB3E49C973F  PMPI_Barrier          Unknown  Unknown
-libdarshan.so.0.0  00007FB3E769E5A7  darshan_core_shut     Unknown  Unknown
-libdarshan.so.0.0  00007FB3E769D23E  MPI_Finalize          Unknown  Unknown
-libesmf.so         00007FB3E8639E7F  _ZN5ESMCI3VMK8fin     Unknown  Unknown
-libesmf.so         00007FB3E8656A82  _ZN5ESMCI2VM8fina     Unknown  Unknown
-libesmf.so         00007FB3E8634B15  c_esmc_vmfinalize     Unknown  Unknown
-libesmf.so         00007FB3E8D50E7C  esmf_vmmod_mp_esm     Unknown  Unknown
-libesmf.so         00007FB3E8B5C79B  esmf_initmod_mp_e     Unknown  Unknown
+libpthread-2.31.s  00007F41C4215910  Unknown               Unknown  Unknown
+libc-2.31.so       00007F41C4104AF7  __sched_yield         Unknown  Unknown
+libmpi_intel.so.1  00007F41C60EAADE  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C6E86A16  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C6E99169  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C6DA158C  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C538CD11  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C538CEF5  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C70865F0  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C6EC60FC  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C6EC400C  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C5650C01  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C6EC8380  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C70873D3  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C547A200  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F41C547A73F  PMPI_Barrier          Unknown  Unknown
+libdarshan.so.0.0  00007F41C814F5A7  darshan_core_shut     Unknown  Unknown
+libdarshan.so.0.0  00007F41C814E23E  MPI_Finalize          Unknown  Unknown
+libesmf.so         00007F41C90EAE7F  _ZN5ESMCI3VMK8fin     Unknown  Unknown
+libesmf.so         00007F41C9107A82  _ZN5ESMCI2VM8fina     Unknown  Unknown
+libesmf.so         00007F41C90E5B15  c_esmc_vmfinalize     Unknown  Unknown
+libesmf.so         00007F41C9801E7C  esmf_vmmod_mp_esm     Unknown  Unknown
+libesmf.so         00007F41C960D79B  esmf_initmod_mp_e     Unknown  Unknown
 ESMF_FieldRegridL  000000000041C0DC  Unknown               Unknown  Unknown
 ESMF_FieldRegridL  0000000000416BFD  Unknown               Unknown  Unknown
-libc-2.31.so       00007FB3E358C24D  __libc_start_main     Unknown  Unknown
+libc-2.31.so       00007F41C403D24D  __libc_start_main     Unknown  Unknown
 ESMF_FieldRegridL  0000000000416B2A  Unknown               Unknown  Unknown
 forrtl: error (78): process killed (SIGTERM)
 Image              PC                Routine            Line        Source             
-libpthread-2.31.s  00007FF86517D910  Unknown               Unknown  Unknown
-libc-2.31.so       00007FF86506CAF7  __sched_yield         Unknown  Unknown
-libmpi_intel.so.1  00007FF867052ADE  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF867DEEA16  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF867E01169  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF867D0958C  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF8662F4D11  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF8662F4EF5  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF867FEE5F0  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF867E2E0FC  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF867E2C00C  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF8665B8C01  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF867E30380  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF867FEF3D3  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF8663E2200  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007FF8663E273F  PMPI_Barrier          Unknown  Unknown
-libdarshan.so.0.0  00007FF8690B75A7  darshan_core_shut     Unknown  Unknown
-libdarshan.so.0.0  00007FF8690B623E  MPI_Finalize          Unknown  Unknown
-libesmf.so         00007FF86A052E7F  _ZN5ESMCI3VMK8fin     Unknown  Unknown
-libesmf.so         00007FF86A06FA82  _ZN5ESMCI2VM8fina     Unknown  Unknown
-libesmf.so         00007FF86A04DB15  c_esmc_vmfinalize     Unknown  Unknown
-libesmf.so         00007FF86A769E7C  esmf_vmmod_mp_esm     Unknown  Unknown
-libesmf.so         00007FF86A57579B  esmf_initmod_mp_e     Unknown  Unknown
+libpthread-2.31.s  00007F4C93F55910  Unknown               Unknown  Unknown
+libc-2.31.so       00007F4C93E44AF7  __sched_yield         Unknown  Unknown
+libmpi_intel.so.1  00007F4C95E2AADE  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C96BC6A16  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C96BCCB02  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C96AE16E4  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C950CCD11  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C950CCEF5  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C96DC65F0  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C96C060FC  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C96C0400C  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C95390C01  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C96C08380  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C96DC73D3  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C951BA200  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F4C951BA73F  PMPI_Barrier          Unknown  Unknown
+libdarshan.so.0.0  00007F4C97E8F5A7  darshan_core_shut     Unknown  Unknown
+libdarshan.so.0.0  00007F4C97E8E23E  MPI_Finalize          Unknown  Unknown
+libesmf.so         00007F4C98E2AE7F  _ZN5ESMCI3VMK8fin     Unknown  Unknown
+libesmf.so         00007F4C98E47A82  _ZN5ESMCI2VM8fina     Unknown  Unknown
+libesmf.so         00007F4C98E25B15  c_esmc_vmfinalize     Unknown  Unknown
+libesmf.so         00007F4C99541E7C  esmf_vmmod_mp_esm     Unknown  Unknown
+libesmf.so         00007F4C9934D79B  esmf_initmod_mp_e     Unknown  Unknown
 ESMF_FieldRegridL  000000000041C0DC  Unknown               Unknown  Unknown
 ESMF_FieldRegridL  0000000000416BFD  Unknown               Unknown  Unknown
-libc-2.31.so       00007FF864FA524D  __libc_start_main     Unknown  Unknown
+libc-2.31.so       00007F4C93D7D24D  __libc_start_main     Unknown  Unknown
 ESMF_FieldRegridL  0000000000416B2A  Unknown               Unknown  Unknown
 forrtl: error (78): process killed (SIGTERM)
 Image              PC                Routine            Line        Source             
-libpthread-2.31.s  00007F152FF0D910  Unknown               Unknown  Unknown
-libc-2.31.so       00007F152FDFCAF7  __sched_yield         Unknown  Unknown
-libmpi_intel.so.1  00007F1531DE2ADE  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1532B7EA16  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1532B91169  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1532A9958C  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1531084D11  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1531084EF5  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1532D7E5F0  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1532BBE0FC  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1532BBC00C  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1531348C01  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1532BC0380  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1532D7F3D3  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F1531172200  Unknown               Unknown  Unknown
-libmpi_intel.so.1  00007F153117273F  PMPI_Barrier          Unknown  Unknown
-libdarshan.so.0.0  00007F1533E475A7  darshan_core_shut     Unknown  Unknown
-libdarshan.so.0.0  00007F1533E4623E  MPI_Finalize          Unknown  Unknown
-libesmf.so         00007F1534DE2E7F  _ZN5ESMCI3VMK8fin     Unknown  Unknown
-libesmf.so         00007F1534DFFA82  _ZN5ESMCI2VM8fina     Unknown  Unknown
-libesmf.so         00007F1534DDDB15  c_esmc_vmfinalize     Unknown  Unknown
-libesmf.so         00007F15354F9E7C  esmf_vmmod_mp_esm     Unknown  Unknown
-libesmf.so         00007F153530579B  esmf_initmod_mp_e     Unknown  Unknown
+libpthread-2.31.s  00007F07F0991910  Unknown               Unknown  Unknown
+libc-2.31.so       00007F07F0880AF7  __sched_yield         Unknown  Unknown
+libmpi_intel.so.1  00007F07F2866ADE  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F3602A16  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F3615169  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F351D58C  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F1B08D11  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F1B08EF5  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F38025F0  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F36420FC  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F364000C  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F1DCCC01  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F3644380  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F38033D3  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F1BF6200  Unknown               Unknown  Unknown
+libmpi_intel.so.1  00007F07F1BF673F  PMPI_Barrier          Unknown  Unknown
+libdarshan.so.0.0  00007F07F48CB5A7  darshan_core_shut     Unknown  Unknown
+libdarshan.so.0.0  00007F07F48CA23E  MPI_Finalize          Unknown  Unknown
+libesmf.so         00007F07F5866E7F  _ZN5ESMCI3VMK8fin     Unknown  Unknown
+libesmf.so         00007F07F5883A82  _ZN5ESMCI2VM8fina     Unknown  Unknown
+libesmf.so         00007F07F5861B15  c_esmc_vmfinalize     Unknown  Unknown
+libesmf.so         00007F07F5F7DE7C  esmf_vmmod_mp_esm     Unknown  Unknown
+libesmf.so         00007F07F5D8979B  esmf_initmod_mp_e     Unknown  Unknown
 ESMF_FieldRegridL  000000000041C0DC  Unknown               Unknown  Unknown
 ESMF_FieldRegridL  0000000000416BFD  Unknown               Unknown  Unknown
-libc-2.31.so       00007F152FD3524D  __libc_start_main     Unknown  Unknown
+libc-2.31.so       00007F07F07B924D  __libc_start_main     Unknown  Unknown
 ESMF_FieldRegridL  0000000000416B2A  Unknown               Unknown  Unknown
-srun: error: c5n0116: tasks 0-1,4-5: Killed
-srun: Force Terminated StepId=134671195.250
+srun: error: c5n2022: tasks 0-1,4-5: Killed
+srun: Force Terminated StepId=134672411.250
