@@ -1,0 +1,849 @@
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:08:01 AM PST
+STARTING: AsyncIOBlockingProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f asyncIOApp *.o *.mod
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf model.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf io.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf asyncIODriver.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf asyncIOApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o asyncIOApp asyncIOApp.o asyncIODriver.o model.o io.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./asyncIOApp
++ local result=0
++ set +x
+FINISHED: AsyncIOBlockingProto
+Thu 16 Nov 2023 03:08:30 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:08:30 AM PST
+STARTING: AsyncIONonblockingProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f asyncIOApp *.o *.mod
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf model.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf io.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf conn.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf asyncIODriver.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf asyncIOApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o asyncIOApp asyncIOApp.o asyncIODriver.o model.o io.o conn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./asyncIOApp
++ local result=0
++ set +x
+FINISHED: AsyncIONonblockingProto
+Thu 16 Nov 2023 03:08:49 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:08:49 AM PST
+STARTING: AtmOcnConOptsProto
+rm -rf PET*.ESMF_LogFile traceout *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf atm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf ocn.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnConOptsProto
+Thu 16 Nov 2023 03:09:33 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:09:33 AM PST
+STARTING: AtmOcnConProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf atm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf ocn.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf conn.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o conn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnConProto
+Thu 16 Nov 2023 03:10:02 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:10:02 AM PST
+STARTING: AtmOcnCplListProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf atm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf ocn.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnCplListProto
+Thu 16 Nov 2023 03:10:09 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:10:09 AM PST
+STARTING: AtmOcnCplSetProto
+rm -f PET*.ESMF_LogFile err out core* *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -g -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf atm.F90
+ftn -g -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf ocn.F90
+ftn -g -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esm.F90
+ftn -g -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnCplSetProto
+Thu 16 Nov 2023 03:10:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:10:12 AM PST
+STARTING: AtmOcnFDSynoProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf atm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf ocn.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnFDSynoProto
+Thu 16 Nov 2023 03:10:46 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:10:46 AM PST
+STARTING: AtmOcnIceSimpleImplicitProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf atm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf ocn.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf ice.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o ice.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=0
++ set +x
+FINISHED: AtmOcnIceSimpleImplicitProto
+Thu 16 Nov 2023 03:11:13 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:11:13 AM PST
+STARTING: AtmOcnImplicitProto
+rm -f PET*.ESMF_LogFile *.nc *.stdout
+rm -f esmApp *.o *.mod
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf atm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf ocn.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esm.F90
+ftn -c -O -fPIC  -pthread -ffree-line-length-none  -fopenmp -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/mod/modO/Unicos.gfortran.64.mpi.default -I/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include -I/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/include  -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMF_VERSION_STRING_GIT='v8.7.0b01-5-gf664797301' -DESMF_LOWERCASE_SINGLEUNDERSCORE -DESMF_MOAB=1 -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_NETCDF=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_NO_OPENACC -DESMF_TESTEXHAUSTIVE -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DESMF_TESTWITHTHREADS -DS64=1 -DESMF_OS_Unicos=1 -DESMF_COMM=mpi -DESMF_DIR=/tmp/gfortran_11.2.0_mpi_O_develop/esmf esmApp.F90
+ftn -pthread  -fopenmp -L/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -L/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib -L/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -Wl,-rpath,/tmp/gfortran_11.2.0_mpi_O_develop/esmf/DEFAULTINSTALLDIR/lib/libO/Unicos.gfortran.64.mpi.default -Wl,-rpath,/opt/cray/pe/netcdf-hdf5parallel/4.9.0.3/gnu/9.1/lib  -Wl,-rpath,/opt/cray/pe/gcc/11.2.0/snos/lib/gcc/x86_64-suse-linux/11.2.0/../../../../lib64/ -o esmApp esmApp.o esm.o atm.o ocn.o -lesmf   -lrt -lstdc++ -ldl -lnetcdff -lnetcdf -lpioc
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: No such file or directory
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnImplicitProto.Log: No such file or directory
+FINISHED: AtmOcnImplicitProto
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnLndProto
+./testProtos.sh: line 41: cd: AtmOcnLndProto: No such file or directory
+make: getcwd: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: getcwd: No such file or directory
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: No such file or directory
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: No such file or directory
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnLndProto.Log: No such file or directory
+FINISHED: AtmOcnLndProto
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnLogNoneProto
+./testProtos.sh: line 41: cd: AtmOcnLogNoneProto: No such file or directory
+make: getcwd: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: getcwd: No such file or directory
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: No such file or directory
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: No such file or directory
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnLogNoneProto.Log: No such file or directory
+FINISHED: AtmOcnLogNoneProto
+cd: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnMedIngestFromConfigProto
+./testProtos.sh: line 41: cd: AtmOcnMedIngestFromConfigProto: No such file or directory
+make: getcwd: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: getcwd: No such file or directory
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: No such file or directory
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnMedIngestFromConfigProto.Log: No such file or directory
+FINISHED: AtmOcnMedIngestFromConfigProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnMedIngestFromInternalProto
+./testProtos.sh: line 41: cd: AtmOcnMedIngestFromInternalProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnMedIngestFromInternalProto.Log: No such file or directory
+FINISHED: AtmOcnMedIngestFromInternalProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnMedPetListProto
+./testProtos.sh: line 41: cd: AtmOcnMedPetListProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnMedPetListProto.Log: No such file or directory
+FINISHED: AtmOcnMedPetListProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnMedPetListTimescalesProto
+./testProtos.sh: line 41: cd: AtmOcnMedPetListTimescalesProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnMedPetListTimescalesProto.Log: No such file or directory
+FINISHED: AtmOcnMedPetListTimescalesProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnMedPetListTimescalesSplitFastProto
+./testProtos.sh: line 41: cd: AtmOcnMedPetListTimescalesSplitFastProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnMedPetListTimescalesSplitFastProto.Log: No such file or directory
+FINISHED: AtmOcnMedPetListTimescalesSplitFastProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnMedProto
+./testProtos.sh: line 41: cd: AtmOcnMedProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnMedProto.Log: No such file or directory
+FINISHED: AtmOcnMedProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnMirrorFieldsProto
+./testProtos.sh: line 41: cd: AtmOcnMirrorFieldsProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnMirrorFieldsProto.Log: No such file or directory
+FINISHED: AtmOcnMirrorFieldsProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnPetListProto
+./testProtos.sh: line 41: cd: AtmOcnPetListProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnPetListProto.Log: No such file or directory
+FINISHED: AtmOcnPetListProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnProto
+./testProtos.sh: line 41: cd: AtmOcnProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnProto.Log: No such file or directory
+FINISHED: AtmOcnProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnRtmTwoTimescalesProto
+./testProtos.sh: line 41: cd: AtmOcnRtmTwoTimescalesProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnRtmTwoTimescalesProto.Log: No such file or directory
+FINISHED: AtmOcnRtmTwoTimescalesProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnScalarProto
+./testProtos.sh: line 41: cd: AtmOcnScalarProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnScalarProto.Log: No such file or directory
+FINISHED: AtmOcnScalarProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnSelectProto
+./testProtos.sh: line 109: cd: AtmOcnSelectProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
+./testProtos.sh: line 112: esm.config: Permission denied
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 116: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 127: ../NUOPC-PROTO-RESULTS/AtmOcnSelectProto.1.Log: No such file or directory
+
+make: *** No rule to make target 'clean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
+./testProtos.sh: line 132: esm.config: Permission denied
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 136: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 147: ../NUOPC-PROTO-RESULTS/AtmOcnSelectProto.2.Log: No such file or directory
+
+make: *** No rule to make target 'clean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
+./testProtos.sh: line 152: esm.config: Permission denied
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 156: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 167: ../NUOPC-PROTO-RESULTS/AtmOcnSelectProto.3.Log: No such file or directory
+FINISHED: AtmOcnSelectProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnSimpleImplicitProto
+./testProtos.sh: line 41: cd: AtmOcnSimpleImplicitProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnSimpleImplicitProto.Log: No such file or directory
+FINISHED: AtmOcnSimpleImplicitProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnTransferGridProto
+./testProtos.sh: line 41: cd: AtmOcnTransferGridProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnTransferGridProto.Log: No such file or directory
+FINISHED: AtmOcnTransferGridProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnTransferLocStreamProto
+./testProtos.sh: line 41: cd: AtmOcnTransferLocStreamProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnTransferLocStreamProto.Log: No such file or directory
+FINISHED: AtmOcnTransferLocStreamProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: AtmOcnTransferMeshProto
+./testProtos.sh: line 41: cd: AtmOcnTransferMeshProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/AtmOcnTransferMeshProto.Log: No such file or directory
+FINISHED: AtmOcnTransferMeshProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: CustomFieldDictionaryProto
+./testProtos.sh: line 41: cd: CustomFieldDictionaryProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/CustomFieldDictionaryProto.Log: No such file or directory
+FINISHED: CustomFieldDictionaryProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: DriverInDriverDataDepProto
+./testProtos.sh: line 41: cd: DriverInDriverDataDepProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/DriverInDriverDataDepProto.Log: No such file or directory
+FINISHED: DriverInDriverDataDepProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: DriverInDriverProto
+./testProtos.sh: line 41: cd: DriverInDriverProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/DriverInDriverProto.Log: No such file or directory
+FINISHED: DriverInDriverProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: DynPhyProto
+./testProtos.sh: line 41: cd: DynPhyProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/DynPhyProto.Log: No such file or directory
+FINISHED: DynPhyProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: ExternalDriverAPIProto
+./testProtos.sh: line 41: cd: ExternalDriverAPIProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./externalApp
+./testProtos.sh: line 45: externalApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'externalApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/ExternalDriverAPIProto.Log: No such file or directory
+FINISHED: ExternalDriverAPIProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: ExternalDriverAPIWeakCplDAProto
+./testProtos.sh: line 41: cd: ExternalDriverAPIWeakCplDAProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./externalApp
+./testProtos.sh: line 45: externalApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'externalApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/ExternalDriverAPIWeakCplDAProto.Log: No such file or directory
+FINISHED: ExternalDriverAPIWeakCplDAProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: GenericMediatorProto
+./testProtos.sh: line 41: cd: GenericMediatorProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./app
+./testProtos.sh: line 45: app.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'app.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/GenericMediatorProto.Log: No such file or directory
+FINISHED: GenericMediatorProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: HierarchyProto
+./testProtos.sh: line 41: cd: HierarchyProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./esmApp
+./testProtos.sh: line 45: esmApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/HierarchyProto.Log: No such file or directory
+FINISHED: HierarchyProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: NamespaceProto
+./testProtos.sh: line 41: cd: NamespaceProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/NamespaceProto.Log: No such file or directory
+FINISHED: NamespaceProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: NestingMultipleProto
+./testProtos.sh: line 41: cd: NestingMultipleProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/NestingMultipleProto.Log: No such file or directory
+FINISHED: NestingMultipleProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: NestingSingleProto
+./testProtos.sh: line 41: cd: NestingSingleProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/NestingSingleProto.Log: No such file or directory
+FINISHED: NestingSingleProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: NestingTelescopeMultipleProto
+./testProtos.sh: line 41: cd: NestingTelescopeMultipleProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/NestingTelescopeMultipleProto.Log: No such file or directory
+FINISHED: NestingTelescopeMultipleProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: SingleModelProto
+./testProtos.sh: line 41: cd: SingleModelProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/SingleModelProto.Log: No such file or directory
+FINISHED: SingleModelProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: SingleModelOpenMPProto
+./testProtos.sh: line 41: cd: SingleModelOpenMPProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/SingleModelOpenMPProto.Log: No such file or directory
+FINISHED: SingleModelOpenMPProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: SingleModelOpenMPUnawareProto
+./testProtos.sh: line 41: cd: SingleModelOpenMPUnawareProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./mainApp
+./testProtos.sh: line 45: mainApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'mainApp.stdout': No such file or directory
+./testProtos.sh: line 56: ../NUOPC-PROTO-RESULTS/SingleModelOpenMPUnawareProto.Log: No such file or directory
+FINISHED: SingleModelOpenMPUnawareProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: ESMX_AtmOcnProto
+./testProtos.sh: line 239: cd: ESMX_AtmOcnProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./install/bin/esmx_app
+./testProtos.sh: line 243: esmx_app.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmx_app.stdout': No such file or directory
+./testProtos.sh: line 254: ../NUOPC-PROTO-RESULTS/ESMX_AtmOcnProto.Log: No such file or directory
+---------------------------------------------------------------------------
+make: *** No rule to make target 'dust'.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./install/bin/esmx_app esmxRunAlt.yaml
+./testProtos.sh: line 260: esmx_app.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'esmx_app.stdout': No such file or directory
+./testProtos.sh: line 271: ../NUOPC-PROTO-RESULTS/ESMX_AtmOcnProto-Alt.Log: No such file or directory
+FINISHED: ESMX_AtmOcnProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+Thu 16 Nov 2023 03:12:12 AM PST
+STARTING: ESMX_ExternalDriverAPIProto
+./testProtos.sh: line 210: cd: ESMX_ExternalDriverAPIProto: No such file or directory
+make: *** No rule to make target 'distclean'.  Stop.
+make: *** No targets specified and no makefile found.  Stop.
++ /tmp/gfortran_11.2.0_mpi_O_develop/esmf/scripts/mpirun.srun -np 4 ./install/bin/externalApp
+./testProtos.sh: line 214: externalApp.stdout: Permission denied
++ local result=1
++ set +x
+mkdir: cannot create directory ‘../NUOPC-PROTO-RESULTS’: Permission denied
+cp: cannot stat 'externalApp.stdout': No such file or directory
+./testProtos.sh: line 225: ../NUOPC-PROTO-RESULTS/ESMX_ExternalDriverAPIProto.Log: No such file or directory
+FINISHED: ESMX_ExternalDriverAPIProto
+Thu 16 Nov 2023 03:12:12 AM PST
+---------------------------------------------------------------------------
+
+Thu 16 Nov 2023 03:12:12 AM PST
+== TEST SUMMARY START ==
+PASS: AsyncIOBlockingProto
+PASS: AsyncIONonblockingProto
+PASS: AtmOcnConOptsProto
+PASS: AtmOcnConProto
+PASS: AtmOcnCplListProto
+PASS: AtmOcnCplSetProto
+PASS: AtmOcnFDSynoProto
+PASS: AtmOcnIceSimpleImplicitProto
+FAIL: AtmOcnImplicitProto
+FAIL: AtmOcnLndProto
+FAIL: AtmOcnLogNoneProto
+FAIL: AtmOcnMedIngestFromConfigProto
+FAIL: AtmOcnMedIngestFromInternalProto
+FAIL: AtmOcnMedPetListProto
+FAIL: AtmOcnMedPetListTimescalesProto
+FAIL: AtmOcnMedPetListTimescalesSplitFastProto
+FAIL: AtmOcnMedProto
+FAIL: AtmOcnMirrorFieldsProto
+FAIL: AtmOcnPetListProto
+FAIL: AtmOcnProto
+FAIL: AtmOcnRtmTwoTimescalesProto
+FAIL: AtmOcnScalarProto
+FAIL: AtmOcnSelectProto
+FAIL: AtmOcnSelectProto
+FAIL: AtmOcnSelectProto
+FAIL: AtmOcnSimpleImplicitProto
+FAIL: AtmOcnTransferGridProto
+FAIL: AtmOcnTransferLocStreamProto
+FAIL: AtmOcnTransferMeshProto
+FAIL: CustomFieldDictionaryProto
+FAIL: DriverInDriverDataDepProto
+FAIL: DriverInDriverProto
+FAIL: DynPhyProto
+FAIL: ExternalDriverAPIProto
+FAIL: ExternalDriverAPIWeakCplDAProto
+FAIL: GenericMediatorProto
+FAIL: HierarchyProto
+FAIL: NamespaceProto
+FAIL: NestingMultipleProto
+FAIL: NestingSingleProto
+FAIL: NestingTelescopeMultipleProto
+FAIL: SingleModelProto
+FAIL: SingleModelOpenMPProto
+FAIL: SingleModelOpenMPUnawareProto
+FAIL: ESMX_AtmOcnProto
+FAIL: ESMX_AtmOcnProto-Alt
+FAIL: ESMX_ExternalDriverAPIProto
+== TEST SUMMARY STOP ==
+Thu 16 Nov 2023 03:12:12 AM PST
+
+---------------------------------------------------------------------------
+grep: */PET*.ESMF_LogFile: No such file or directory
