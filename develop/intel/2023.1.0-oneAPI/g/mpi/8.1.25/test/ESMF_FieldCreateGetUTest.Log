@@ -1,0 +1,1089 @@
+2023-11-18 01:25:31
+20231118 014305.018 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231118 014305.018 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231118 014305.018 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231118 014305.018 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231118 014305.018 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231118 014305.018 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231118 014305.018 INFO             PET0 Running with ESMF Version   : v8.7.0b01-5-gf664797301
+20231118 014305.018 INFO             PET0 ESMF library build date/time: "Nov 18 2023" "01:24:36"
+20231118 014305.018 INFO             PET0 ESMF library build location : /tmp/intel_2023.1.0-oneAPI_mpi_g_develop/esmf
+20231118 014305.018 INFO             PET0 ESMF_COMM                   : mpi
+20231118 014305.018 INFO             PET0 ESMF_MOAB                   : enabled
+20231118 014305.018 INFO             PET0 ESMF_LAPACK                 : enabled
+20231118 014305.018 INFO             PET0 ESMF_NETCDF                 : enabled
+20231118 014305.018 INFO             PET0 ESMF_PNETCDF                : disabled
+20231118 014305.018 INFO             PET0 ESMF_PIO                    : enabled
+20231118 014305.018 INFO             PET0 ESMF_YAMLCPP                : enabled
+20231118 014305.018 INFO             PET0  Beginning Test, file ESMF_FieldCreateGetUTest.F90, line 53
+20231118 014305.019 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20231118 014305.019 INFO             PET0  PASS  Creating an empty Field, ESMF_FieldCreateGetUTest.F90, line 62
+20231118 014305.019 ERROR            PET0 ESMF_FieldGet.F90:456 ESMF_FieldGetDefault Invalid object  - No Grid or invalid Grid attached to Field
+20231118 014305.019 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:2443 ESMF_TESTS Invalid object  - Internal subroutine call returned Error
+20231118 014305.019 INFO             PET0  PASS  Get info associated with the empty field, ESMF_FieldCreateGetUTest.F90, line 70
+20231118 014305.021 INFO             PET0  PASS  Query field for global and local bounds, ESMF_FieldCreateGetUTest.F90, line 78
+20231118 014305.024 INFO             PET0  PASS  Query field for global and local bounds on mesh, ESMF_FieldCreateGetUTest.F90, line 86
+20231118 014305.026 INFO             PET0  PASS  Create field with global and local indexflag on mesh, ESMF_FieldCreateGetUTest.F90, line 94
+20231118 014305.026 INFO             PET0  PASS  Creating a Field from a fortran array 2d, ESMF_FieldCreateGetUTest.F90, line 102
+20231118 014305.027 INFO             PET0  PASS  Creating a 2D Field with global indices, ESMF_FieldCreateGetUTest.F90, line 110
+20231118 014305.028 INFO             PET0  PASS  Creating a 2D Field with global indices and shared DEs across SSI, ESMF_FieldCreateGetUTest.F90, line 118
+20231118 014305.029 INFO             PET0  PASS  Creating a 2D Field with global indices - testing EmptyCreate/Set/Complete, ESMF_FieldCreateGetUTest.F90, line 126
+20231118 014305.030 INFO             PET0  PASS  Creating a 2D Field with global indices and shared DEs across SSI - testing EmptyCreate/Set/Complete, ESMF_FieldCreateGetUTest.F90, line 135
+20231118 014305.031 ERROR            PET0 ESMF_FieldGet.F90:4326 ESMF_FieldGetBounds Value unrecognized or out of range  - the size of totalCount must equal to the field rank
+20231118 014305.031 ERROR            PET0 ESMF_FieldGet.F90:2593 ESMF_FieldGetDataPtr Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:2569 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET0  PASS  Creating a Field from a fortran array 2d, get fails with smaller totalCount., ESMF_FieldCreateGetUTest.F90, line 144
+20231118 014305.031 ERROR            PET0 ESMCI_LocalArray.C:538 ESMCI::LocalArray::create() Arguments are incompatible  - - Mismatch of lbounds, ubounds and counts
+20231118 014305.031 ERROR            PET0 ESMCI_Array.C:1245 ESMCI::Array::create() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:2605 ESMF_TESTS Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET0  PASS  Creating a Field from a fortran array 2d, array size is bigger than Array total bounds, ESMF_FieldCreateGetUTest.F90, line 153
+20231118 014305.031 WARNING          PET0 jj=0: 3 < 4 - 1 + 1
+20231118 014305.031 ERROR            PET0 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.031 ERROR            PET0 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:2640 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET0  PASS  Creating a Field from a fortran array 2d, with bad array size, ESMF_FieldCreateGetUTest.F90, line 162
+20231118 014305.032 INFO             PET0  shape(fptr1a)=           4          20          10          20          30
+20231118 014305.032 INFO             PET0  lbound(fptr1a)=           1           1           1           1           1
+20231118 014305.032 INFO             PET0  ubound(fptr1a)=           4          20          10          20          30
+20231118 014305.032 INFO             PET0  shape(fptr2a)=           4          20          10
+20231118 014305.032 INFO             PET0  lbound(fptr2a)=           1           1           1
+20231118 014305.032 INFO             PET0  ubound(fptr2a)=           4          20          10
+20231118 014305.033 INFO             PET0  shape(fptr1b)=          10          20          30
+20231118 014305.033 INFO             PET0  lbound(fptr1b)=           1           1           1
+20231118 014305.033 INFO             PET0  ubound(fptr1b)=          10          20          30
+20231118 014305.033 INFO             PET0  shape(fptr2b)=          10          20
+20231118 014305.033 INFO             PET0  lbound(fptr2b)=           1           1
+20231118 014305.033 INFO             PET0  ubound(fptr2b)=          10          20
+20231118 014305.033 INFO             PET0  PASS  Creating a Field from Field with slicing, ESMF_FieldCreateGetUTest.F90, line 170
+20231118 014305.033 ERROR            PET0 ESMCI_Grid_F.C:2264 c_esmc_gridgetplocaldepsloc() Wrong argument specified  - - staggerloc outside of range for grid
+20231118 014305.033 ERROR            PET0 ESMF_Grid.F90:18655 ESMF_GridGetPLocalDePSloc Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:2818 ESMF_TESTS Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 INFO             PET0  PASS  Creating a Field from a fortran array 2d using ESMF_DATACOPY_VALUE and test isESMFAllocated, ESMF_FieldCreateGetUTest.F90, line 179
+20231118 014305.033 ERROR            PET0 ESMCI_Grid_F.C:2264 c_esmc_gridgetplocaldepsloc() Wrong argument specified  - - staggerloc outside of range for grid
+20231118 014305.033 ERROR            PET0 ESMF_Grid.F90:18655 ESMF_GridGetPLocalDePSloc Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:2818 ESMF_TESTS Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 INFO             PET0  PASS  Creating a Field from a fortran array 2d using ESMF_DATACOPY_REFERENCE and test isESMFAllocated, ESMF_FieldCreateGetUTest.F90, line 188
+20231118 014305.034 INFO             PET0  PASS  Creating a Field from a fortran array 2d, distgrid size equal to index space size, ESMF_FieldCreateGetUTest.F90, line 197
+20231118 014305.035 INFO             PET0  PASS  Creating a Field from a fortran array 2d with halowidth, ESMF_FieldCreateGetUTest.F90, line 205
+20231118 014305.035 INFO             PET0  PASS  Creating a Field from a fortran array 2d with halowidth, distgrid size equal to index space size, ESMF_FieldCreateGetUTest.F90, line 214
+20231118 014305.036 WARNING          PET0 jj=0: 8 < 7 - -1 + 1
+20231118 014305.036 ERROR            PET0 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.036 ERROR            PET0 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET0 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET0 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET0 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET0 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET0 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:2987 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 INFO             PET0  PASS  Creating a Field from a fortran array 2d with halowidth, distgrid size equal to index space size, bad array size, ESMF_FieldCreateGetUTest.F90, line 223
+20231118 014305.038 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 236
+20231118 014305.040 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 250
+20231118 014305.042 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 263
+20231118 014305.044 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, no distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 277
+20231118 014305.046 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, no distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 292
+20231118 014305.048 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 306
+20231118 014305.050 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, distgrid padding, using ESMF_STAGGERLOC_CENTER, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 320
+20231118 014305.051 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 333
+20231118 014305.053 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, 1,2 dimension swapped, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 347
+20231118 014305.055 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 359
+20231118 014305.057 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, ESMF_FieldCreateGetUTest.F90, line 371
+20231118 014305.059 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 384
+20231118 014305.061 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 397
+20231118 014305.063 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, grid without padding, ESMF_FieldCreateGetUTest.F90, line 411
+20231118 014305.064 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 423
+20231118 014305.066 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed and divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 435
+20231118 014305.068 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 448
+20231118 014305.068 ERROR            PET0 ESMF_FieldGetAllocBounds.F90:866 ESMF_FieldGetGBAllocBounds Value unrecognized or out of range  - - gridToFieldMap element must be unique
+20231118 014305.068 ERROR            PET0 ESMF_FieldGetAllocBounds.F90:249 ESMF_GridGetFieldBounds Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:3102 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, non unique gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 461
+20231118 014305.068 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded, ESMF_FieldCreateGetUTest.F90, line 470
+20231118 014305.069 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with specified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 479
+20231118 014305.069 ERROR            PET0 ESMCI_Array.C:1229 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not match requested element count
+20231118 014305.069 ERROR            PET0 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET0 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET0 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET0 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET0 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET0 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:3333 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with smaller pecified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 488
+20231118 014305.070 ERROR            PET0 ESMCI_Array.C:1229 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not match requested element count
+20231118 014305.070 ERROR            PET0 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:3369 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with bigger specified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 497
+20231118 014305.070 WARNING          PET0 jj=0: 5 < 20 - 1 + 1
+20231118 014305.070 ERROR            PET0 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.070 ERROR            PET0 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:3405 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1nd dimension undistributed, 3rd dimension ungridded, ESMF_FieldCreateGetUTest.F90, line 506
+20231118 014305.072 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, ESMF_FieldCreateGetUTest.F90, line 517
+20231118 014305.074 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 528
+20231118 014305.076 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, ESMF_FieldCreateGetUTest.F90, line 540
+20231118 014305.078 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 552
+20231118 014305.080 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, cornor stagger, ESMF_FieldCreateGetUTest.F90, line 563
+20231118 014305.082 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, cornor stagger, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 574
+20231118 014305.083 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, corner stagger, ESMF_FieldCreateGetUTest.F90, line 586
+20231118 014305.085 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, corner stagger, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 598
+20231118 014305.091 INFO             PET0  PASS  Creating a Field from a fortran array 3d 1,3 dim distributed, 2nd dimension undistributed, 1,3 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 613
+20231118 014305.096 INFO             PET0  PASS  Creating a Field from a fortran array 3d 1,3 dim distributed, 2nd dimension undistributed, 1,3 dimension swapped, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 628
+20231118 014305.101 INFO             PET0  PASS  Creating a Field from a fortran array 3d 2,3 dim distributed, 1st dimension undistributed, 2,3 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 643
+20231118 014305.105 INFO             PET0  PASS  Creating a Field from a fortran array 3d 2,3 dim distributed, 1st dimension undistributed, 2,3 dimension swapped, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 658
+20231118 014305.106 INFO             PET0  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, ESMF_FieldCreateGetUTest.F90, line 666
+20231118 014305.106 INFO             PET0  PASS  Creating a Field from a fortran array pointer, 2d, both dimensions distributed, ESMF_FieldCreateGetUTest.F90, line 674
+20231118 014305.107 INFO             PET0  PASS  Creating a Field from a fortran array pointer, 2d, one dimension distributed, ESMF_FieldCreateGetUTest.F90, line 682
+20231118 014305.108 INFO             PET0  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 691
+20231118 014305.108 WARNING          PET0 jj=0: 20 < 18 - -5 + 1
+20231118 014305.108 ERROR            PET0 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.108 ERROR            PET0 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.108 ERROR            PET0 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.108 ERROR            PET0 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.108 ERROR            PET0 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.108 ERROR            PET0 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.108 ERROR            PET0 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.108 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:4013 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.108 INFO             PET0  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width, gridToFieldMap has dimensions swapped, ESMF_FieldCreateGetUTest.F90, line 701
+20231118 014305.110 INFO             PET0  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width and gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 710
+20231118 014305.115 INFO             PET0  PASS  Creating a Field from a fortran array, 3d, 1,2 dimensions distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 719
+20231118 014305.120 INFO             PET0  PASS  Creating a Field from a fortran array, 3d, 1,2 dimensions distributed, with halo width and gridToFieldMap /2,1/, ESMF_FieldCreateGetUTest.F90, line 728
+20231118 014305.125 INFO             PET0  PASS  Creating a Field from a fortran array, 3d, 1,3 dimensions distributed, with halo width and gridToFieldMap /1,3/, ESMF_FieldCreateGetUTest.F90, line 737
+20231118 014305.131 INFO             PET0  PASS  Creating a Field from a fortran array, 3d, 1,3 dimensions distributed, with halo width and gridToFieldMap /3,1/, ESMF_FieldCreateGetUTest.F90, line 746
+20231118 014305.175 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 759
+20231118 014305.221 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo width, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 773
+20231118 014305.222 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 786
+20231118 014305.224 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1,2 dimension swapped, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 800
+20231118 014305.269 INFO             PET0  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 812
+20231118 014305.314 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, ESMF_FieldCreateGetUTest.F90, line 824
+20231118 014305.363 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 837
+20231118 014305.407 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 863
+20231118 014305.451 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo, corner stagger, get test, grid without padding, ESMF_FieldCreateGetUTest.F90, line 877
+20231118 014305.453 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 889
+20231118 014305.454 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed and divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 901
+20231118 014305.456 INFO             PET0  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 914
+20231118 014305.457 ERROR            PET0 ESMF_FieldEmpty.F90:20013 ESMF_FieldEmptyCompGB Invalid argument  - - farray is not associated with memory allocation)
+20231118 014305.457 ERROR            PET0 ESMF_FieldCreate.F90:3291 ESMF_FieldCreateGBData Invalid argument  - Internal subroutine call returned Error
+20231118 014305.457 ERROR            PET0 ESMF_FieldCreate.F90:9658 ESMF_FieldCreateGridData Invalid argument  - Internal subroutine call returned Error
+20231118 014305.457 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:4475 ESMF_TESTS Invalid argument  - Internal subroutine call returned Error
+20231118 014305.457 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with halo, non unique gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 929
+20231118 014305.494 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with halo, ESMF_FieldCreateGetUTest.F90, line 944
+20231118 014305.531 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 958
+20231118 014305.558 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, minindex starts from numbers greater than 1, with halo and data copy, ESMF_FieldCreateGetUTest.F90, line 974
+20231118 014305.589 INFO             PET0  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with extra padding, halo, and data copy, ESMF_FieldCreateGetUTest.F90, line 989
+20231118 014305.646 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds, ESMF_FieldCreateGetUTest.F90, line 1004
+20231118 014305.703 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds allocate the Fortran array from bounds instead of counts, ESMF_FieldCreateGetUTest.F90, line 1018
+20231118 014306.204 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1036
+20231118 014306.932 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1054
+20231118 014307.454 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1074
+20231118 014308.294 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1093
+20231118 014308.790 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1112
+20231118 014309.689 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1131
+20231118 014309.758 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1168
+20231118 014309.867 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1188
+20231118 014310.366 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger, ESMF_FieldCreateGetUTest.F90, line 1208
+20231118 014311.182 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger, ESMF_FieldCreateGetUTest.F90, line 1228
+20231118 014311.808 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger distgrid padded, ESMF_FieldCreateGetUTest.F90, line 1250
+20231118 014312.444 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger distgrid padded, ESMF_FieldCreateGetUTest.F90, line 1272
+20231118 014312.943 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1292
+20231118 014313.849 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1312
+20231118 014314.376 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1333
+20231118 014315.221 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1354
+20231118 014315.299 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1375
+20231118 014315.411 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1396
+20231118 014315.413 INFO             PET0  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1417
+20231118 014315.415 INFO             PET0  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1438
+20231118 014315.417 INFO             PET0  PASS  Creating a 7D field using generic interface, ESMF_FieldCreateGetUTest.F90, line 1456
+20231118 014315.419 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1475
+20231118 014315.421 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap no fieldget, ESMF_FieldCreateGetUTest.F90, line 1495
+20231118 014315.423 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1516
+20231118 014315.520 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_FieldCreateGetUTest.F90, line 1538
+20231118 014315.616 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, ESMF_FieldCreateGetUTest.F90, line 1561
+20231118 014315.714 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, CORNER STAGGER, ESMF_FieldCreateGetUTest.F90, line 1585
+20231118 014315.810 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, EDGE1 STAGGER, ESMF_FieldCreateGetUTest.F90, line 1608
+20231118 014315.812 INFO             PET0  PASS  Creating a 7D field using generic interface, ESMF_FieldCreateGetUTest.F90, line 1626
+20231118 014315.814 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1645
+20231118 014315.816 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap no fieldget, ESMF_FieldCreateGetUTest.F90, line 1665
+20231118 014315.818 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1686
+20231118 014315.914 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_FieldCreateGetUTest.F90, line 1708
+20231118 014316.010 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, ESMF_FieldCreateGetUTest.F90, line 1731
+20231118 014316.105 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, CORNER STAGGER, ESMF_FieldCreateGetUTest.F90, line 1755
+20231118 014316.201 INFO             PET0  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, EDGE1 STAGGER, ESMF_FieldCreateGetUTest.F90, line 1778
+20231118 014316.698 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1798
+20231118 014317.221 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1817
+20231118 014317.715 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1836
+20231118 014317.781 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1855
+20231118 014317.783 INFO             PET0  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1876
+20231118 014317.859 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1897
+20231118 014317.873 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1916
+20231118 014317.950 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, center stagger, ESMF_FieldCreateGetUTest.F90, line 1939
+20231118 014318.036 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, ESMF_FieldCreateGetUTest.F90, line 1962
+20231118 014318.047 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 4D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 1985
+20231118 014318.048 INFO             PET0  PASS  Creating a 3D field from a 4D grid and 1D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2003
+20231118 014318.050 INFO             PET0  PASS  Creating a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2020
+20231118 014318.070 INFO             PET0  PASS  Complete a 7D field from a 4D grid and 4D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2044
+20231118 014318.071 INFO             PET0  PASS  Complete a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2062
+20231118 014318.072 INFO             PET0  PASS  Complete a 3D field from a 4D grid and 1D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2081
+20231118 014318.074 INFO             PET0  PASS  Complete a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2099
+20231118 014318.075 INFO             PET0  PASS  Complete a 2D field from a 3D grid using generic interface, irregular gridToFieldMap and distgridToGridMap corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2117
+20231118 014318.564 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 2137
+20231118 014319.077 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 2159
+20231118 014319.590 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 2179
+20231118 014320.079 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 2198
+20231118 014320.145 INFO             PET0  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 2217
+20231118 014320.147 INFO             PET0  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2238
+20231118 014320.223 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2259
+20231118 014320.238 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2279
+20231118 014320.309 INFO             PET0  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, ESMF_FieldCreateGetUTest.F90, line 2304
+20231118 014320.309 INFO             PET0  PASS  Testing Atnas's case #3556962, ESMF_FieldCreateGetUTest.F90, line 2319
+20231118 014320.309 ERROR            PET0 ESMCI_Array.C:1458 ESMCI::Array::create() Value cannot be a NULL pointer  - Valid undistLBound argument required to create Array with tensor dims
+20231118 014320.309 ERROR            PET0 ESMCI_Array_F.C:132 c_esmc_arraycreateallocate() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.309 ERROR            PET0 ESMF_ArrayCreate.F90:26747 ESMF_ArrayCreateAllocateAS() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.309 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:7875 ESMF_TESTS Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.309 INFO             PET0  PASS  Testing Eric Klusek's case #852717, ESMF_FieldCreateGetUTest.F90, line 2334
+20231118 014320.309 ERROR            PET0 ESMF_FieldCreate.F90:7385 ESMF_FieldCreateGridArray Object being used before creation  - Bad Object
+20231118 014320.309 ERROR            PET0 ESMF_FieldCreateGetUTest.F90:8059 ESMF_TESTS Object being used before creation  - Internal subroutine call returned Error
+20231118 014320.310 INFO             PET0  PASS  Testing field create from uninit array, ESMF_FieldCreateGetUTest.F90, line 2342
+20231118 014320.310 INFO             PET0  PASS  Testing field create when all entries in map are 0 allocatable, ESMF_FieldCreateGetUTest.F90, line 2350
+20231118 014320.311 INFO             PET0  PASS  Testing field create when all entries in map are 0 pointer, ESMF_FieldCreateGetUTest.F90, line 2358
+20231118 014320.311 INFO             PET0  PASS  Testing creating a Field from a Geom object and fortran array, ESMF_FieldCreateGetUTest.F90, line 2366
+20231118 014320.312 INFO             PET0  PASS  Testing completing a Field from a Geom object and fortran array, ESMF_FieldCreateGetUTest.F90, line 2374
+20231118 014320.312 INFO             PET0  PASS  Testing creating a Field from a Geom object and a typekind, ESMF_FieldCreateGetUTest.F90, line 2382
+20231118 014320.313 INFO             PET0  PASS  Testing completing a Field from a Geom object and a typekind, ESMF_FieldCreateGetUTest.F90, line 2390
+20231118 014320.313 INFO             PET0  Ending Test, file ESMF_FieldCreateGetUTest.F90, line 2393
+20231118 014320.313 INFO             PET0  Finalizing ESMF
+20231118 014305.018 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231118 014305.018 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231118 014305.018 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231118 014305.018 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231118 014305.018 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231118 014305.018 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231118 014305.018 INFO             PET1 Running with ESMF Version   : v8.7.0b01-5-gf664797301
+20231118 014305.018 INFO             PET1 ESMF library build date/time: "Nov 18 2023" "01:24:36"
+20231118 014305.018 INFO             PET1 ESMF library build location : /tmp/intel_2023.1.0-oneAPI_mpi_g_develop/esmf
+20231118 014305.018 INFO             PET1 ESMF_COMM                   : mpi
+20231118 014305.018 INFO             PET1 ESMF_MOAB                   : enabled
+20231118 014305.018 INFO             PET1 ESMF_LAPACK                 : enabled
+20231118 014305.018 INFO             PET1 ESMF_NETCDF                 : enabled
+20231118 014305.018 INFO             PET1 ESMF_PNETCDF                : disabled
+20231118 014305.018 INFO             PET1 ESMF_PIO                    : enabled
+20231118 014305.018 INFO             PET1 ESMF_YAMLCPP                : enabled
+20231118 014305.018 INFO             PET1  Beginning Test, file ESMF_FieldCreateGetUTest.F90, line 53
+20231118 014305.019 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20231118 014305.019 INFO             PET1  PASS  Creating an empty Field, ESMF_FieldCreateGetUTest.F90, line 62
+20231118 014305.019 ERROR            PET1 ESMF_FieldGet.F90:456 ESMF_FieldGetDefault Invalid object  - No Grid or invalid Grid attached to Field
+20231118 014305.019 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:2443 ESMF_TESTS Invalid object  - Internal subroutine call returned Error
+20231118 014305.019 INFO             PET1  PASS  Get info associated with the empty field, ESMF_FieldCreateGetUTest.F90, line 70
+20231118 014305.021 INFO             PET1  PASS  Query field for global and local bounds, ESMF_FieldCreateGetUTest.F90, line 78
+20231118 014305.024 INFO             PET1  PASS  Query field for global and local bounds on mesh, ESMF_FieldCreateGetUTest.F90, line 86
+20231118 014305.026 INFO             PET1  PASS  Create field with global and local indexflag on mesh, ESMF_FieldCreateGetUTest.F90, line 94
+20231118 014305.026 INFO             PET1  PASS  Creating a Field from a fortran array 2d, ESMF_FieldCreateGetUTest.F90, line 102
+20231118 014305.027 INFO             PET1  PASS  Creating a 2D Field with global indices, ESMF_FieldCreateGetUTest.F90, line 110
+20231118 014305.028 INFO             PET1  PASS  Creating a 2D Field with global indices and shared DEs across SSI, ESMF_FieldCreateGetUTest.F90, line 118
+20231118 014305.029 INFO             PET1  PASS  Creating a 2D Field with global indices - testing EmptyCreate/Set/Complete, ESMF_FieldCreateGetUTest.F90, line 126
+20231118 014305.030 INFO             PET1  PASS  Creating a 2D Field with global indices and shared DEs across SSI - testing EmptyCreate/Set/Complete, ESMF_FieldCreateGetUTest.F90, line 135
+20231118 014305.031 ERROR            PET1 ESMF_FieldGet.F90:4326 ESMF_FieldGetBounds Value unrecognized or out of range  - the size of totalCount must equal to the field rank
+20231118 014305.031 ERROR            PET1 ESMF_FieldGet.F90:2593 ESMF_FieldGetDataPtr Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:2569 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET1  PASS  Creating a Field from a fortran array 2d, get fails with smaller totalCount., ESMF_FieldCreateGetUTest.F90, line 144
+20231118 014305.031 ERROR            PET1 ESMCI_LocalArray.C:538 ESMCI::LocalArray::create() Arguments are incompatible  - - Mismatch of lbounds, ubounds and counts
+20231118 014305.031 ERROR            PET1 ESMCI_Array.C:1245 ESMCI::Array::create() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:2605 ESMF_TESTS Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET1  PASS  Creating a Field from a fortran array 2d, array size is bigger than Array total bounds, ESMF_FieldCreateGetUTest.F90, line 153
+20231118 014305.031 WARNING          PET1 jj=0: 3 < 4 - 1 + 1
+20231118 014305.031 ERROR            PET1 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.031 ERROR            PET1 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:2640 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET1  PASS  Creating a Field from a fortran array 2d, with bad array size, ESMF_FieldCreateGetUTest.F90, line 162
+20231118 014305.032 INFO             PET1  shape(fptr1a)=           4          20          10          20          30
+20231118 014305.032 INFO             PET1  lbound(fptr1a)=           1           1           1           1           1
+20231118 014305.032 INFO             PET1  ubound(fptr1a)=           4          20          10          20          30
+20231118 014305.032 INFO             PET1  shape(fptr2a)=           4          20          10
+20231118 014305.032 INFO             PET1  lbound(fptr2a)=           1           1           1
+20231118 014305.032 INFO             PET1  ubound(fptr2a)=           4          20          10
+20231118 014305.033 INFO             PET1  shape(fptr1b)=          10          20          30
+20231118 014305.033 INFO             PET1  lbound(fptr1b)=           1           1           1
+20231118 014305.033 INFO             PET1  ubound(fptr1b)=          10          20          30
+20231118 014305.033 INFO             PET1  shape(fptr2b)=          10          20
+20231118 014305.033 INFO             PET1  lbound(fptr2b)=           1           1
+20231118 014305.033 INFO             PET1  ubound(fptr2b)=          10          20
+20231118 014305.033 INFO             PET1  PASS  Creating a Field from Field with slicing, ESMF_FieldCreateGetUTest.F90, line 170
+20231118 014305.033 ERROR            PET1 ESMCI_Grid_F.C:2264 c_esmc_gridgetplocaldepsloc() Wrong argument specified  - - staggerloc outside of range for grid
+20231118 014305.033 ERROR            PET1 ESMF_Grid.F90:18655 ESMF_GridGetPLocalDePSloc Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:2818 ESMF_TESTS Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 INFO             PET1  PASS  Creating a Field from a fortran array 2d using ESMF_DATACOPY_VALUE and test isESMFAllocated, ESMF_FieldCreateGetUTest.F90, line 179
+20231118 014305.033 ERROR            PET1 ESMCI_Grid_F.C:2264 c_esmc_gridgetplocaldepsloc() Wrong argument specified  - - staggerloc outside of range for grid
+20231118 014305.033 ERROR            PET1 ESMF_Grid.F90:18655 ESMF_GridGetPLocalDePSloc Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:2818 ESMF_TESTS Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 INFO             PET1  PASS  Creating a Field from a fortran array 2d using ESMF_DATACOPY_REFERENCE and test isESMFAllocated, ESMF_FieldCreateGetUTest.F90, line 188
+20231118 014305.034 INFO             PET1  PASS  Creating a Field from a fortran array 2d, distgrid size equal to index space size, ESMF_FieldCreateGetUTest.F90, line 197
+20231118 014305.035 INFO             PET1  PASS  Creating a Field from a fortran array 2d with halowidth, ESMF_FieldCreateGetUTest.F90, line 205
+20231118 014305.036 INFO             PET1  PASS  Creating a Field from a fortran array 2d with halowidth, distgrid size equal to index space size, ESMF_FieldCreateGetUTest.F90, line 214
+20231118 014305.036 WARNING          PET1 jj=0: 8 < 7 - -1 + 1
+20231118 014305.036 ERROR            PET1 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.036 ERROR            PET1 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET1 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET1 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET1 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET1 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET1 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:2987 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 INFO             PET1  PASS  Creating a Field from a fortran array 2d with halowidth, distgrid size equal to index space size, bad array size, ESMF_FieldCreateGetUTest.F90, line 223
+20231118 014305.038 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 236
+20231118 014305.040 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 250
+20231118 014305.042 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 263
+20231118 014305.044 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, no distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 277
+20231118 014305.046 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, no distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 292
+20231118 014305.048 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 306
+20231118 014305.050 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, distgrid padding, using ESMF_STAGGERLOC_CENTER, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 320
+20231118 014305.052 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 333
+20231118 014305.054 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, 1,2 dimension swapped, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 347
+20231118 014305.056 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 359
+20231118 014305.058 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, ESMF_FieldCreateGetUTest.F90, line 371
+20231118 014305.060 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 384
+20231118 014305.062 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 397
+20231118 014305.064 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, grid without padding, ESMF_FieldCreateGetUTest.F90, line 411
+20231118 014305.066 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 423
+20231118 014305.067 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed and divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 435
+20231118 014305.069 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 448
+20231118 014305.069 ERROR            PET1 ESMF_FieldGetAllocBounds.F90:866 ESMF_FieldGetGBAllocBounds Value unrecognized or out of range  - - gridToFieldMap element must be unique
+20231118 014305.069 ERROR            PET1 ESMF_FieldGetAllocBounds.F90:249 ESMF_GridGetFieldBounds Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:3102 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, non unique gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 461
+20231118 014305.070 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded, ESMF_FieldCreateGetUTest.F90, line 470
+20231118 014305.070 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with specified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 479
+20231118 014305.070 ERROR            PET1 ESMCI_Array.C:1229 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not match requested element count
+20231118 014305.070 ERROR            PET1 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET1 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:3333 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with smaller pecified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 488
+20231118 014305.071 ERROR            PET1 ESMCI_Array.C:1229 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not match requested element count
+20231118 014305.071 ERROR            PET1 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:3369 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with bigger specified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 497
+20231118 014305.071 WARNING          PET1 jj=0: 5 < 20 - 1 + 1
+20231118 014305.071 ERROR            PET1 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.071 ERROR            PET1 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:3405 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.071 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1nd dimension undistributed, 3rd dimension ungridded, ESMF_FieldCreateGetUTest.F90, line 506
+20231118 014305.072 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, ESMF_FieldCreateGetUTest.F90, line 517
+20231118 014305.073 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 528
+20231118 014305.074 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, ESMF_FieldCreateGetUTest.F90, line 540
+20231118 014305.075 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 552
+20231118 014305.076 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, cornor stagger, ESMF_FieldCreateGetUTest.F90, line 563
+20231118 014305.077 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, cornor stagger, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 574
+20231118 014305.078 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, corner stagger, ESMF_FieldCreateGetUTest.F90, line 586
+20231118 014305.079 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, corner stagger, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 598
+20231118 014305.084 INFO             PET1  PASS  Creating a Field from a fortran array 3d 1,3 dim distributed, 2nd dimension undistributed, 1,3 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 613
+20231118 014305.089 INFO             PET1  PASS  Creating a Field from a fortran array 3d 1,3 dim distributed, 2nd dimension undistributed, 1,3 dimension swapped, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 628
+20231118 014305.094 INFO             PET1  PASS  Creating a Field from a fortran array 3d 2,3 dim distributed, 1st dimension undistributed, 2,3 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 643
+20231118 014305.097 INFO             PET1  PASS  Creating a Field from a fortran array 3d 2,3 dim distributed, 1st dimension undistributed, 2,3 dimension swapped, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 658
+20231118 014305.098 INFO             PET1  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, ESMF_FieldCreateGetUTest.F90, line 666
+20231118 014305.099 INFO             PET1  PASS  Creating a Field from a fortran array pointer, 2d, both dimensions distributed, ESMF_FieldCreateGetUTest.F90, line 674
+20231118 014305.099 INFO             PET1  PASS  Creating a Field from a fortran array pointer, 2d, one dimension distributed, ESMF_FieldCreateGetUTest.F90, line 682
+20231118 014305.101 INFO             PET1  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 691
+20231118 014305.101 WARNING          PET1 jj=0: 20 < 18 - -5 + 1
+20231118 014305.101 ERROR            PET1 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.101 ERROR            PET1 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.101 ERROR            PET1 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.101 ERROR            PET1 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.101 ERROR            PET1 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.101 ERROR            PET1 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.101 ERROR            PET1 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.101 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:4013 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.101 INFO             PET1  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width, gridToFieldMap has dimensions swapped, ESMF_FieldCreateGetUTest.F90, line 701
+20231118 014305.102 INFO             PET1  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width and gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 710
+20231118 014305.107 INFO             PET1  PASS  Creating a Field from a fortran array, 3d, 1,2 dimensions distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 719
+20231118 014305.112 INFO             PET1  PASS  Creating a Field from a fortran array, 3d, 1,2 dimensions distributed, with halo width and gridToFieldMap /2,1/, ESMF_FieldCreateGetUTest.F90, line 728
+20231118 014305.116 INFO             PET1  PASS  Creating a Field from a fortran array, 3d, 1,3 dimensions distributed, with halo width and gridToFieldMap /1,3/, ESMF_FieldCreateGetUTest.F90, line 737
+20231118 014305.121 INFO             PET1  PASS  Creating a Field from a fortran array, 3d, 1,3 dimensions distributed, with halo width and gridToFieldMap /3,1/, ESMF_FieldCreateGetUTest.F90, line 746
+20231118 014305.169 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 759
+20231118 014305.218 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo width, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 773
+20231118 014305.219 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 786
+20231118 014305.221 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1,2 dimension swapped, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 800
+20231118 014305.269 INFO             PET1  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 812
+20231118 014305.318 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, ESMF_FieldCreateGetUTest.F90, line 824
+20231118 014305.368 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 837
+20231118 014305.412 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 863
+20231118 014305.453 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo, corner stagger, get test, grid without padding, ESMF_FieldCreateGetUTest.F90, line 877
+20231118 014305.455 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 889
+20231118 014305.457 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed and divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 901
+20231118 014305.458 INFO             PET1  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 914
+20231118 014305.460 ERROR            PET1 ESMF_FieldEmpty.F90:20013 ESMF_FieldEmptyCompGB Invalid argument  - - farray is not associated with memory allocation)
+20231118 014305.460 ERROR            PET1 ESMF_FieldCreate.F90:3291 ESMF_FieldCreateGBData Invalid argument  - Internal subroutine call returned Error
+20231118 014305.460 ERROR            PET1 ESMF_FieldCreate.F90:9658 ESMF_FieldCreateGridData Invalid argument  - Internal subroutine call returned Error
+20231118 014305.460 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:4475 ESMF_TESTS Invalid argument  - Internal subroutine call returned Error
+20231118 014305.460 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with halo, non unique gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 929
+20231118 014305.494 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with halo, ESMF_FieldCreateGetUTest.F90, line 944
+20231118 014305.528 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 958
+20231118 014305.554 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, minindex starts from numbers greater than 1, with halo and data copy, ESMF_FieldCreateGetUTest.F90, line 974
+20231118 014305.583 INFO             PET1  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with extra padding, halo, and data copy, ESMF_FieldCreateGetUTest.F90, line 989
+20231118 014305.627 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds, ESMF_FieldCreateGetUTest.F90, line 1004
+20231118 014305.671 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds allocate the Fortran array from bounds instead of counts, ESMF_FieldCreateGetUTest.F90, line 1018
+20231118 014306.051 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1036
+20231118 014306.599 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1054
+20231118 014306.996 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1074
+20231118 014307.634 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1093
+20231118 014308.011 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1112
+20231118 014308.692 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1131
+20231118 014308.761 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1168
+20231118 014308.872 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1188
+20231118 014309.368 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger, ESMF_FieldCreateGetUTest.F90, line 1208
+20231118 014310.179 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger, ESMF_FieldCreateGetUTest.F90, line 1228
+20231118 014310.561 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger distgrid padded, ESMF_FieldCreateGetUTest.F90, line 1250
+20231118 014310.945 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger distgrid padded, ESMF_FieldCreateGetUTest.F90, line 1272
+20231118 014311.366 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1292
+20231118 014312.123 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1312
+20231118 014312.563 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1333
+20231118 014313.273 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1354
+20231118 014313.340 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1375
+20231118 014313.436 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1396
+20231118 014313.438 INFO             PET1  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1417
+20231118 014313.440 INFO             PET1  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1438
+20231118 014313.443 INFO             PET1  PASS  Creating a 7D field using generic interface, ESMF_FieldCreateGetUTest.F90, line 1456
+20231118 014313.445 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1475
+20231118 014313.447 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap no fieldget, ESMF_FieldCreateGetUTest.F90, line 1495
+20231118 014313.449 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1516
+20231118 014313.545 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_FieldCreateGetUTest.F90, line 1538
+20231118 014313.642 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, ESMF_FieldCreateGetUTest.F90, line 1561
+20231118 014313.739 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, CORNER STAGGER, ESMF_FieldCreateGetUTest.F90, line 1585
+20231118 014313.835 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, EDGE1 STAGGER, ESMF_FieldCreateGetUTest.F90, line 1608
+20231118 014313.837 INFO             PET1  PASS  Creating a 7D field using generic interface, ESMF_FieldCreateGetUTest.F90, line 1626
+20231118 014313.839 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1645
+20231118 014313.841 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap no fieldget, ESMF_FieldCreateGetUTest.F90, line 1665
+20231118 014313.843 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1686
+20231118 014313.937 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_FieldCreateGetUTest.F90, line 1708
+20231118 014314.034 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, ESMF_FieldCreateGetUTest.F90, line 1731
+20231118 014314.131 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, CORNER STAGGER, ESMF_FieldCreateGetUTest.F90, line 1755
+20231118 014314.226 INFO             PET1  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, EDGE1 STAGGER, ESMF_FieldCreateGetUTest.F90, line 1778
+20231118 014314.605 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1798
+20231118 014315.003 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1817
+20231118 014315.380 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1836
+20231118 014315.448 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1855
+20231118 014315.450 INFO             PET1  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1876
+20231118 014315.516 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1897
+20231118 014315.525 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1916
+20231118 014315.591 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, center stagger, ESMF_FieldCreateGetUTest.F90, line 1939
+20231118 014315.668 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, ESMF_FieldCreateGetUTest.F90, line 1962
+20231118 014315.679 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 4D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 1985
+20231118 014315.680 INFO             PET1  PASS  Creating a 3D field from a 4D grid and 1D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2003
+20231118 014315.681 INFO             PET1  PASS  Creating a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2020
+20231118 014315.702 INFO             PET1  PASS  Complete a 7D field from a 4D grid and 4D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2044
+20231118 014315.703 INFO             PET1  PASS  Complete a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2062
+20231118 014315.704 INFO             PET1  PASS  Complete a 3D field from a 4D grid and 1D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2081
+20231118 014315.706 INFO             PET1  PASS  Complete a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2099
+20231118 014315.707 INFO             PET1  PASS  Complete a 2D field from a 3D grid using generic interface, irregular gridToFieldMap and distgridToGridMap corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2117
+20231118 014316.088 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 2137
+20231118 014316.486 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 2159
+20231118 014316.883 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 2179
+20231118 014317.260 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 2198
+20231118 014317.327 INFO             PET1  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 2217
+20231118 014317.329 INFO             PET1  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2238
+20231118 014317.396 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2259
+20231118 014317.406 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2279
+20231118 014317.468 INFO             PET1  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, ESMF_FieldCreateGetUTest.F90, line 2304
+20231118 014320.309 INFO             PET1  PASS  Testing Atnas's case #3556962, ESMF_FieldCreateGetUTest.F90, line 2319
+20231118 014320.309 ERROR            PET1 ESMCI_Array.C:1458 ESMCI::Array::create() Value cannot be a NULL pointer  - Valid undistLBound argument required to create Array with tensor dims
+20231118 014320.309 ERROR            PET1 ESMCI_Array_F.C:132 c_esmc_arraycreateallocate() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.309 ERROR            PET1 ESMF_ArrayCreate.F90:26747 ESMF_ArrayCreateAllocateAS() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.309 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:7875 ESMF_TESTS Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.309 INFO             PET1  PASS  Testing Eric Klusek's case #852717, ESMF_FieldCreateGetUTest.F90, line 2334
+20231118 014320.309 ERROR            PET1 ESMF_FieldCreate.F90:7385 ESMF_FieldCreateGridArray Object being used before creation  - Bad Object
+20231118 014320.309 ERROR            PET1 ESMF_FieldCreateGetUTest.F90:8059 ESMF_TESTS Object being used before creation  - Internal subroutine call returned Error
+20231118 014320.310 INFO             PET1  PASS  Testing field create from uninit array, ESMF_FieldCreateGetUTest.F90, line 2342
+20231118 014320.310 INFO             PET1  PASS  Testing field create when all entries in map are 0 allocatable, ESMF_FieldCreateGetUTest.F90, line 2350
+20231118 014320.311 INFO             PET1  PASS  Testing field create when all entries in map are 0 pointer, ESMF_FieldCreateGetUTest.F90, line 2358
+20231118 014320.311 INFO             PET1  PASS  Testing creating a Field from a Geom object and fortran array, ESMF_FieldCreateGetUTest.F90, line 2366
+20231118 014320.312 INFO             PET1  PASS  Testing completing a Field from a Geom object and fortran array, ESMF_FieldCreateGetUTest.F90, line 2374
+20231118 014320.312 INFO             PET1  PASS  Testing creating a Field from a Geom object and a typekind, ESMF_FieldCreateGetUTest.F90, line 2382
+20231118 014320.313 INFO             PET1  PASS  Testing completing a Field from a Geom object and a typekind, ESMF_FieldCreateGetUTest.F90, line 2390
+20231118 014320.313 INFO             PET1  Ending Test, file ESMF_FieldCreateGetUTest.F90, line 2393
+20231118 014320.313 INFO             PET1  Finalizing ESMF
+20231118 014305.018 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231118 014305.018 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231118 014305.018 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231118 014305.018 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231118 014305.018 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231118 014305.018 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231118 014305.018 INFO             PET2 Running with ESMF Version   : v8.7.0b01-5-gf664797301
+20231118 014305.018 INFO             PET2 ESMF library build date/time: "Nov 18 2023" "01:24:36"
+20231118 014305.018 INFO             PET2 ESMF library build location : /tmp/intel_2023.1.0-oneAPI_mpi_g_develop/esmf
+20231118 014305.018 INFO             PET2 ESMF_COMM                   : mpi
+20231118 014305.018 INFO             PET2 ESMF_MOAB                   : enabled
+20231118 014305.018 INFO             PET2 ESMF_LAPACK                 : enabled
+20231118 014305.018 INFO             PET2 ESMF_NETCDF                 : enabled
+20231118 014305.018 INFO             PET2 ESMF_PNETCDF                : disabled
+20231118 014305.018 INFO             PET2 ESMF_PIO                    : enabled
+20231118 014305.018 INFO             PET2 ESMF_YAMLCPP                : enabled
+20231118 014305.018 INFO             PET2  Beginning Test, file ESMF_FieldCreateGetUTest.F90, line 53
+20231118 014305.019 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20231118 014305.019 INFO             PET2  PASS  Creating an empty Field, ESMF_FieldCreateGetUTest.F90, line 62
+20231118 014305.019 ERROR            PET2 ESMF_FieldGet.F90:456 ESMF_FieldGetDefault Invalid object  - No Grid or invalid Grid attached to Field
+20231118 014305.019 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:2443 ESMF_TESTS Invalid object  - Internal subroutine call returned Error
+20231118 014305.019 INFO             PET2  PASS  Get info associated with the empty field, ESMF_FieldCreateGetUTest.F90, line 70
+20231118 014305.021 INFO             PET2  PASS  Query field for global and local bounds, ESMF_FieldCreateGetUTest.F90, line 78
+20231118 014305.024 INFO             PET2  PASS  Query field for global and local bounds on mesh, ESMF_FieldCreateGetUTest.F90, line 86
+20231118 014305.026 INFO             PET2  PASS  Create field with global and local indexflag on mesh, ESMF_FieldCreateGetUTest.F90, line 94
+20231118 014305.026 INFO             PET2  PASS  Creating a Field from a fortran array 2d, ESMF_FieldCreateGetUTest.F90, line 102
+20231118 014305.027 INFO             PET2  PASS  Creating a 2D Field with global indices, ESMF_FieldCreateGetUTest.F90, line 110
+20231118 014305.028 INFO             PET2  PASS  Creating a 2D Field with global indices and shared DEs across SSI, ESMF_FieldCreateGetUTest.F90, line 118
+20231118 014305.029 INFO             PET2  PASS  Creating a 2D Field with global indices - testing EmptyCreate/Set/Complete, ESMF_FieldCreateGetUTest.F90, line 126
+20231118 014305.030 INFO             PET2  PASS  Creating a 2D Field with global indices and shared DEs across SSI - testing EmptyCreate/Set/Complete, ESMF_FieldCreateGetUTest.F90, line 135
+20231118 014305.031 ERROR            PET2 ESMF_FieldGet.F90:4326 ESMF_FieldGetBounds Value unrecognized or out of range  - the size of totalCount must equal to the field rank
+20231118 014305.031 ERROR            PET2 ESMF_FieldGet.F90:2593 ESMF_FieldGetDataPtr Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:2569 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET2  PASS  Creating a Field from a fortran array 2d, get fails with smaller totalCount., ESMF_FieldCreateGetUTest.F90, line 144
+20231118 014305.031 ERROR            PET2 ESMCI_LocalArray.C:538 ESMCI::LocalArray::create() Arguments are incompatible  - - Mismatch of lbounds, ubounds and counts
+20231118 014305.031 ERROR            PET2 ESMCI_Array.C:1245 ESMCI::Array::create() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:2605 ESMF_TESTS Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET2  PASS  Creating a Field from a fortran array 2d, array size is bigger than Array total bounds, ESMF_FieldCreateGetUTest.F90, line 153
+20231118 014305.031 WARNING          PET2 jj=0: 3 < 4 - 1 + 1
+20231118 014305.031 ERROR            PET2 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.031 ERROR            PET2 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:2640 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET2  PASS  Creating a Field from a fortran array 2d, with bad array size, ESMF_FieldCreateGetUTest.F90, line 162
+20231118 014305.032 INFO             PET2  shape(fptr1a)=           4          20          10          20          30
+20231118 014305.032 INFO             PET2  lbound(fptr1a)=           1           1           1           1           1
+20231118 014305.032 INFO             PET2  ubound(fptr1a)=           4          20          10          20          30
+20231118 014305.032 INFO             PET2  shape(fptr2a)=           4          20          10
+20231118 014305.032 INFO             PET2  lbound(fptr2a)=           1           1           1
+20231118 014305.032 INFO             PET2  ubound(fptr2a)=           4          20          10
+20231118 014305.033 INFO             PET2  shape(fptr1b)=          10          20          30
+20231118 014305.033 INFO             PET2  lbound(fptr1b)=           1           1           1
+20231118 014305.033 INFO             PET2  ubound(fptr1b)=          10          20          30
+20231118 014305.033 INFO             PET2  shape(fptr2b)=          10          20
+20231118 014305.033 INFO             PET2  lbound(fptr2b)=           1           1
+20231118 014305.033 INFO             PET2  ubound(fptr2b)=          10          20
+20231118 014305.033 INFO             PET2  PASS  Creating a Field from Field with slicing, ESMF_FieldCreateGetUTest.F90, line 170
+20231118 014305.033 ERROR            PET2 ESMCI_Grid_F.C:2264 c_esmc_gridgetplocaldepsloc() Wrong argument specified  - - staggerloc outside of range for grid
+20231118 014305.033 ERROR            PET2 ESMF_Grid.F90:18655 ESMF_GridGetPLocalDePSloc Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:2818 ESMF_TESTS Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 INFO             PET2  PASS  Creating a Field from a fortran array 2d using ESMF_DATACOPY_VALUE and test isESMFAllocated, ESMF_FieldCreateGetUTest.F90, line 179
+20231118 014305.033 ERROR            PET2 ESMCI_Grid_F.C:2264 c_esmc_gridgetplocaldepsloc() Wrong argument specified  - - staggerloc outside of range for grid
+20231118 014305.033 ERROR            PET2 ESMF_Grid.F90:18655 ESMF_GridGetPLocalDePSloc Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:2818 ESMF_TESTS Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 INFO             PET2  PASS  Creating a Field from a fortran array 2d using ESMF_DATACOPY_REFERENCE and test isESMFAllocated, ESMF_FieldCreateGetUTest.F90, line 188
+20231118 014305.034 INFO             PET2  PASS  Creating a Field from a fortran array 2d, distgrid size equal to index space size, ESMF_FieldCreateGetUTest.F90, line 197
+20231118 014305.035 INFO             PET2  PASS  Creating a Field from a fortran array 2d with halowidth, ESMF_FieldCreateGetUTest.F90, line 205
+20231118 014305.035 INFO             PET2  PASS  Creating a Field from a fortran array 2d with halowidth, distgrid size equal to index space size, ESMF_FieldCreateGetUTest.F90, line 214
+20231118 014305.036 WARNING          PET2 jj=0: 8 < 7 - -1 + 1
+20231118 014305.036 ERROR            PET2 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.036 ERROR            PET2 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET2 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET2 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET2 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET2 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET2 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:2987 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 INFO             PET2  PASS  Creating a Field from a fortran array 2d with halowidth, distgrid size equal to index space size, bad array size, ESMF_FieldCreateGetUTest.F90, line 223
+20231118 014305.038 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 236
+20231118 014305.040 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 250
+20231118 014305.042 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 263
+20231118 014305.044 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, no distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 277
+20231118 014305.046 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, no distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 292
+20231118 014305.048 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 306
+20231118 014305.050 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, distgrid padding, using ESMF_STAGGERLOC_CENTER, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 320
+20231118 014305.052 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 333
+20231118 014305.054 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, 1,2 dimension swapped, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 347
+20231118 014305.055 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 359
+20231118 014305.057 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, ESMF_FieldCreateGetUTest.F90, line 371
+20231118 014305.059 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 384
+20231118 014305.061 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 397
+20231118 014305.063 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, grid without padding, ESMF_FieldCreateGetUTest.F90, line 411
+20231118 014305.065 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 423
+20231118 014305.066 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed and divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 435
+20231118 014305.068 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 448
+20231118 014305.068 ERROR            PET2 ESMF_FieldGetAllocBounds.F90:866 ESMF_FieldGetGBAllocBounds Value unrecognized or out of range  - - gridToFieldMap element must be unique
+20231118 014305.068 ERROR            PET2 ESMF_FieldGetAllocBounds.F90:249 ESMF_GridGetFieldBounds Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:3102 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, non unique gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 461
+20231118 014305.069 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded, ESMF_FieldCreateGetUTest.F90, line 470
+20231118 014305.069 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with specified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 479
+20231118 014305.069 ERROR            PET2 ESMCI_Array.C:1229 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not match requested element count
+20231118 014305.069 ERROR            PET2 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET2 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET2 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET2 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET2 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET2 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:3333 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.069 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with smaller pecified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 488
+20231118 014305.070 ERROR            PET2 ESMCI_Array.C:1229 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not match requested element count
+20231118 014305.070 ERROR            PET2 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:3369 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with bigger specified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 497
+20231118 014305.070 WARNING          PET2 jj=0: 5 < 20 - 1 + 1
+20231118 014305.070 ERROR            PET2 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.070 ERROR            PET2 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:3405 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.070 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1nd dimension undistributed, 3rd dimension ungridded, ESMF_FieldCreateGetUTest.F90, line 506
+20231118 014305.071 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, ESMF_FieldCreateGetUTest.F90, line 517
+20231118 014305.072 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 528
+20231118 014305.073 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, ESMF_FieldCreateGetUTest.F90, line 540
+20231118 014305.073 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 552
+20231118 014305.074 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, cornor stagger, ESMF_FieldCreateGetUTest.F90, line 563
+20231118 014305.075 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, cornor stagger, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 574
+20231118 014305.076 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, corner stagger, ESMF_FieldCreateGetUTest.F90, line 586
+20231118 014305.077 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, corner stagger, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 598
+20231118 014305.081 INFO             PET2  PASS  Creating a Field from a fortran array 3d 1,3 dim distributed, 2nd dimension undistributed, 1,3 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 613
+20231118 014305.086 INFO             PET2  PASS  Creating a Field from a fortran array 3d 1,3 dim distributed, 2nd dimension undistributed, 1,3 dimension swapped, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 628
+20231118 014305.091 INFO             PET2  PASS  Creating a Field from a fortran array 3d 2,3 dim distributed, 1st dimension undistributed, 2,3 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 643
+20231118 014305.094 INFO             PET2  PASS  Creating a Field from a fortran array 3d 2,3 dim distributed, 1st dimension undistributed, 2,3 dimension swapped, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 658
+20231118 014305.095 INFO             PET2  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, ESMF_FieldCreateGetUTest.F90, line 666
+20231118 014305.095 INFO             PET2  PASS  Creating a Field from a fortran array pointer, 2d, both dimensions distributed, ESMF_FieldCreateGetUTest.F90, line 674
+20231118 014305.096 INFO             PET2  PASS  Creating a Field from a fortran array pointer, 2d, one dimension distributed, ESMF_FieldCreateGetUTest.F90, line 682
+20231118 014305.097 INFO             PET2  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 691
+20231118 014305.097 WARNING          PET2 jj=0: 20 < 18 - -5 + 1
+20231118 014305.097 ERROR            PET2 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.097 ERROR            PET2 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.097 ERROR            PET2 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.097 ERROR            PET2 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.097 ERROR            PET2 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.097 ERROR            PET2 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.097 ERROR            PET2 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.097 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:4013 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.097 INFO             PET2  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width, gridToFieldMap has dimensions swapped, ESMF_FieldCreateGetUTest.F90, line 701
+20231118 014305.099 INFO             PET2  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width and gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 710
+20231118 014305.104 INFO             PET2  PASS  Creating a Field from a fortran array, 3d, 1,2 dimensions distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 719
+20231118 014305.108 INFO             PET2  PASS  Creating a Field from a fortran array, 3d, 1,2 dimensions distributed, with halo width and gridToFieldMap /2,1/, ESMF_FieldCreateGetUTest.F90, line 728
+20231118 014305.113 INFO             PET2  PASS  Creating a Field from a fortran array, 3d, 1,3 dimensions distributed, with halo width and gridToFieldMap /1,3/, ESMF_FieldCreateGetUTest.F90, line 737
+20231118 014305.118 INFO             PET2  PASS  Creating a Field from a fortran array, 3d, 1,3 dimensions distributed, with halo width and gridToFieldMap /3,1/, ESMF_FieldCreateGetUTest.F90, line 746
+20231118 014305.163 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 759
+20231118 014305.209 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo width, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 773
+20231118 014305.211 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 786
+20231118 014305.213 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1,2 dimension swapped, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 800
+20231118 014305.257 INFO             PET2  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 812
+20231118 014305.305 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, ESMF_FieldCreateGetUTest.F90, line 824
+20231118 014305.353 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 837
+20231118 014305.396 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 863
+20231118 014305.438 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo, corner stagger, get test, grid without padding, ESMF_FieldCreateGetUTest.F90, line 877
+20231118 014305.440 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 889
+20231118 014305.441 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed and divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 901
+20231118 014305.443 INFO             PET2  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 914
+20231118 014305.444 ERROR            PET2 ESMF_FieldEmpty.F90:20013 ESMF_FieldEmptyCompGB Invalid argument  - - farray is not associated with memory allocation)
+20231118 014305.444 ERROR            PET2 ESMF_FieldCreate.F90:3291 ESMF_FieldCreateGBData Invalid argument  - Internal subroutine call returned Error
+20231118 014305.444 ERROR            PET2 ESMF_FieldCreate.F90:9658 ESMF_FieldCreateGridData Invalid argument  - Internal subroutine call returned Error
+20231118 014305.444 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:4475 ESMF_TESTS Invalid argument  - Internal subroutine call returned Error
+20231118 014305.444 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with halo, non unique gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 929
+20231118 014305.479 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with halo, ESMF_FieldCreateGetUTest.F90, line 944
+20231118 014305.513 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 958
+20231118 014305.538 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, minindex starts from numbers greater than 1, with halo and data copy, ESMF_FieldCreateGetUTest.F90, line 974
+20231118 014305.567 INFO             PET2  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with extra padding, halo, and data copy, ESMF_FieldCreateGetUTest.F90, line 989
+20231118 014305.615 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds, ESMF_FieldCreateGetUTest.F90, line 1004
+20231118 014305.662 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds allocate the Fortran array from bounds instead of counts, ESMF_FieldCreateGetUTest.F90, line 1018
+20231118 014306.075 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1036
+20231118 014306.676 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1054
+20231118 014307.108 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1074
+20231118 014307.802 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1093
+20231118 014308.212 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1112
+20231118 014308.954 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1131
+20231118 014309.021 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1168
+20231118 014309.129 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1188
+20231118 014309.542 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger, ESMF_FieldCreateGetUTest.F90, line 1208
+20231118 014310.213 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger, ESMF_FieldCreateGetUTest.F90, line 1228
+20231118 014310.726 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger distgrid padded, ESMF_FieldCreateGetUTest.F90, line 1250
+20231118 014311.246 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger distgrid padded, ESMF_FieldCreateGetUTest.F90, line 1272
+20231118 014311.690 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1292
+20231118 014312.345 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1312
+20231118 014312.814 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1333
+20231118 014313.559 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1354
+20231118 014313.621 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1375
+20231118 014313.711 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1396
+20231118 014313.713 INFO             PET2  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1417
+20231118 014313.715 INFO             PET2  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1438
+20231118 014313.717 INFO             PET2  PASS  Creating a 7D field using generic interface, ESMF_FieldCreateGetUTest.F90, line 1456
+20231118 014313.719 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1475
+20231118 014313.721 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap no fieldget, ESMF_FieldCreateGetUTest.F90, line 1495
+20231118 014313.723 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1516
+20231118 014313.818 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_FieldCreateGetUTest.F90, line 1538
+20231118 014313.913 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, ESMF_FieldCreateGetUTest.F90, line 1561
+20231118 014314.008 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, CORNER STAGGER, ESMF_FieldCreateGetUTest.F90, line 1585
+20231118 014314.103 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, EDGE1 STAGGER, ESMF_FieldCreateGetUTest.F90, line 1608
+20231118 014314.105 INFO             PET2  PASS  Creating a 7D field using generic interface, ESMF_FieldCreateGetUTest.F90, line 1626
+20231118 014314.107 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1645
+20231118 014314.109 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap no fieldget, ESMF_FieldCreateGetUTest.F90, line 1665
+20231118 014314.111 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1686
+20231118 014314.205 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_FieldCreateGetUTest.F90, line 1708
+20231118 014314.301 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, ESMF_FieldCreateGetUTest.F90, line 1731
+20231118 014314.395 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, CORNER STAGGER, ESMF_FieldCreateGetUTest.F90, line 1755
+20231118 014314.490 INFO             PET2  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, EDGE1 STAGGER, ESMF_FieldCreateGetUTest.F90, line 1778
+20231118 014314.902 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1798
+20231118 014315.334 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1817
+20231118 014315.747 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1836
+20231118 014315.812 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1855
+20231118 014315.814 INFO             PET2  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1876
+20231118 014315.875 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1897
+20231118 014315.883 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1916
+20231118 014315.945 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, center stagger, ESMF_FieldCreateGetUTest.F90, line 1939
+20231118 014316.031 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, ESMF_FieldCreateGetUTest.F90, line 1962
+20231118 014316.041 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 4D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 1985
+20231118 014316.043 INFO             PET2  PASS  Creating a 3D field from a 4D grid and 1D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2003
+20231118 014316.044 INFO             PET2  PASS  Creating a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2020
+20231118 014316.064 INFO             PET2  PASS  Complete a 7D field from a 4D grid and 4D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2044
+20231118 014316.065 INFO             PET2  PASS  Complete a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2062
+20231118 014316.066 INFO             PET2  PASS  Complete a 3D field from a 4D grid and 1D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2081
+20231118 014316.068 INFO             PET2  PASS  Complete a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2099
+20231118 014316.069 INFO             PET2  PASS  Complete a 2D field from a 3D grid using generic interface, irregular gridToFieldMap and distgridToGridMap corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2117
+20231118 014316.481 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 2137
+20231118 014316.913 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 2159
+20231118 014317.345 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 2179
+20231118 014317.756 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 2198
+20231118 014317.822 INFO             PET2  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 2217
+20231118 014317.824 INFO             PET2  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2238
+20231118 014317.885 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2259
+20231118 014317.894 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2279
+20231118 014317.965 INFO             PET2  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, ESMF_FieldCreateGetUTest.F90, line 2304
+20231118 014320.309 INFO             PET2  PASS  Testing Atnas's case #3556962, ESMF_FieldCreateGetUTest.F90, line 2319
+20231118 014320.309 ERROR            PET2 ESMCI_Array.C:1458 ESMCI::Array::create() Value cannot be a NULL pointer  - Valid undistLBound argument required to create Array with tensor dims
+20231118 014320.309 ERROR            PET2 ESMCI_Array_F.C:132 c_esmc_arraycreateallocate() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.309 ERROR            PET2 ESMF_ArrayCreate.F90:26747 ESMF_ArrayCreateAllocateAS() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.310 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:7875 ESMF_TESTS Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.310 INFO             PET2  PASS  Testing Eric Klusek's case #852717, ESMF_FieldCreateGetUTest.F90, line 2334
+20231118 014320.310 ERROR            PET2 ESMF_FieldCreate.F90:7385 ESMF_FieldCreateGridArray Object being used before creation  - Bad Object
+20231118 014320.310 ERROR            PET2 ESMF_FieldCreateGetUTest.F90:8059 ESMF_TESTS Object being used before creation  - Internal subroutine call returned Error
+20231118 014320.310 INFO             PET2  PASS  Testing field create from uninit array, ESMF_FieldCreateGetUTest.F90, line 2342
+20231118 014320.310 INFO             PET2  PASS  Testing field create when all entries in map are 0 allocatable, ESMF_FieldCreateGetUTest.F90, line 2350
+20231118 014320.311 INFO             PET2  PASS  Testing field create when all entries in map are 0 pointer, ESMF_FieldCreateGetUTest.F90, line 2358
+20231118 014320.312 INFO             PET2  PASS  Testing creating a Field from a Geom object and fortran array, ESMF_FieldCreateGetUTest.F90, line 2366
+20231118 014320.312 INFO             PET2  PASS  Testing completing a Field from a Geom object and fortran array, ESMF_FieldCreateGetUTest.F90, line 2374
+20231118 014320.313 INFO             PET2  PASS  Testing creating a Field from a Geom object and a typekind, ESMF_FieldCreateGetUTest.F90, line 2382
+20231118 014320.313 INFO             PET2  PASS  Testing completing a Field from a Geom object and a typekind, ESMF_FieldCreateGetUTest.F90, line 2390
+20231118 014320.313 INFO             PET2  Ending Test, file ESMF_FieldCreateGetUTest.F90, line 2393
+20231118 014320.313 INFO             PET2  Finalizing ESMF
+20231118 014305.018 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231118 014305.018 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20231118 014305.018 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20231118 014305.018 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20231118 014305.018 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20231118 014305.018 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20231118 014305.018 INFO             PET3 Running with ESMF Version   : v8.7.0b01-5-gf664797301
+20231118 014305.018 INFO             PET3 ESMF library build date/time: "Nov 18 2023" "01:24:36"
+20231118 014305.018 INFO             PET3 ESMF library build location : /tmp/intel_2023.1.0-oneAPI_mpi_g_develop/esmf
+20231118 014305.018 INFO             PET3 ESMF_COMM                   : mpi
+20231118 014305.018 INFO             PET3 ESMF_MOAB                   : enabled
+20231118 014305.018 INFO             PET3 ESMF_LAPACK                 : enabled
+20231118 014305.018 INFO             PET3 ESMF_NETCDF                 : enabled
+20231118 014305.018 INFO             PET3 ESMF_PNETCDF                : disabled
+20231118 014305.018 INFO             PET3 ESMF_PIO                    : enabled
+20231118 014305.018 INFO             PET3 ESMF_YAMLCPP                : enabled
+20231118 014305.018 INFO             PET3  Beginning Test, file ESMF_FieldCreateGetUTest.F90, line 53
+20231118 014305.019 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20231118 014305.019 INFO             PET3  PASS  Creating an empty Field, ESMF_FieldCreateGetUTest.F90, line 62
+20231118 014305.019 ERROR            PET3 ESMF_FieldGet.F90:456 ESMF_FieldGetDefault Invalid object  - No Grid or invalid Grid attached to Field
+20231118 014305.019 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:2443 ESMF_TESTS Invalid object  - Internal subroutine call returned Error
+20231118 014305.019 INFO             PET3  PASS  Get info associated with the empty field, ESMF_FieldCreateGetUTest.F90, line 70
+20231118 014305.021 INFO             PET3  PASS  Query field for global and local bounds, ESMF_FieldCreateGetUTest.F90, line 78
+20231118 014305.024 INFO             PET3  PASS  Query field for global and local bounds on mesh, ESMF_FieldCreateGetUTest.F90, line 86
+20231118 014305.026 INFO             PET3  PASS  Create field with global and local indexflag on mesh, ESMF_FieldCreateGetUTest.F90, line 94
+20231118 014305.026 INFO             PET3  PASS  Creating a Field from a fortran array 2d, ESMF_FieldCreateGetUTest.F90, line 102
+20231118 014305.027 INFO             PET3  PASS  Creating a 2D Field with global indices, ESMF_FieldCreateGetUTest.F90, line 110
+20231118 014305.028 INFO             PET3  PASS  Creating a 2D Field with global indices and shared DEs across SSI, ESMF_FieldCreateGetUTest.F90, line 118
+20231118 014305.029 INFO             PET3  PASS  Creating a 2D Field with global indices - testing EmptyCreate/Set/Complete, ESMF_FieldCreateGetUTest.F90, line 126
+20231118 014305.030 INFO             PET3  PASS  Creating a 2D Field with global indices and shared DEs across SSI - testing EmptyCreate/Set/Complete, ESMF_FieldCreateGetUTest.F90, line 135
+20231118 014305.031 ERROR            PET3 ESMF_FieldGet.F90:4326 ESMF_FieldGetBounds Value unrecognized or out of range  - the size of totalCount must equal to the field rank
+20231118 014305.031 ERROR            PET3 ESMF_FieldGet.F90:2593 ESMF_FieldGetDataPtr Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:2569 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET3  PASS  Creating a Field from a fortran array 2d, get fails with smaller totalCount., ESMF_FieldCreateGetUTest.F90, line 144
+20231118 014305.031 ERROR            PET3 ESMCI_LocalArray.C:538 ESMCI::LocalArray::create() Arguments are incompatible  - - Mismatch of lbounds, ubounds and counts
+20231118 014305.031 ERROR            PET3 ESMCI_Array.C:1245 ESMCI::Array::create() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:2605 ESMF_TESTS Arguments are incompatible  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET3  PASS  Creating a Field from a fortran array 2d, array size is bigger than Array total bounds, ESMF_FieldCreateGetUTest.F90, line 153
+20231118 014305.031 WARNING          PET3 jj=0: 3 < 4 - 1 + 1
+20231118 014305.031 ERROR            PET3 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.031 ERROR            PET3 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:2640 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.031 INFO             PET3  PASS  Creating a Field from a fortran array 2d, with bad array size, ESMF_FieldCreateGetUTest.F90, line 162
+20231118 014305.032 INFO             PET3  shape(fptr1a)=           4          20          10          20          30
+20231118 014305.032 INFO             PET3  lbound(fptr1a)=           1           1           1           1           1
+20231118 014305.032 INFO             PET3  ubound(fptr1a)=           4          20          10          20          30
+20231118 014305.032 INFO             PET3  shape(fptr2a)=           4          20          10
+20231118 014305.032 INFO             PET3  lbound(fptr2a)=           1           1           1
+20231118 014305.032 INFO             PET3  ubound(fptr2a)=           4          20          10
+20231118 014305.033 INFO             PET3  shape(fptr1b)=          10          20          30
+20231118 014305.033 INFO             PET3  lbound(fptr1b)=           1           1           1
+20231118 014305.033 INFO             PET3  ubound(fptr1b)=          10          20          30
+20231118 014305.033 INFO             PET3  shape(fptr2b)=          10          20
+20231118 014305.033 INFO             PET3  lbound(fptr2b)=           1           1
+20231118 014305.033 INFO             PET3  ubound(fptr2b)=          10          20
+20231118 014305.033 INFO             PET3  PASS  Creating a Field from Field with slicing, ESMF_FieldCreateGetUTest.F90, line 170
+20231118 014305.033 ERROR            PET3 ESMCI_Grid_F.C:2264 c_esmc_gridgetplocaldepsloc() Wrong argument specified  - - staggerloc outside of range for grid
+20231118 014305.033 ERROR            PET3 ESMF_Grid.F90:18655 ESMF_GridGetPLocalDePSloc Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:2818 ESMF_TESTS Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 INFO             PET3  PASS  Creating a Field from a fortran array 2d using ESMF_DATACOPY_VALUE and test isESMFAllocated, ESMF_FieldCreateGetUTest.F90, line 179
+20231118 014305.033 ERROR            PET3 ESMCI_Grid_F.C:2264 c_esmc_gridgetplocaldepsloc() Wrong argument specified  - - staggerloc outside of range for grid
+20231118 014305.033 ERROR            PET3 ESMF_Grid.F90:18655 ESMF_GridGetPLocalDePSloc Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:2818 ESMF_TESTS Wrong argument specified  - Internal subroutine call returned Error
+20231118 014305.033 INFO             PET3  PASS  Creating a Field from a fortran array 2d using ESMF_DATACOPY_REFERENCE and test isESMFAllocated, ESMF_FieldCreateGetUTest.F90, line 188
+20231118 014305.034 INFO             PET3  PASS  Creating a Field from a fortran array 2d, distgrid size equal to index space size, ESMF_FieldCreateGetUTest.F90, line 197
+20231118 014305.035 INFO             PET3  PASS  Creating a Field from a fortran array 2d with halowidth, ESMF_FieldCreateGetUTest.F90, line 205
+20231118 014305.035 INFO             PET3  PASS  Creating a Field from a fortran array 2d with halowidth, distgrid size equal to index space size, ESMF_FieldCreateGetUTest.F90, line 214
+20231118 014305.036 WARNING          PET3 jj=0: 8 < 7 - -1 + 1
+20231118 014305.036 ERROR            PET3 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.036 ERROR            PET3 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET3 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET3 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET3 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET3 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET3 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:2987 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.036 INFO             PET3  PASS  Creating a Field from a fortran array 2d with halowidth, distgrid size equal to index space size, bad array size, ESMF_FieldCreateGetUTest.F90, line 223
+20231118 014305.037 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 236
+20231118 014305.039 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 250
+20231118 014305.041 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 263
+20231118 014305.043 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with halo width, no distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 277
+20231118 014305.045 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, no distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 292
+20231118 014305.047 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, distgrid padding, using ESMF_STAGGERLOC_EDGE1, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 306
+20231118 014305.049 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed and remapped, with halo width, distgrid padding, using ESMF_STAGGERLOC_CENTER, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 320
+20231118 014305.050 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 333
+20231118 014305.052 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, 1,2 dimension swapped, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 347
+20231118 014305.054 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 359
+20231118 014305.056 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, ESMF_FieldCreateGetUTest.F90, line 371
+20231118 014305.057 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 384
+20231118 014305.059 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 397
+20231118 014305.061 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, corner stagger, get test, grid without padding, ESMF_FieldCreateGetUTest.F90, line 411
+20231118 014305.063 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 423
+20231118 014305.064 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed and divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 435
+20231118 014305.066 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 448
+20231118 014305.066 ERROR            PET3 ESMF_FieldGetAllocBounds.F90:866 ESMF_FieldGetGBAllocBounds Value unrecognized or out of range  - - gridToFieldMap element must be unique
+20231118 014305.066 ERROR            PET3 ESMF_FieldGetAllocBounds.F90:249 ESMF_GridGetFieldBounds Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.066 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:3102 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.066 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, non unique gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 461
+20231118 014305.066 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded, ESMF_FieldCreateGetUTest.F90, line 470
+20231118 014305.067 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with specified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 479
+20231118 014305.067 ERROR            PET3 ESMCI_Array.C:1229 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not match requested element count
+20231118 014305.067 ERROR            PET3 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.067 ERROR            PET3 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.067 ERROR            PET3 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.067 ERROR            PET3 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.067 ERROR            PET3 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.067 ERROR            PET3 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.067 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:3333 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.067 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with smaller pecified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 488
+20231118 014305.068 ERROR            PET3 ESMCI_Array.C:1229 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not match requested element count
+20231118 014305.068 ERROR            PET3 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:3369 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 2nd dimension undistributed, 3rd dimension ungridded with bigger specified ungriddedbounds, ESMF_FieldCreateGetUTest.F90, line 497
+20231118 014305.068 WARNING          PET3 jj=0: 5 < 20 - 1 + 1
+20231118 014305.068 ERROR            PET3 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.068 ERROR            PET3 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_ArrayCreate.F90:14329 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_FieldEmpty.F90:21194 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_FieldCreate.F90:3409 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_FieldCreate.F90:9840 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:3405 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.068 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1nd dimension undistributed, 3rd dimension ungridded, ESMF_FieldCreateGetUTest.F90, line 506
+20231118 014305.070 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, ESMF_FieldCreateGetUTest.F90, line 517
+20231118 014305.072 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 528
+20231118 014305.074 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, ESMF_FieldCreateGetUTest.F90, line 540
+20231118 014305.075 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 552
+20231118 014305.077 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, cornor stagger, ESMF_FieldCreateGetUTest.F90, line 563
+20231118 014305.079 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has extra padding, cornor stagger, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 574
+20231118 014305.080 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, corner stagger, ESMF_FieldCreateGetUTest.F90, line 586
+20231118 014305.082 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, grid has no extra padding, corner stagger, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 598
+20231118 014305.087 INFO             PET3  PASS  Creating a Field from a fortran array 3d 1,3 dim distributed, 2nd dimension undistributed, 1,3 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 613
+20231118 014305.091 INFO             PET3  PASS  Creating a Field from a fortran array 3d 1,3 dim distributed, 2nd dimension undistributed, 1,3 dimension swapped, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 628
+20231118 014305.096 INFO             PET3  PASS  Creating a Field from a fortran array 3d 2,3 dim distributed, 1st dimension undistributed, 2,3 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 643
+20231118 014305.099 INFO             PET3  PASS  Creating a Field from a fortran array 3d 2,3 dim distributed, 1st dimension undistributed, 2,3 dimension swapped, use GetAllocBounds internally, ESMF_FieldCreateGetUTest.F90, line 658
+20231118 014305.100 INFO             PET3  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, ESMF_FieldCreateGetUTest.F90, line 666
+20231118 014305.100 INFO             PET3  PASS  Creating a Field from a fortran array pointer, 2d, both dimensions distributed, ESMF_FieldCreateGetUTest.F90, line 674
+20231118 014305.101 INFO             PET3  PASS  Creating a Field from a fortran array pointer, 2d, one dimension distributed, ESMF_FieldCreateGetUTest.F90, line 682
+20231118 014305.102 INFO             PET3  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 691
+20231118 014305.102 WARNING          PET3 jj=0: 20 < 18 - -5 + 1
+20231118 014305.102 ERROR            PET3 ESMCI_Array.C:1177 ESMCI::Array::create() Value unrecognized or out of range  - LocalArray does not accommodate requested element count
+20231118 014305.102 ERROR            PET3 ESMCI_Array_F.C:79 c_esmc_arraycreatelocalarray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.102 ERROR            PET3 ESMF_ArrayCreate.F90:25275 ESMF_ArrayCreateLocalArray() Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.102 ERROR            PET3 ESMF_ArrayCreate.F90:13921 ESMF_ArrayCreateAsmdSp Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.102 ERROR            PET3 ESMF_FieldEmpty.F90:19418 ESMF_FieldEmptyCompGB Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.102 ERROR            PET3 ESMF_FieldCreate.F90:3173 ESMF_FieldCreateGBData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.102 ERROR            PET3 ESMF_FieldCreate.F90:9476 ESMF_FieldCreateGridData Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.102 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:4013 ESMF_TESTS Value unrecognized or out of range  - Internal subroutine call returned Error
+20231118 014305.102 INFO             PET3  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width, gridToFieldMap has dimensions swapped, ESMF_FieldCreateGetUTest.F90, line 701
+20231118 014305.104 INFO             PET3  PASS  Creating a Field from a fortran array, 2d, both dimensions distributed, with halo width and gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 710
+20231118 014305.108 INFO             PET3  PASS  Creating a Field from a fortran array, 3d, 1,2 dimensions distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 719
+20231118 014305.112 INFO             PET3  PASS  Creating a Field from a fortran array, 3d, 1,2 dimensions distributed, with halo width and gridToFieldMap /2,1/, ESMF_FieldCreateGetUTest.F90, line 728
+20231118 014305.116 INFO             PET3  PASS  Creating a Field from a fortran array, 3d, 1,3 dimensions distributed, with halo width and gridToFieldMap /1,3/, ESMF_FieldCreateGetUTest.F90, line 737
+20231118 014305.121 INFO             PET3  PASS  Creating a Field from a fortran array, 3d, 1,3 dimensions distributed, with halo width and gridToFieldMap /3,1/, ESMF_FieldCreateGetUTest.F90, line 746
+20231118 014305.163 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo width, ESMF_FieldCreateGetUTest.F90, line 759
+20231118 014305.205 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo width, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 773
+20231118 014305.207 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 786
+20231118 014305.209 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, 1,2 dimension swapped, fieldget checked, ESMF_FieldCreateGetUTest.F90, line 800
+20231118 014305.250 INFO             PET3  PASS  Creating a Field from a fortran array 3d grid 2d distgrid 2d, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 812
+20231118 014305.294 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, ESMF_FieldCreateGetUTest.F90, line 824
+20231118 014305.339 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 837
+20231118 014305.382 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, with extra padding and halo, corner stagger, get test, ESMF_FieldCreateGetUTest.F90, line 863
+20231118 014305.422 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, with halo, corner stagger, get test, grid without padding, ESMF_FieldCreateGetUTest.F90, line 877
+20231118 014305.423 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 889
+20231118 014305.425 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed and divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 901
+20231118 014305.426 INFO             PET3  PASS  Creating a Field from a fortran array 2d both dims distributed, neither dimension divisible, with extra padding and halo, 1,2 dimension swapped, ESMF_FieldCreateGetUTest.F90, line 914
+20231118 014305.427 ERROR            PET3 ESMF_FieldEmpty.F90:20013 ESMF_FieldEmptyCompGB Invalid argument  - - farray is not associated with memory allocation)
+20231118 014305.427 ERROR            PET3 ESMF_FieldCreate.F90:3291 ESMF_FieldCreateGBData Invalid argument  - Internal subroutine call returned Error
+20231118 014305.428 ERROR            PET3 ESMF_FieldCreate.F90:9658 ESMF_FieldCreateGridData Invalid argument  - Internal subroutine call returned Error
+20231118 014305.428 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:4475 ESMF_TESTS Invalid argument  - Internal subroutine call returned Error
+20231118 014305.428 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with halo, non unique gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 929
+20231118 014305.459 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with halo, ESMF_FieldCreateGetUTest.F90, line 944
+20231118 014305.491 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with extra padding and halo, ESMF_FieldCreateGetUTest.F90, line 958
+20231118 014305.516 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, minindex starts from numbers greater than 1, with halo and data copy, ESMF_FieldCreateGetUTest.F90, line 974
+20231118 014305.543 INFO             PET3  PASS  Creating a Field from a fortran array 3d all dims distributed, neither dimension divisible, with extra padding, halo, and data copy, ESMF_FieldCreateGetUTest.F90, line 989
+20231118 014305.580 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds, ESMF_FieldCreateGetUTest.F90, line 1004
+20231118 014305.616 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds allocate the Fortran array from bounds instead of counts, ESMF_FieldCreateGetUTest.F90, line 1018
+20231118 014305.929 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1036
+20231118 014306.380 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1054
+20231118 014306.707 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1074
+20231118 014307.226 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1093
+20231118 014307.538 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1112
+20231118 014308.099 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1131
+20231118 014308.166 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1168
+20231118 014308.275 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1188
+20231118 014308.685 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger, ESMF_FieldCreateGetUTest.F90, line 1208
+20231118 014309.357 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger, ESMF_FieldCreateGetUTest.F90, line 1228
+20231118 014309.669 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger distgrid padded, ESMF_FieldCreateGetUTest.F90, line 1250
+20231118 014309.986 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, edge1 stagger distgrid padded, ESMF_FieldCreateGetUTest.F90, line 1272
+20231118 014310.356 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1292
+20231118 014310.911 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1312
+20231118 014311.299 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1333
+20231118 014311.926 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1354
+20231118 014311.979 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1375
+20231118 014312.054 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1396
+20231118 014312.056 INFO             PET3  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1417
+20231118 014312.057 INFO             PET3  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1438
+20231118 014312.060 INFO             PET3  PASS  Creating a 7D field using generic interface, ESMF_FieldCreateGetUTest.F90, line 1456
+20231118 014312.062 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1475
+20231118 014312.064 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap no fieldget, ESMF_FieldCreateGetUTest.F90, line 1495
+20231118 014312.066 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1516
+20231118 014312.160 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_FieldCreateGetUTest.F90, line 1538
+20231118 014312.255 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, ESMF_FieldCreateGetUTest.F90, line 1561
+20231118 014312.350 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, CORNER STAGGER, ESMF_FieldCreateGetUTest.F90, line 1585
+20231118 014312.444 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, EDGE1 STAGGER, ESMF_FieldCreateGetUTest.F90, line 1608
+20231118 014312.446 INFO             PET3  PASS  Creating a 7D field using generic interface, ESMF_FieldCreateGetUTest.F90, line 1626
+20231118 014312.448 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1645
+20231118 014312.450 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap no fieldget, ESMF_FieldCreateGetUTest.F90, line 1665
+20231118 014312.452 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1686
+20231118 014312.547 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_FieldCreateGetUTest.F90, line 1708
+20231118 014312.642 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, ESMF_FieldCreateGetUTest.F90, line 1731
+20231118 014312.738 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, ESMF_DATACOPY_VALUE, CORNER STAGGER, ESMF_FieldCreateGetUTest.F90, line 1755
+20231118 014312.830 INFO             PET3  PASS  Creating a 7D field using generic interface, arbitrary gridToFieldMap arbitrary distgridToGridMap, arbitrary haloWidth, EDGE1 STAGGER, ESMF_FieldCreateGetUTest.F90, line 1778
+20231118 014313.145 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 1798
+20231118 014313.473 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 1817
+20231118 014313.786 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 1836
+20231118 014313.852 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 1855
+20231118 014313.853 INFO             PET3  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1876
+20231118 014313.906 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1897
+20231118 014313.912 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 1916
+20231118 014313.965 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, center stagger, ESMF_FieldCreateGetUTest.F90, line 1939
+20231118 014314.039 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, ESMF_FieldCreateGetUTest.F90, line 1962
+20231118 014314.050 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 4D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 1985
+20231118 014314.051 INFO             PET3  PASS  Creating a 3D field from a 4D grid and 1D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2003
+20231118 014314.052 INFO             PET3  PASS  Creating a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2020
+20231118 014314.072 INFO             PET3  PASS  Complete a 7D field from a 4D grid and 4D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2044
+20231118 014314.074 INFO             PET3  PASS  Complete a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2062
+20231118 014314.075 INFO             PET3  PASS  Complete a 3D field from a 4D grid and 1D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2081
+20231118 014314.076 INFO             PET3  PASS  Complete a 3D field from a 4D grid using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2099
+20231118 014314.077 INFO             PET3  PASS  Complete a 2D field from a 3D grid using generic interface, irregular gridToFieldMap and distgridToGridMap corner stagger, replicated dimension, ESMF_FieldCreateGetUTest.F90, line 2117
+20231118 014314.392 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 2137
+20231118 014314.721 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, ESMF_FieldCreateGetUTest.F90, line 2159
+20231118 014315.048 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, fieldget=true, ESMF_FieldCreateGetUTest.F90, line 2179
+20231118 014315.359 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, ESMF_FieldCreateGetUTest.F90, line 2198
+20231118 014315.424 INFO             PET3  PASS  Creating a 7D field from a 5D grid and 2D ungridded bounds using generic interface, irregular gridToFieldMap, data copy, ESMF_FieldCreateGetUTest.F90, line 2217
+20231118 014315.426 INFO             PET3  PASS  Creating a 7D field from a 1D grid and 6D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2238
+20231118 014315.479 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2259
+20231118 014315.485 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap, ESMF_FieldCreateGetUTest.F90, line 2279
+20231118 014315.546 INFO             PET3  PASS  Creating a 7D field from a 4D grid and 3D ungridded bounds using generic interface, irregular gridToFieldMap and distgridToGridMap data copy, corner stagger, ESMF_FieldCreateGetUTest.F90, line 2304
+20231118 014320.309 INFO             PET3  PASS  Testing Atnas's case #3556962, ESMF_FieldCreateGetUTest.F90, line 2319
+20231118 014320.309 ERROR            PET3 ESMCI_Array.C:1458 ESMCI::Array::create() Value cannot be a NULL pointer  - Valid undistLBound argument required to create Array with tensor dims
+20231118 014320.309 ERROR            PET3 ESMCI_Array_F.C:132 c_esmc_arraycreateallocate() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.309 ERROR            PET3 ESMF_ArrayCreate.F90:26747 ESMF_ArrayCreateAllocateAS() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.310 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:7875 ESMF_TESTS Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20231118 014320.310 INFO             PET3  PASS  Testing Eric Klusek's case #852717, ESMF_FieldCreateGetUTest.F90, line 2334
+20231118 014320.310 ERROR            PET3 ESMF_FieldCreate.F90:7385 ESMF_FieldCreateGridArray Object being used before creation  - Bad Object
+20231118 014320.310 ERROR            PET3 ESMF_FieldCreateGetUTest.F90:8059 ESMF_TESTS Object being used before creation  - Internal subroutine call returned Error
+20231118 014320.310 INFO             PET3  PASS  Testing field create from uninit array, ESMF_FieldCreateGetUTest.F90, line 2342
+20231118 014320.310 INFO             PET3  PASS  Testing field create when all entries in map are 0 allocatable, ESMF_FieldCreateGetUTest.F90, line 2350
+20231118 014320.311 INFO             PET3  PASS  Testing field create when all entries in map are 0 pointer, ESMF_FieldCreateGetUTest.F90, line 2358
+20231118 014320.312 INFO             PET3  PASS  Testing creating a Field from a Geom object and fortran array, ESMF_FieldCreateGetUTest.F90, line 2366
+20231118 014320.312 INFO             PET3  PASS  Testing completing a Field from a Geom object and fortran array, ESMF_FieldCreateGetUTest.F90, line 2374
+20231118 014320.313 INFO             PET3  PASS  Testing creating a Field from a Geom object and a typekind, ESMF_FieldCreateGetUTest.F90, line 2382
+20231118 014320.313 INFO             PET3  PASS  Testing completing a Field from a Geom object and a typekind, ESMF_FieldCreateGetUTest.F90, line 2390
+20231118 014320.313 INFO             PET3  Ending Test, file ESMF_FieldCreateGetUTest.F90, line 2393
+20231118 014320.313 INFO             PET3  Finalizing ESMF
